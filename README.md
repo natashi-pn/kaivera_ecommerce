@@ -10,66 +10,66 @@ Discount codes to test
 //Features//
 
 User Authentication & Access Control
-  •	Role-Based Navigation
-      o	Admin: Access to admin-specific navigation and dashboard.
-      o	User: Access to user-specific features and profile.
-      o	Guest: Limited access with default navigation before login.
-      •	Access Restrictions
-      o	Guests cannot purchase products, submit reviews, or send feedback until they log in.
+  -	Role-Based Navigation
+      -	Admin: Access to admin-specific navigation and dashboard.
+      -	User: Access to user-specific features and profile.
+      -	Guest: Limited access with default navigation before login.
+  -	Access Restrictions
+      -	Guests cannot purchase products, submit reviews, or send feedback until they log in.
 
 -----------------------------------------------------------------------------------------
 
 E-Commerce Core Features
-  •	Live Product Search
-      o	Real-time product search using AJAX without page reload.
-      o	Product navigation bar is disabled during search for a cleaner UI experience.
-  •	Add to Cart (AJAX)
-      o	Add products to cart without page refresh.
-      o	Includes an extra button for quick access to the cart.
-  •	Wishlist Functionality (AJAX)
-      o	Add/remove products from wish list instantly.
-      o	Wishlist appears in a side panel popup for quick access.
-  •	Voucher/Discount System
-      o	Users can apply discount codes during checkout to receive price reductions.  
-  •	Order Receipt System
-      o	After a successful payment, users see a popup receipt.
-      o	Receipts can be downloaded as PNG images.
-      o	Double-clicking the receipt closes the popup.
+  -	Live Product Search
+      -	Real-time product search using AJAX without page reload.
+      -	Product navigation bar is disabled during search for a cleaner UI experience.
+  -	Add to Cart (AJAX)
+      -	Add products to cart without page refresh.
+      -	Includes an extra button for quick access to the cart.
+  -	Wishlist Functionality (AJAX)
+      -	Add/remove products from wish list instantly.
+      -	Wishlist appears in a side panel popup for quick access.
+  -	Voucher/Discount System
+      -	Users can apply discount codes during checkout to receive price reductions.  
+  -	Order Receipt System
+      -	After a successful payment, users see a popup receipt.
+      -	Receipts can be downloaded as PNG images.
+      -	Double-clicking the receipt closes the popup.
 
 -----------------------------------------------------------------------------------------
 
 Ratings & Feedback
-  •	Submit Feedback Without Refresh
-      o	Users can rate and leave comments on the contact page via AJAX.
-  •	Dynamic Display of Feedback
-      o	Ratings and user feedback are updated live on the Home and About pages without reload.
-  •	Review Management
-      o	Users can view their submitted reviews from their profile.
-      o	Admins can manage and moderate all product reviews from the dashboard.
+  -	Submit Feedback Without Refresh
+      -	Users can rate and leave comments on the contact page via AJAX.
+  -	Dynamic Display of Feedback
+      -	Ratings and user feedback are updated live on the Home and About pages without reload.
+  -	Review Management
+      -	Users can view their submitted reviews from their profile.
+      -	Admins can manage and moderate all product reviews from the dashboard.
 
 -----------------------------------------------------------------------------------------
 
 User & Admin Profiles
-  •	User Profile
-o	View order history with cancellation available for orders not yet shipped.
-o	Manage wish list and personal reviews.
-o	Edit username and profile picture.
-  •	Admin Profile
-      o	Access to an admin dashboard.
-      o	Manage CRUD operations for:
+  -	User Profile
+      -	View order history with cancellation available for orders not yet shipped.
+      -	Manage wish list and personal reviews.
+      -	Edit username and profile picture.
+  -	Admin Profile
+      -	Access to an admin dashboard.
+      -	Manage CRUD operations for:
                                   Orders
                                   Users
                                   Discounts
                                   Products
                                   Reviews
                                   Messages
-      o	View top-selling products and overall store analytics.
+      -	View top-selling products and overall store analytics.
 
 -----------------------------------------------------------------------------------------
       
 Analytics & Highlights
-  •	Top 4 Best-Selling Products:
-      o	Displayed prominently on the homepage under “Top Essences of Kaivera.”
+  -	Top 4 Best-Selling Products:
+      -	Displayed prominently on the homepage under “Top Essences of Kaivera.”
 
 -----------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------
