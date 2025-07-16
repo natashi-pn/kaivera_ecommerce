@@ -41,10 +41,7 @@ $user = getSearchUser($user_id);
                 <label for="name_input">UserName</label>
                 <input type="text" name="user_name" id="name_input" value="<?php echo $user['user_name'] ?>">
             </div>
-            <div class="input_field">
-                <label for="email_input">Email</label>
-                <input type="email" name="user_email" id="email_input" value="<?php echo $user['user_email'] ?>">
-            </div>
+
             <div class="input_field">
                 <label for="phone_input">Phone</label>
                 <input type="number" name="user_phone" id="phone_input" step="any" value="<?php echo $user['user_phone'] ?>">
