@@ -1,0 +1,132 @@
+:root {
+    --black: #1d2025;
+    --white: #dfedea;
+    --tropical: #abbee1;
+    --black-olive: #1a1c20;
+    --gray: #191b1b;
+    --second-white: #b8c2c2;
+    --bigFont: "bebas neue", sans-serif;
+    --smallFont: "Poppins", sans-serif;
+    --hand-written: "Lugrasimo", cursive;
+}
+
+
+
+/* Charts CSS :v */
+
+.chart-container {
+    height: 100%;
+    width: 100%;
+
+}
+
+.chart-container h1 {
+    font-family: var(--bigFont);
+    color: var(--white);
+    font-size: 2rem;
+    margin: 20px;
+    line-height: 1;
+}
+
+.chart-container .cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
+    justify-content: center;
+    gap: 1rem;
+    transition: .3s ease-in-out;
+
+}
+
+.card {
+    height: 100px;
+    background: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+.card h1 {
+    font-family: var(--bigFont);
+    font-size: 2.2rem;
+    color: var(--black);
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+.card p {
+    color: var(--gray);
+    font-size: .8rem;
+    font-family: var(--smallFont);
+}
+
+
+.chart-container .cards:hover .card {
+    opacity: .5;
+}
+
+.chart-container .cards:hover .card:hover {
+    opacity: 1;
+}
+
+.chart-container canvas {
+    height: 100;
+}
+
+#paymentMethodsChart {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 300px;
+
+}
+
+
+/* Admin Tables */
+
+@media(max-width : 800px) {
+    table {
+        font-size: .8rem;
+    }
+
+    th {
+        font-size: .7rem;
+    }
+}
+
+
+
+@media(max-width : 600px) {
+
+
+    section {
+        padding: 0;
+    }
+
+    .action a {
+        padding: 5px 8px;
+        font-size: .55rem;
+        margin: 3px;
+    }
+
+    table {
+        font-size: .55rem;
+    }
+
+    th {
+        font-size: .5rem;
+    }
+
+    .product_image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .chart-container h1 {
+        font-size: 1.5rem;
+    }
+}

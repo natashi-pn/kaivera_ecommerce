@@ -1,0 +1,25 @@
+Features
+
+- User type authentiation with respective limited accesses. (Admin, User, Guest) admin sees admin nav, users see user nav and guest (before login)
+ sees default nav.
+- Submit Ratings and Comments in the Contact Page without refresh.
+- Dynamically update the ratings and feedback section in the home and about page.
+- Product Searching live with ajax without refresh , The product nav is disabled when the user is searching.
+- Wishlist feature is added without refresh and live goes to the wishlist side bar popup and can remove any time.
+- Add to cart is live with ajax and addition button to add to cart + go to cart to make easier to go to cart.
+- Discount feature is added using vouncher codes.
+- After payment the receipt is showed popup and users can download the receipts as pngs before double clicking to close.
+- 2 profiles are added for admin and users , admin has dashboard, crud tables such as orders, users, discounts, products, reviews and messages.
+- In user profile there is order history, reviews by that user, wishlists and the ability to cancel order if not shipped yet.
+- User and admins can edit their user profile like username, profile picture.
+- limit features such as buy products, giving reviews and feedbacks for the guest before logins.
+- there is top 4 sales products by the Kaivera displayed on the home page.
+
+
+Discount codes
+A8F3K9L2
+Z7C2M4B8
+X1N8T6Q4
+D3H5P7V9
+R9E4L6T2
+
