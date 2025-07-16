@@ -1,10 +1,10 @@
 Discount codes to test
-                      -A8F3K9L2
-                      -Z7C2M4B8
-                      -X1N8T6Q4
-                      -D3H5P7V9
-                      -R9E4L6T2
-                      -abc
+                      A8F3K9L2,
+                      Z7C2M4B8,
+                      X1N8T6Q4,
+                      D3H5P7V9,
+                      R9E4L6T2,
+                      abc
 
 
 //Features//
