@@ -775,17 +775,22 @@ a:active {
   padding: 8px;
   margin: 5px;
   border-radius: 50px;
-  transition: 0.2s linear;
+  transition: 0.2s ease-in-out;
   font-size: .9rem;
   font-weight: 400;
   font-family: var(--smallFont);
   text-align: center;
+  filter: brightness(0.8);
 }
 
 .top-essence .product .product-content a:hover {
-  background: transparent;
-  border: 1px solid var(--white);
-  color: var(--white);
+  scale: 1.02;
+  filter: brightness(1);
+
+}
+
+.top-essence .product .product-content a:active {
+  scale: 0.95;
 }
 
 .line-wrapper {
@@ -808,6 +813,7 @@ a:active {
   justify-content: center;
   position: relative;
   cursor: none;
+
 }
 
 .remove_cursor {
@@ -817,12 +823,10 @@ a:active {
 .testimonial .testimonial-text {
   width: 50%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   padding: 5rem;
   z-index: 2;
@@ -832,31 +836,38 @@ a:active {
   color: var(--white);
   font-size: 3rem;
   font-family: var(--bigFont);
+  text-align: center;
 }
 
 .testimonial .testimonial-text p {
   color: rgb(214, 214, 214);
   font-size: 1rem;
-  text-align: justify;
+  text-align: center;
   font-weight: 300;
   font-family: var(--smallFont);
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 .testimonial .testimonial-image {
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 0;
-  right: 0;
+
 }
 
 .testimonial .testimonial-image .image {
   height: 100%;
-  background: url(../assets/images/testimonial.webp);
+  background: url(../assets/images/mockup.webp);
   background-size: 100%;
   will-change: background-position;
-  opacity: .8;
+  opacity: .3;
+  transition: background-size .3s ease-in-out,
+    opacity .3s ease-in-out;
+}
+
+.testimonial:hover>.testimonial-image .image {
+  opacity: .4;
+  background-size: 101%;
 }
 
 .testimonial-content {
@@ -1054,12 +1065,10 @@ footer {
   .testimonial .testimonial-text {
     width: 100%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     padding: 2rem;
     z-index: 2;
@@ -1078,15 +1087,12 @@ footer {
   .testimonial .testimonial-text p {
     color: rgb(214, 214, 214);
     font-size: 1rem;
-    text-align: justify;
+    text-align: center;
   }
 
   .testimonial .testimonial-image {
     width: 100%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
     opacity: 0.6;
     padding: 0;
   }
@@ -1264,7 +1270,7 @@ footer {
   }
 
   .testimonial .testimonial-image .image {
-    background-size: 300%;
+    background-size: 100%;
   }
 
   .testimonial-title {

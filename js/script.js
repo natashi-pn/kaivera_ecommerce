@@ -1107,7 +1107,7 @@ function setUpParallax() {
     const imageEl = document.querySelector(".background-parallax");
     const speed = 0.5;
     const scrollY = window.scrollY;
-    const newPosY = -200 + scrollY * speed;
+    const newPosY = -1000 + scrollY * speed;
     imageEl.style.backgroundPositionY = `${newPosY}px`;
   });
 }

@@ -280,7 +280,7 @@ $topProducts = getTopProducts();
 
   <!-- FAQ Section -->
 
-  <div class="w-screen bg-[#e0eeee] shadow-xl ring-1 ring-gray-900/5 faq-section">
+  <div class="w-screen bg-white shadow-xl ring-1 ring-gray-900/5 faq-section">
     <div class="mx-auto px-5">
       <div class="flex flex-col items-center">
         <h2 class="mt-5 text-center text-7xl tracking-tight faq-title">
