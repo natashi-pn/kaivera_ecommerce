@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     }
 
     foreach ($users as $user) {
-        if ($user['user_name'] === $user_name) {
+        if ($user['user_name'] === $user_name && $user['user_id'] != $user_id) {
             $_SESSION['error'] = 'Username Exists';
             header("Location: user_update_user.php?id=" . $user_id);
             exit;
