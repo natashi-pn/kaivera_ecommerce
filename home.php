@@ -20,7 +20,7 @@ $topProducts = getTopProducts();
   <script src="js/script.js" defer></script>
 </head>
 
-<body data-page="home">
+<body data-page="home" class="light">
 
   <div class="notification"></div>
 
@@ -60,7 +60,7 @@ $topProducts = getTopProducts();
   <section class="landing-page" id="landing-page">
 
     <div class="hero-img">
-      <img src="assets/images/hero-img5.webp" alt="" data-speed="0.35" class="image-parallax" />
+      <img src="assets/images/hero-img5.webp" alt="" data-speed="0.45" class="image-parallax" />
     </div>
     <div class="content">
       <h1>Wildcrafted</h1>
@@ -211,10 +211,10 @@ $topProducts = getTopProducts();
     </section>
   </a>
 
-  <section class="bg-[#1d2025] flex items-center justify-center testimonial-content">
+  <section class="flex items-center justify-center testimonial-content">
     <div class="max-w-7xl w-full mx-auto px-4">
       <div class="text-center mb-16">
-        <p class="text-light text-gray-300 max-w-1xl mx-auto testimonial-title linesAnimation">
+        <p class="text-light max-w-1xl mx-auto testimonial-title linesAnimation">
           Hear what our customers say about their experience with our products
           and services.
         </p>
@@ -244,9 +244,9 @@ $topProducts = getTopProducts();
               foreach ($reviews as $review) {
             ?>
                 <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4 animate-fade">
-                  <div class="bg-[#1a1c20] p-8 rounded-xl shadow-lg h-full">
+                  <div class="testimonial_card_indi p-8 rounded-xl shadow-lg h-full">
                     <div class="flex items-center mb-4">
-                      <div class="flex space-x-1 text-[#9cb0d5]">
+                      <div class="flex space-x-1 testimonial_star">
 
                         <?php
                         for ($i = 1; $i <= $review['rating']; $i++) {
@@ -255,15 +255,15 @@ $topProducts = getTopProducts();
                         ?>
                       </div>
                     </div>
-                    <p class="text-gray-400 mb-6 text-base">
+                    <p class="testimonial_comment mb-6 text-base">
                       <?php echo $review['comment'] ?>
                     </p>
                     <div class="flex items-center">
                       <img
                         src="<?php echo htmlspecialchars($review['user_profile_image']) ?>" class="w-14 h-14 rounded-full object-cover mr-4 border-2 border-[#9fc9b7]" />
                       <div>
-                        <h4 class="text-gray-200 text-normal"><?php echo htmlspecialchars($review['user_name']) ?></h4>
-                        <h4 class="text-gray-400 text-sm"><?php echo $review['user_type'] ?></h4>
+                        <h4 class="testimonial_name text-normal"><?php echo htmlspecialchars($review['user_name']) ?></h4>
+                        <h4 class="testimonial_type text-sm"><?php echo $review['user_type'] ?></h4>
                       </div>
                     </div>
                   </div>
@@ -280,13 +280,13 @@ $topProducts = getTopProducts();
 
   <!-- FAQ Section -->
 
-  <div class="w-screen bg-white shadow-xl ring-1 ring-gray-900/5 faq-section">
+  <div class="w-screen shadow-xl ring-1 ring-gray-900/5 faq-section">
     <div class="mx-auto px-5">
       <div class="flex flex-col items-center">
         <h2 class="mt-5 text-center text-7xl tracking-tight faq-title">
           FAQ
         </h2>
-        <p class="mt-3 text-black text-base text-center">
+        <p class="mt-3 text-base text-center faq-desc">
           Your Questions Are Answered Here
         </p>
       </div>
@@ -302,7 +302,7 @@ $topProducts = getTopProducts();
                 </svg>
               </span>
             </summary>
-            <p class="group-open:animate-fadeIn mt-3 text-neutral-900 text-sm">
+            <p class="group-open:animate-fadeIn mt-3 faq-ans text-sm">
               Simply navigate to the Products page from the main menu. You'll
               see clearly labeled categories such as Dresses, Shirts and Shoes. Click on any category to filter and explore
               relevant items.
@@ -320,7 +320,7 @@ $topProducts = getTopProducts();
                 </svg>
               </span>
             </summary>
-            <p class="group-open:animate-fadeIn mt-3 text-neutral-900 text-sm">
+            <p class="group-open:animate-fadeIn mt-3 faq-ans text-sm">
               On any product page, click the “Add to Cart” after product details button
               beneath the item. The cart icon in the navigation bar will be notified and
               updated instantly, allowing you to check and remove your selected
@@ -339,7 +339,7 @@ $topProducts = getTopProducts();
                 </svg>
               </span>
             </summary>
-            <p class="group-open:animate-fadeIn mt-3 text-neutral-900 text-sm">
+            <p class="group-open:animate-fadeIn mt-3 faq-ans text-sm">
               Click the menu icon at the top right of the page to go to Cart
               Page. You’ll see a full summary of your selected items with the option to remove them before checking out.
             </p>
@@ -356,7 +356,7 @@ $topProducts = getTopProducts();
                 </svg>
               </span>
             </summary>
-            <p class="group-open:animate-fadeIn mt-3 text-neutral-900 text-sm">
+            <p class="group-open:animate-fadeIn mt-3 faq-ans text-sm">
               Click on any product image or name to open its dedicated product
               page, which displays the full description, high-resolution
               images, available colors, and price in USD.
@@ -374,7 +374,7 @@ $topProducts = getTopProducts();
                 </svg>
               </span>
             </summary>
-            <p class="group-open:animate-fadeIn mt-3 text-neutral-900 text-sm">
+            <p class="group-open:animate-fadeIn mt-3 faq-ans text-sm">
               Definitely! Kaivera website is built with a responsive design,
               ensuring smooth browsing and functionality across all
               devices—from phones to desktops. Transitions and animations are
@@ -393,7 +393,7 @@ $topProducts = getTopProducts();
                 </svg>
               </span>
             </summary>
-            <p class="group-open:animate-fadeIn mt-3 text-neutral-900 text-sm">
+            <p class="group-open:animate-fadeIn mt-3 faq-ans text-sm">
               You can easily move between pages using the top navigation bar.
               Click on Home, Products, Cart, or Contact to access the
               respective sections. Smooth transitions ensure a seamless luxury

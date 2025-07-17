@@ -76,8 +76,8 @@
          </div>
 
          <div class="profile">
-             <a href="admin/admin.php">Admin Dashboard</a>
-
+             <button id="light_mode" class="hidden"><i class="fa-solid fa-sun"></i></button>
+             <button id="dark_mode"><i class="fa-solid fa-moon"></i></button>
          </div>
 
      </section>

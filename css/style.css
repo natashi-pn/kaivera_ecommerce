@@ -23,10 +23,31 @@
   background: var(--white);
 }
 
+
+
+body.light {
+
+  --black: #ebf4f2;
+  --white: #1d2025;
+  --tropical: #525f79;
+  --black-olive: #bec7c7;
+  --gray: #c4d3d3;
+  --second-white: #1a1c20;
+  --bigFont: "bebas neue", sans-serif;
+  --smallFont: "Poppins", sans-serif;
+  --hand-written: "Lugrasimo", cursive;
+
+}
+
 html {
   background-color: var(--black);
   overflow-x: hidden;
 }
+
+
+
+
+
 
 ::-webkit-scrollbar {
   width: 0;
@@ -98,11 +119,12 @@ a:active {
   font-family: var(--smallFont);
   font-size: .9rem;
   transition: .2s linear;
-  color: rgb(157, 157, 157);
+  color: rgb(137, 137, 137);
+  opacity: 0.5;
 }
 
 .nav-menu .btn_wrapper a:hover {
-  color: var(--white);
+  opacity: 1;
 
 }
 
@@ -209,19 +231,47 @@ a:active {
   transform: scale(1.1);
 }
 
-.navigation_bottom .profile a {
-  margin: 0 20px;
+.navigation_bottom .profile {
+
+  width: 45px;
+  height: 45px;
+}
+
+.navigation_bottom .profile button {
+  width: 45px;
+  height: 45px;
   color: var(--second-white);
   font-size: .9rem;
   font-family: var(--smallFont);
-  transition: .1s linear;
-  text-decoration: none;
-
+  transition: .2s linear;
+  position: absolute;
+  padding: 10px;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.navigation_bottom .profile a:hover {
-  text-decoration: underline;
+.navigation_bottom .profile button:hover {
+  transform: scale(1.03);
+  background: rgba(127, 127, 127, 0.15);
 }
+
+.navigation_bottom .profile button:active {
+  scale: 0.93;
+}
+
+.navigation_bottom .profile button i {
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.navigation_bottom .profile button.hidden {
+  display: none;
+}
+
+
 
 .navigation .left {
   width: 100%;
@@ -425,7 +475,7 @@ a:active {
   width: 35%;
 
   text-align: center;
-  color: var(--white);
+  color: rgb(176, 176, 176);
   font-size: 0.8rem;
   font-family: var(--smallFont);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -451,7 +501,7 @@ a:active {
 /* About Us section */
 .about-us {
   width: 100%;
-  background: white;
+  background: var(--black);
   padding: 50px;
 }
 
@@ -468,24 +518,24 @@ a:active {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  color: #000;
+  color: var(--white);
 }
 
 .about-us .container .wrapper p {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   font-size: 1.3rem;
-  color: var(--black);
+  color: var(--white);
   font-family: var(--smallFont);
 }
 
 .about-us .container .wrapper a {
   margin: 30px 0;
   text-decoration: none;
-  background: var(--black);
-  color: var(--white);
+  background: var(--white);
+  color: var(--black);
   font-family: var(--smallFont);
   padding: 13px 20px;
-  border: 1px solid black;
+  border: 1px solid var(--white);
   border-radius: 25px;
   font-size: 0.8rem;
   transition: 0.2s linear;
@@ -494,7 +544,7 @@ a:active {
 
 .about-us .container .wrapper a:hover {
   background: transparent;
-  color: var(--black);
+  color: var(--white);
 }
 
 .content-container {
@@ -506,7 +556,7 @@ a:active {
 
 .content-container .content {
   padding: 0 5px;
-  border-left: 2px solid black;
+  border-left: 2px solid var(--white);
   display: flex;
   flex-direction: column;
   height: 500px;
@@ -517,7 +567,7 @@ a:active {
 }
 
 .content-container .content .content-title h1 {
-  color: black;
+  color: var(--white);
   font-family: var(--bigFont);
   font-size: 1.8rem;
   font-weight: 500;
@@ -527,7 +577,7 @@ a:active {
 }
 
 .content-container .content .content-title h1:nth-child(1) {
-  color: black;
+  color: var(--white);
   font-size: 7rem;
   font-weight: 500;
 }
@@ -537,6 +587,7 @@ a:active {
   font-family: var(--smallFont);
   font-size: 1.2rem;
   text-align: justify;
+  color: var(--second-white);
 }
 
 /* Scroll Text Animation */
@@ -547,6 +598,7 @@ a:active {
   padding: 5px 0;
   cursor: pointer;
   height: 50vh;
+  background: var(--black);
 }
 
 .horizontalText p {
@@ -594,7 +646,7 @@ a:active {
   padding: 5px;
   width: 100px;
   height: 100px;
-  color: rgb(0, 0, 0);
+  color: white;
   border-radius: 50%;
   z-index: 100000;
   transform: scale(0);
@@ -807,7 +859,7 @@ a:active {
 .testimonial {
   height: 50vh;
   width: 100vw;
-  margin: 3rem 0 3rem 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -823,7 +875,6 @@ a:active {
 .testimonial .testimonial-text {
   width: 50%;
   height: 100%;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -833,19 +884,19 @@ a:active {
 }
 
 .testimonial .testimonial-text h1 {
-  color: var(--white);
+  color: white;
   font-size: 3rem;
   font-family: var(--bigFont);
   text-align: center;
 }
 
 .testimonial .testimonial-text p {
-  color: rgb(214, 214, 214);
+  color: rgb(198, 198, 198);
   font-size: 1rem;
   text-align: center;
   font-weight: 300;
   font-family: var(--smallFont);
-  line-height: 1.4;
+  line-height: 1.2;
 }
 
 .testimonial .testimonial-image {
@@ -871,14 +922,47 @@ a:active {
 }
 
 .testimonial-content {
-  margin: 4rem 0;
+  padding: 3rem 0;
+  /* margin: 4rem 0; */
   font-family: var(--smallFont);
-
+  background: var(--black);
 }
 
 .testimonial-title {
   font-size: 2rem;
   font-family: var(--bigFont);
+  color: var(--white);
+}
+
+.testimonial-card {
+  transition: all 0.5s ease;
+
+}
+
+.testimonial_card_indi {
+  background: var(--black-olive);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.testimonial_star {
+  color: var(--second-white);
+}
+
+.testimonial_name {
+  color: var(--white);
+}
+
+.testimonial_type {
+  color: var(--second-white);
+}
+
+.testimonial_comment {
+  color: var(--second-white);
 }
 
 #carousel {
@@ -888,10 +972,23 @@ a:active {
 .faq-section {
   padding: 8rem 8rem;
   font-family: var(--smallFont);
+  background: var(--black);
+  color: var(--white);
 }
 
 .faq-title {
   font-family: var(--bigFont);
+  color: var(--white);
+}
+
+.faq-desc {
+  font-family: var(--smallFont);
+  color: var(--white);
+}
+
+.faq-ans {
+  font-family: var(--smallFont);
+  color: var(--second-white);
 }
 
 /* Image Slider */
@@ -1005,10 +1102,29 @@ footer {
 
 .cart-section {
   font-family: var(--smallFont);
+  background: var(--black);
 }
 
 .cart-title {
   font-family: var(--bigFont);
+  color: var(--white);
+}
+
+.cart_item {
+  background: var(--black-olive);
+  border: 1px solid rgb(131, 131, 131);
+}
+
+.cart_text {
+  color: var(--white);
+}
+
+.cart_color {
+  color: var(--tropical);
+}
+
+.cart_header {
+  color: var(--white);
 }
 
 @media (max-width: 1055px) {
@@ -1035,7 +1151,7 @@ footer {
   }
 
   .content-container .content .content-title h1:nth-child(1) {
-    color: black;
+
     font-size: 6rem;
     font-weight: 400;
   }
@@ -1053,9 +1169,9 @@ footer {
   }
 
   .testimonial {
-    height: 30vh;
+    height: 50vh;
     width: 100vw;
-    margin: 6rem 0 3rem 0;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1065,7 +1181,6 @@ footer {
   .testimonial .testimonial-text {
     width: 100%;
     height: 100%;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1075,7 +1190,6 @@ footer {
   }
 
   .testimonial .testimonial-text h1 {
-    color: var(--white);
     font-size: 3rem;
     font-weight: 500;
   }
@@ -1221,13 +1335,13 @@ footer {
   }
 
 
-  .navigation_bottom .profile a {
+  .navigation_bottom .profile {
     margin: 0 5px;
-
     font-size: .8rem;
 
-
   }
+
+
 
   .navigation_bottom {
     padding: 8px;
@@ -1243,7 +1357,7 @@ footer {
   }
 
   .content-container .content .content-title h1:nth-child(1) {
-    color: black;
+
     font-size: 4rem;
     font-weight: 400;
   }
@@ -1359,7 +1473,6 @@ footer {
     font-size: .7rem;
   }
 
-
   .top-essence .title h1:nth-child(1) {
     font-size: 2.6rem;
   }
@@ -1378,7 +1491,7 @@ footer {
   }
 
   .content-container .content .content-title h1:nth-child(1) {
-    color: black;
+
     font-size: 3rem;
     font-weight: 400;
   }
@@ -1417,15 +1530,7 @@ footer {
   animation: fadeIn 0.8s ease-in-out;
 }
 
-.testimonial-card {
-  transition: all 0.5s ease;
-}
 
-.testimonial-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
 
 .nav-button {
   transition: all 0.3s ease;
@@ -1501,7 +1606,7 @@ footer {
   width: 100%;
   height: 40%;
 
-  color: var(--white);
+  color: white;
   position: relative;
 }
 
@@ -1618,7 +1723,7 @@ footer {
   position: relative;
   top: 0;
   z-index: 10;
-  color: white;
+  color: var(--white);
   font-family: var(--bigFont);
 }
 
@@ -1838,8 +1943,8 @@ footer {
 .contact-container {
   height: 300vh;
   width: 100vw;
-
   display: flex;
+  background: var(--black);
 }
 
 .contact-container .left-section {
@@ -1942,7 +2047,7 @@ footer {
   outline: none;
   border: none;
   padding: 10px;
-  color: white;
+  color: var(--white);
   border-bottom: 1px solid rgba(179, 179, 179, 0.5);
 }
 
@@ -1964,11 +2069,11 @@ footer {
   height: 80%;
   background: transparent;
   outline: none;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 5px;
+  border: 1px solid var(--second-white);
+  border-radius: 10px;
   resize: none;
   padding: 8px 10px;
-  color: white;
+  color: var(--white);
   font-size: 1rem;
   margin: 10px 0;
 }
@@ -1981,7 +2086,7 @@ footer {
   font-size: 0.8rem;
   font-weight: normal;
   margin: 10px;
-  color: rgba(255, 225, 255, 0.5);
+  color: var(--second-white);
 }
 
 .contact-form .input-btns {
@@ -2000,8 +2105,8 @@ footer {
   border-radius: 20px;
   background: transparent;
   border: 1px solid rgba(255, 225, 255, 0.5);
-  background: white;
-  color: black;
+  background: var(--white);
+  color: var(--black);
   font-size: 0.7rem;
   font-family: var(--smallFont);
   transition: 0.2s linear;
@@ -2145,6 +2250,7 @@ footer {
 .contact_us {
   width: 100vw;
   padding: 3rem;
+  background: var(--black);
 }
 
 .contact_us .contact_us_title {
@@ -2216,14 +2322,21 @@ footer {
   color: var(--white);
   border: 1px solid transparent;
   font-family: var(--smallFont);
+  transition: .2s linear;
+  cursor: pointer;
+}
+
+.contact_us .input_container .field input:hover {
+  border-color: var(--white);
+
 }
 
 .contact_us .input_container .field input:focus {
-  border: 1px solid var(--tropical);
+  border-color: var(--tropical);
 }
 
 .contact_us .input_container .field input::placeholder {
-  color: rgba(188, 234, 255, 0.467);
+  color: var(--tropical);
   font-size: .9rem;
 }
 
@@ -2493,6 +2606,7 @@ input[type=number]::-webkit-outer-spin-button {
 .about-content {
   width: 100vw;
   padding: 50px;
+  background: var(--black);
 }
 
 
@@ -2811,6 +2925,7 @@ input[type=number]::-webkit-outer-spin-button {
   color: var(--white);
   font-family: var(--smallFont);
   font-size: 16px;
+  transition: .2s linear;
 }
 
 .signup_section form span {
@@ -2836,7 +2951,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .signup_section form input::placeholder {
   font-family: var(--smallFont);
-  color: rgba(188, 234, 255, 0.467);
+  color: var(--tropical);
 }
 
 .signup_section form button {
@@ -2897,6 +3012,8 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 10px 0;
   width: 80%;
   font-size: .9rem;
+  text-align: center;
+
 }
 
 .signup_section .error_message p {
@@ -2979,7 +3096,7 @@ input[type=number]::-webkit-outer-spin-button {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  top: 0;
+  top: 20px;
   left: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 99;
@@ -3033,7 +3150,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .product_details_container .image span {
   font-size: .9rem;
-  color: rgba(255, 255, 255, 0.653);
+  color: var(--white);
   font-weight: 300;
   position: relative;
   margin: 20px 15px;
@@ -3046,7 +3163,8 @@ input[type=number]::-webkit-outer-spin-button {
 
 .product_details_container .image a {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.653);
+  color: var(--white);
+
   margin: 40px;
   position: absolute;
   left: 0;
@@ -3194,7 +3312,7 @@ input[type=number]::-webkit-outer-spin-button {
   width: 50px;
   height: 100%;
   background: none;
-  color: white;
+  color: var(--white);
   font-family: var(--smallFont);
   font-size: .9rem;
   text-align: center;
@@ -3237,7 +3355,7 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 10px 15px;
   margin: 5px;
   border-radius: 20px;
-  color: black;
+  color: var(--black);
   background-color: var(--tropical);
   outline: none;
   border: 1px solid transparent;
@@ -3256,9 +3374,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .product_details_container .content .btn button:not(:disabled):hover {
-  background: transparent;
-  color: white;
-  border-color: white;
+  scale: 1.02;
+
 }
 
 #productImage {
@@ -3448,10 +3565,10 @@ input[type=number]::-webkit-outer-spin-button {
 .payment_method {
   transition: .2s linear;
   border: 1px solid transparent;
-  background: var(--white);
+  background: rgb(225, 225, 225);
   font-size: .8rem;
   text-align: center;
-  color: var(--black);
+  color: black;
   font-family: var(--smallFont);
   width: 100%;
   padding: 8px 15px;
@@ -3489,7 +3606,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .receipt .warning p {
   text-align: center;
-  color: var(--white);
+  color: white;
   font-size: .8rem;
   font-family: var(--smallFont);
 
@@ -3521,7 +3638,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .receipt .receipt_card .header h1 {
-  color: var(--black);
+  color: black;
   font-family: var(--bigFont);
   font-size: 2rem;
 }
@@ -3538,7 +3655,7 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: center;
   font-family: var(--smallFont);
   font-size: .7rem;
-  color: var(--gray);
+  color: rgb(30, 30, 30);
 
 
 }
@@ -3559,13 +3676,13 @@ input[type=number]::-webkit-outer-spin-button {
   gap: 5px;
   width: 100%;
   font-size: .9rem;
-  color: var(--black);
+  color: black;
 
   align-items: flex-start;
 }
 
 .receipt .receipt_card .order_info .row:nth-child(1) {
-  color: var(--gray);
+  color: rgb(32, 32, 32);
   font-size: .7rem;
   margin: 8px 0;
   font-weight: bold;
@@ -3575,9 +3692,9 @@ input[type=number]::-webkit-outer-spin-button {
 .receipt .receipt_card .order_info .total {
   font-weight: bold;
   font-size: .7rem;
-  color: var(--black);
+  color: black;
   margin-top: 10px;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid white;
   padding-top: 8px;
 }
 
@@ -3621,7 +3738,7 @@ input[type=number]::-webkit-outer-spin-button {
   width: 100%;
   margin-top: 6rem;
   text-align: center;
-  color: var(--white);
+  color: white;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -3713,7 +3830,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .product_info h1 {
   font-family: var(--bigFont);
-  color: var(--black);
+  color: black;
   font-size: 1.5rem;
   text-transform: uppercase;
   width: 100%;
@@ -3736,6 +3853,7 @@ input[type=number]::-webkit-outer-spin-button {
   line-height: 1;
   margin: 12px 0;
   text-align: justify;
+  color: rgb(43, 43, 43);
 
 }
 

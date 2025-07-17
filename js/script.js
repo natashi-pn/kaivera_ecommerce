@@ -1024,6 +1024,41 @@ function setUpNavigation() {
   }
   rebindWishlist();
 
+  document.addEventListener("DOMContentLoaded", function () {
+    const light_mode = document.getElementById("light_mode");
+    const dark_mode = document.getElementById("dark_mode");
+
+    const savedMode = localStorage.getItem("mode");
+
+
+    if (savedMode === "light") {
+      document.body.classList.add("light");
+      light_mode.classList.add("hidden");
+      dark_mode.classList.remove("hidden");
+    } else {
+      document.body.classList.remove("light");
+      dark_mode.classList.add("hidden");
+      light_mode.classList.remove("hidden");
+    }
+
+    light_mode.addEventListener("click", function (e) {
+      e.preventDefault();
+      light_mode.classList.add("hidden");
+      dark_mode.classList.remove("hidden");
+      document.body.classList.add("light");
+      localStorage.setItem("mode", "light");
+    });
+
+    dark_mode.addEventListener("click", function (e) {
+      e.preventDefault();
+      dark_mode.classList.add("hidden");
+      light_mode.classList.remove("hidden");
+      document.body.classList.remove("light");
+      localStorage.setItem("mode", "dark");
+    });
+  });
+
+
 }
 
 function rebindWishlist() {
@@ -1097,7 +1132,7 @@ function setUpParallax() {
   document.addEventListener("scroll", () => {
     const images = document.querySelectorAll(".image-parallax");
     images.forEach((img) => {
-      const speed = img.dataset.speed || 0.2;
+      const speed = img.dataset.speed || 0.5;
       const offset = window.scrollY * speed;
       img.style.transform = `translateY(${offset}px)`;
     });
@@ -1784,10 +1819,10 @@ function setUpCart() {
 
 // Page Load Functions
 function initGlobal() {
-
   setUpHelpBubble();
   setUpNavigation();
   setUpLoader();
+
 
 }
 function initHome() {

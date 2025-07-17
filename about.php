@@ -181,10 +181,10 @@ require_once("controllers/functions.php");
   </section>
 
 
-  <section class="bg-[#1d2025] flex items-center justify-center testimonial-content">
+  <section class="flex items-center justify-center testimonial-content">
     <div class="max-w-7xl w-full mx-auto px-4">
       <div class="text-center mb-16">
-        <p class="text-light text-gray-300 max-w-1xl mx-auto testimonial-title linesAnimation">
+        <p class="text-light max-w-1xl mx-auto testimonial-title linesAnimation">
           Hear what our customers say about their experience with our products
           and services.
         </p>
@@ -214,9 +214,9 @@ require_once("controllers/functions.php");
               foreach ($reviews as $review) {
             ?>
                 <div class="testimonial-card flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4 animate-fade">
-                  <div class="bg-[#1a1c20] p-8 rounded-xl shadow-lg h-full">
+                  <div class="testimonial_card_indi p-8 rounded-xl shadow-lg h-full">
                     <div class="flex items-center mb-4">
-                      <div class="flex space-x-1 text-[#9cb0d5]">
+                      <div class="flex space-x-1 testimonial_star">
 
                         <?php
                         for ($i = 1; $i <= $review['rating']; $i++) {
@@ -225,15 +225,15 @@ require_once("controllers/functions.php");
                         ?>
                       </div>
                     </div>
-                    <p class="text-gray-400 mb-6 text-base">
+                    <p class="testimonial_comment mb-6 text-base">
                       <?php echo $review['comment'] ?>
                     </p>
                     <div class="flex items-center">
                       <img
                         src="<?php echo htmlspecialchars($review['user_profile_image']) ?>" class="w-14 h-14 rounded-full object-cover mr-4 border-2 border-[#9fc9b7]" />
                       <div>
-                        <h4 class="text-gray-200 text-normal"><?php echo htmlspecialchars($review['user_name']) ?></h4>
-                        <h4 class="text-gray-400 text-sm"><?php echo $review['user_type'] ?></h4>
+                        <h4 class="testimonial_name text-normal"><?php echo htmlspecialchars($review['user_name']) ?></h4>
+                        <h4 class="testimonial_type text-sm"><?php echo $review['user_type'] ?></h4>
                       </div>
                     </div>
                   </div>

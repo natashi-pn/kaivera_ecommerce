@@ -9,12 +9,13 @@
 :root {
     --black: #1d2025;
     --white: #dfedea;
-    --tropical: #8fabce;
-    --black-olive: #17181b;
+    --tropical: #bac9e5;
+    --black-olive: #1a1c20;
     --gray: #191b1b;
-    --second-white: #b8c2c2;
+    --second-white: #bec7c7;
     --bigFont: "bebas neue", sans-serif;
     --smallFont: "Poppins", sans-serif;
+    --hand-written: "Lugrasimo", cursive;
 }
 
 ::selection {

@@ -84,10 +84,10 @@ unset($_SESSION['alert_cart']);
   </section>
 
   <!-- Cart Section -->
-  <section class="bg-[#1a1c20] py-8 antialiased dark:bg-[#1a1c20] md:py-16 cart-section">
+  <section class=" py-8 antialiased dark: md:py-16 cart-section">
     <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
       <a href="products.php" class="transition-link help-target" data-help="Go To Products">
-        <h2 class="text-3xl text-gray-900 dark:text-white sm:text-3xl text-center cart-title">
+        <h2 class="text-3xl dark: sm:text-3xl text-center cart-title">
           Shopping Cart
         </h2>
       </a>
@@ -121,29 +121,29 @@ unset($_SESSION['alert_cart']);
             ?>
 
               <div
-                class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-[#1d2025] md:p-6">
+                class="rounded-lg border  p-4 shadow-sm   md:p-6 cart_item">
                 <div class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
                   <a href="products.php" class="shrink-0 md:order-1 transition-link">
                     <img class="h-20 w-20 dark:hidden"
                       src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front.svg" alt="imac image" />
                     <img class="hidden h-20 w-20 dark:block" src="<?php echo htmlspecialchars($item['product_image']) ?>" alt="imac image"
-                      style="<?php echo $color ?>" />
+                      style="<?php echo $color ?> object-fit: contain;" />
                   </a>
                   <div class="flex items-center justify-between md:order-3 md:justify-end">
                     <div class="flex items-center">
                       <input type="text" id="counter-input" data-input-counter
-                        class="w-10 shrink-0 border-0 bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0 dark:text-white"
-                        placeholder="" value="<?php echo $item['product_quantity'] ?>" required />
+                        class="w-10 shrink-0 border-0 bg-transparent text-center text-sm font-medium focus:outline-none focus:ring-0 cart_text"
+                        placeholder="" value="<?php echo $item['product_quantity'] ?>" />
                     </div>
                     <div class="text-end md:order-4 md:w-32">
-                      <p class="text-base font-bold text-gray-900 dark:text-white">
+                      <p class="text-base font-bold cart_text">
                         <?php echo "$ " . $item['product_price'] ?>
                       </p>
                     </div>
                   </div>
 
                   <div class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">
-                    <a href="products.php" class="transition-link text-base font-medium text-gray-900 hover:underline dark:text-white"><?php echo htmlspecialchars($item['product_name']) . " (" . $item['product_color'] . ")" ?></a>
+                    <a href="products.php" class="transition-link text-base font-medium hover:underline cart_text"><?php echo htmlspecialchars($item['product_name']) . " (" . $item['product_color'] . ")" ?></a>
 
                     <div class="flex items-center gap-4">
 
@@ -169,17 +169,17 @@ unset($_SESSION['alert_cart']);
 
         <div class="mx-auto mt-6 max-w-4xl flex-1 space-y-6 lg:mt-0 lg:w-full">
           <div
-            class="space-y-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-[#1d2025] sm:p-6">
-            <p class="text-xl text-gray-900 dark:text-white">Order summary</p>
+            class="space-y-4 rounded-lg border border-gray-200  p-4 shadow-sm dark:border-gray-700  sm:p-6 cart_item">
+            <p class="text-xl  cart_header">Order summary</p>
 
             <form method="POST" id="order_form">
               <div class="space-y-4">
                 <div class="space-y-2">
                   <dl class="flex items-center justify-between gap-4">
-                    <dt class="text-base font-normal text-gray-500 dark:text-gray-400">
+                    <dt class="text-base font-normal cart_text">
                       Original price
                     </dt>
-                    <dd class="text-base font-medium text-gray-900 dark:text-white">
+                    <dd class="text-base font-medium  cart_text">
                       <?php
                       $original_price = 0;
                       foreach ($cart as $item) {
@@ -198,7 +198,7 @@ unset($_SESSION['alert_cart']);
 
                   ?>
                   <dl class="flex items-center justify-between gap-4 help-target" data-help="Enter Voucher">
-                    <dt class="text-base font-normal text-gray-500 dark:text-gray-400">
+                    <dt class="text-base font-normal cart_text">
                       Discount<?php
                               if (isset($discount_percent)) {
                                 echo "(" . $discount_percent . "%)";
@@ -218,10 +218,10 @@ unset($_SESSION['alert_cart']);
 
 
                   <dl class="flex items-center justify-between gap-4">
-                    <dt class="text-base font-normal text-gray-500 dark:text-gray-400">
+                    <dt class="text-base font-normal cart_text">
                       Tax (5%)
                     </dt>
-                    <dd class="text-base font-medium text-gray-900 dark:text-white">
+                    <dd class="text-base font-medium cart_text">
                       <?php
                       $tax = $original_price * 5 / 100;
                       echo "$" . $tax;
@@ -230,10 +230,10 @@ unset($_SESSION['alert_cart']);
                   </dl>
 
                   <dl class="flex items-center justify-between gap-4">
-                    <dt class="text-base font-normal text-gray-500 dark:text-gray-400">
+                    <dt class="text-base font-normal cart_text">
                       Payment Method
                     </dt>
-                    <dd class="text-base font-medium text-gray-900 dark:text-white">
+                    <dd class="text-base font-medium text-gray-900 cart_text">
                       <select name="payment_method" id="payment_method" class="payment_method">
                         <option value="credit-card" selected>Credit Card</option>
                         <option value="pay-pal">Pay Pal</option>
@@ -245,10 +245,10 @@ unset($_SESSION['alert_cart']);
                 </div>
 
                 <dl class="flex items-center justify-between gap-4 border-t border-gray-200 pt-2 dark:border-gray-700">
-                  <dt class="text-base font-bold text-gray-900 dark:text-white">
+                  <dt class="text-base font-bold text-gray-900 cart_text">
                     Total
                   </dt>
-                  <dd class="text-base font-bold text-gray-900 dark:text-white">
+                  <dd class="text-base font-bold text-gray-900 cart_text">
                     <?php
                     $total_price = ($original_price + $tax) - $discount;
                     echo "$" . $total_price;
@@ -273,11 +273,11 @@ unset($_SESSION['alert_cart']);
             </form>
 
             <div class="flex items-center justify-center gap-2">
-              <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
+              <span class="text-sm font-normal cart_text">
                 or
               </span>
               <a href="products.php" title=""
-                class="transition-link inline-flex items-center gap-2 text-base font-medium text-[#abbee1] underline hover:no-underline dark:text-[#abbee1]">
+                class="transition-link inline-flex items-center gap-2 text-base font-medium  underline hover:no-underline cart_color">
                 Continue Shopping
                 <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                   viewBox="0 0 24 24">
@@ -289,10 +289,10 @@ unset($_SESSION['alert_cart']);
           </div>
 
           <div
-            class="space-y-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-[#1d2025] sm:p-6">
+            class="space-y-4 rounded-lg border border-gray-200  p-4 shadow-sm dark:border-gray-700  sm:p-6 cart_item">
             <form class="space-y-4" method="POST" id="discount_form">
               <div>
-                <label for="voucher" class="mb-2 block text-base font-medium text-gray-900 dark:text-white">
+                <label for="voucher" class="mb-2 block text-base font-medium cart_header">
                   Do you have a voucher or gift card?
                 </label>
                 <input type="text" id="voucher"

@@ -171,10 +171,10 @@ if (isset($_GET['form']) && $_GET['form'] === 'login') {
                     const statusElement = document.getElementById(type + "_status");
                     if (data.status === "taken") {
                         statusElement.innerText = `${type} is already taken`;
-                        statusElement.style.color = "#d66666";
+                        statusElement.style.color = "#8d4444ff";
                     } else if (data.status === "available") {
                         statusElement.innerText = `${type} is available`;
-                        statusElement.style.color = "#9fc9b7";
+                        statusElement.style.color = "#43895fff";
                     } else {
                         statusElement.innerText = "Error checking";
                         statusElement.style.color = "orange";
