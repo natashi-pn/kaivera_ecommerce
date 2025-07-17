@@ -70,7 +70,8 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
                 </div>
                 <div class="action">
                     <a href="user_update_user.php?id=<?php echo $user_id ?>" class="green_btn">Edit Account</a>
-                    <a href="user_delete_user.php?id=<?php echo $user_id ?>" class=" red_btn">Delete Account</a>
+                    <a href="user_delete_user.php?id=<?php echo $user_id ?>" class="red_btn"
+                        onclick="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">Delete Account</a>
                 </div>
             </div>
             <div class="heading">

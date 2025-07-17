@@ -24,6 +24,13 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         }
     }
 
+    foreach ($users as $user) {
+        if ($user['user_name'] === $user_name) {
+            $_SESSION['error'] = 'Username Exists';
+            header("Location: user_update_user.php?id=" . $user_id);
+            exit;
+        }
+    }
 
 
     if (isset($_FILES['user_profile_image']) && $_FILES['user_profile_image']['error'] === 0) {
