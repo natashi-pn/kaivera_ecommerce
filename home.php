@@ -294,7 +294,7 @@ $topProducts = getTopProducts();
         <div class="py-5">
           <details class="group">
             <summary class="flex cursor-pointer list-none items-center justify-between font-big text-base">
-              <span>How can I browse Kaivera products by category?</span>
+              <span>Why can’t I view or buy some products without signing in?</span>
               <span class="transition group-open:rotate-180">
                 <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
                   stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
@@ -303,9 +303,9 @@ $topProducts = getTopProducts();
               </span>
             </summary>
             <p class="group-open:animate-fadeIn mt-3 faq-ans text-sm">
-              Simply navigate to the Products page from the main menu. You'll
-              see clearly labeled categories such as Dresses, Shirts and Shoes. Click on any category to filter and explore
-              relevant items.
+              Some features and products on our platform are reserved for registered users only.
+              To ensure a secure and personalized shopping experience, you must be logged in or signed up
+              to access certain product details, add items to your cart, or make a purchase.
             </p>
           </details>
         </div>
@@ -340,7 +340,7 @@ $topProducts = getTopProducts();
               </span>
             </summary>
             <p class="group-open:animate-fadeIn mt-3 faq-ans text-sm">
-              Click the menu icon at the top right of the page to go to Cart
+              Click the cart icon at the top right of the page to go to Cart
               Page. You’ll see a full summary of your selected items with the option to remove them before checking out.
             </p>
           </details>
@@ -348,7 +348,7 @@ $topProducts = getTopProducts();
         <div class="py-5">
           <details class="group">
             <summary class="flex cursor-pointer list-none items-center justify-between font-big text-base">
-              <span>Can I see detailed information about each product?</span>
+              <span>Is there a light and dark mode available on the site?</span>
               <span class="transition group-open:rotate-180">
                 <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
                   stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
@@ -357,9 +357,9 @@ $topProducts = getTopProducts();
               </span>
             </summary>
             <p class="group-open:animate-fadeIn mt-3 faq-ans text-sm">
-              Click on any product image or name to open its dedicated product
-              page, which displays the full description, high-resolution
-              images, available colors, and price in USD.
+              Yes! Our website offers both light and dark modes for your convenience.
+              You can easily switch between them using the toggle button on
+              the navigation bar, depending on your preference or lighting environment.
             </p>
           </details>
         </div>
