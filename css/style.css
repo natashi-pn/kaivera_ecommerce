@@ -8,7 +8,7 @@
 
 :root {
   --black: #1d2025;
-  --white: #dfedea;
+  --white: #e3eeec;
   --tropical: #bac9e5;
   --black-olive: #1a1c20;
   --gray: #191b1b;
@@ -119,12 +119,13 @@ a:active {
   font-family: var(--smallFont);
   font-size: .9rem;
   transition: .2s linear;
-  color: rgb(137, 137, 137);
-  opacity: 0.5;
+  color: rgb(98, 98, 98);
+
 }
 
 .nav-menu .btn_wrapper a:hover {
-  opacity: 1;
+
+  color: rgb(146, 146, 146);
 
 }
 
@@ -2221,7 +2222,7 @@ footer {
   padding: 20px 0;
   border-bottom: 1px solid rgb(159, 159, 159);
   will-change: transform;
-  transition: 0.5s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .contact-container .right-section .contact-info .contact-info-row h1 {
@@ -2244,7 +2245,7 @@ footer {
 }
 
 .contact-container .right-section .contact-info .contact-info-row:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .contact_us {

@@ -3,7 +3,8 @@ $server = "localhost";
 $user = "root";
 $password = "";
 $database = "kaivera";
-$dsn = "mysql:host=$server; dbname=$database";
+$port = 3306;
+$dsn = "mysql:host=$server;port=$port; dbname=$database";
 try {
 
     $conn = new PDO($dsn, $user, $password);

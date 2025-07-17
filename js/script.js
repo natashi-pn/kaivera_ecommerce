@@ -667,34 +667,6 @@ function setUpContact() {
     trigger: ".contact-form",
     start: "top 60%",
     end: "bottom 40%",
-    onEnter: () => {
-      gsap.to("html", {
-        filter: "invert(1)",
-        duration: 1,
-        ease: "power2.out",
-      });
-    },
-    onLeave: () => {
-      gsap.to("html", {
-        filter: "invert(0)",
-        duration: 1,
-        ease: "power2.out",
-      });
-    },
-    onEnterBack: () => {
-      gsap.to("html", {
-        filter: "invert(1)",
-        duration: 1,
-        ease: "power2.out",
-      });
-    },
-    onLeaveBack: () => {
-      gsap.to("html", {
-        filter: "invert(0)",
-        duration: 1,
-        ease: "power2.out",
-      });
-    },
   });
 
   ScrollTrigger.matchMedia({
