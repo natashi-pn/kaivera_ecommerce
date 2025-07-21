@@ -242,16 +242,12 @@ unset($_SESSION['order_id']);
         <?php } ?>
       </div>
     </section>
-
-
-
-
   </div>
   </section>
 
   <section class="product_details hidden" id="product-popup">
     <div class="product_details_container popup-content">
-      <div class="image" id="product_image">
+      <div class="image help-target remove_cursor" id="product_image" data-help="Double Click to Close">
         <span class="close-btn"><i class="fa-solid fa-arrow-left"></i></span>
         <div class="image_container"><img id="productImage" src="" alt=""></div>
 

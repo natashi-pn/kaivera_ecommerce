@@ -544,8 +544,7 @@ a:active {
 }
 
 .about-us .container .wrapper a:hover {
-  background: transparent;
-  color: var(--white);
+  scale: 1.05;
 }
 
 .content-container {
@@ -647,7 +646,7 @@ a:active {
   padding: 5px;
   width: 100px;
   height: 100px;
-  color: white;
+  color: var(--black);
   border-radius: 50%;
   z-index: 100000;
   transform: scale(0);
@@ -1917,13 +1916,11 @@ footer {
 
 .product-section .product .product-content button:disabled {
   color: var(--black);
-  background: rgb(110, 127, 119);
+  background: rgb(165, 193, 180);
 }
 
 .product-section .product .product-content button:not(:disabled):hover {
-  background: transparent;
-  border: 1px solid var(--white);
-  color: var(--white);
+  scale: 1.03;
 }
 
 
