@@ -13,13 +13,13 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     $user_id = trim($_POST['update_user_id']);
     $user_name = trim($_POST['user_name']);
     $user_email = trim($_POST['user_email']);
-    $user_password = trim($_POST['user_password']);
+
     $user_phone =  trim($_POST['user_phone']);
     $user_type =  trim($_POST['user_type']);
 
 
 
-    $fields = [$user_name, $user_email, $user_password, $user_phone, $user_type];
+    $fields = [$user_name, $user_email, $user_phone, $user_type];
     foreach ($fields as $field) {
         if (empty($field)) {
             $_SESSION['error'] = 'All inputs are required';
@@ -48,14 +48,12 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         $filePath = "../uploads/profile_pictures/default_pf.jpg";
     }
 
-
-
-    $sql = "UPDATE users SET user_name=?,user_email=?,user_password=?,user_phone=?,user_type=?,user_profile_image=?
+    $sql = "UPDATE users SET user_name=?,user_email=?,user_phone=?,user_type=?,user_profile_image=?
      WHERE user_id = ?;";
 
 
     $stmt =   $conn->prepare($sql);
-    $status = $stmt->execute([$user_name, $user_email, $user_password, $user_phone, $user_type, $filePath, $user_id]);
+    $status = $stmt->execute([$user_name, $user_email, $user_phone, $user_type, $filePath, $user_id]);
 
 
     if ($status) {

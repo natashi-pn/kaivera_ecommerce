@@ -3,8 +3,8 @@
    <div class="nav-logo">
      <img src="assets/images/kaivera logo.png" alt="" />
    </div>
-   <div class="nav-menu">
 
+   <div class="nav-menu">
      <div class="btn_wrapper hide_nav">
        <a href="home.php">Home</a>
      </div>

@@ -252,14 +252,14 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
                                 if (!empty($wishlists)) {
                                     foreach ($wishlists as $wishlist) {
                                 ?>
-                                        <tr class=" bg-[#b7c8e8] text-gray-800">
+                                        <tr class="bg-[#b7c8e8] text-gray-800">
                                             <td class="p-2 md:p-4 text-center"> <?php echo $wishlist['wishlist_id'] ?></td>
 
                                             <td class="p-2 md:p-4 text-center"> <?php echo $wishlist['product_name'] ?></td>
                                             <td class="p-2 md:p-4 text-center product_image_container"> <img src="<?php echo htmlspecialchars($wishlist['product_image']) ?>" alt="" class="product_image">
                                             </td>
                                             <td class="p-2 md:p-4 text-center">$<?php echo $wishlist['added_at'] ?></td>
-                                            <td class="relative p-2 md:p-4 action">
+                                            <td class="action">
                                                 <a href="../user/delete_user_wishlist.php?id=<?php echo $wishlist['wishlist_id'] ?>" class="red_btn">Remove Wishlist</a>
                                             </td>
                                         </tr>

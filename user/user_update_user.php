@@ -53,7 +53,6 @@ $user = getSearchUser($user_id);
 
             <div class="input_btn">
                 <button type="submit" class="green_btn">Update</button>
-                <button type="reset" class="red_btn">Reset</button>
                 <a href="profile.php">Back</a>
             </div>
         </form>

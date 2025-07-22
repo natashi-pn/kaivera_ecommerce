@@ -80,7 +80,7 @@ a:active {
   z-index: 102;
   pointer-events: none;
   border-radius: 15px;
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(30px);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -119,7 +119,7 @@ a:active {
   font-family: var(--smallFont);
   font-size: .9rem;
   transition: .2s linear;
-  color: rgb(98, 98, 98);
+  color: rgb(205, 205, 205);
 
 }
 
@@ -2112,12 +2112,11 @@ footer {
 
 .contact-form .input-btns .btn:disabled {
   color: var(--black);
-  background: #6a8473;
+  background: #7f9c89;
 }
 
 .contact-form .input-btns .btn:not(:disabled):hover {
-  background: transparent;
-  color: var(--white);
+  scale: 1.04;
 }
 
 .contact-form .links {
@@ -2384,7 +2383,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 .input_buttons {
   color: var(--black);
-
   font-family: var(--smallFont);
   margin-top: 45px;
 }
@@ -2410,16 +2408,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .input_buttons button:hover {
-  color: var(--white);
-  background: transparent;
-  border: 1px solid var(--white);
+  scale: 1.04;
+
 }
 
 
 .input_buttons input:hover {
-  color: var(--white);
-  background: transparent;
-  border: 1px solid var(--white);
+  scale: 1.04;
+
 }
 
 @media (max-width: 1250px) {
@@ -3562,6 +3558,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .payment_method {
   transition: .2s linear;
+  outline: none;
   border: 1px solid transparent;
   background: rgb(225, 225, 225);
   font-size: .8rem;
@@ -3574,6 +3571,10 @@ input[type=number]::-webkit-outer-spin-button {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
+}
+
+.payment_method:hover {
+  border-color: black;
 }
 
 
