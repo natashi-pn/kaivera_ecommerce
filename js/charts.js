@@ -124,41 +124,40 @@ fetch('../dashboard/top_loyal_customers.php')
 
         const { labels, data } = result;
 
-        new Chart(document.getElementById('loyalCustomersChart').getContext('2d'), {
-            type: 'line',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Total Orders',
-                    data: data,
-                    fill: false,
-                    borderColor: '#73a3d4ff',
-                    backgroundColor: '#fdffffff',
-                    tension: 0.3,
-                    pointRadius: 6,
-                    pointHoverRadius: 8
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { display: true },
-                    tooltip: { mode: 'nearest', intersect: true }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        title: { display: true, text: 'Orders' }
-                    },
-                    x: {
-                        title: { display: true, text: 'Customers' }
-                    }
-                }
-            }
-        });
+        // Reference to the container where table will be placed
+        const container = document.getElementById('loyalCustomersChart');
+
+        // Clear previous content (in case of re-render)
+        container.innerHTML = '';
+
+        // Create table element
+        const table = document.createElement('table');
+        table.style.width = '100%';
+        table.style.borderCollapse = 'collapse';
+        table.style.marginTop = '20px';
+
+        // Add basic styling (optional)
+        table.innerHTML = `
+            <thead>
+                <tr style="background-color: #1d2025; color: white;">
+                    <th style="padding: 10px;">Customer</th>
+                    <th style="padding: 10px;">Total Orders</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${labels.map((label, index) => `
+                    <tr>
+                        <td style="background-color: #2b2f36; padding: 10px; color: silver;">${label}</td>
+                        <td style="background-color: #2b2f36; padding: 10px; color: silver;">${data[index]}</td>
+                    </tr>
+                `).join('')}
+            </tbody>
+        `;
+
+        container.appendChild(table);
     })
     .catch(err => {
-        console.error('Failed to load chart data:', err);
+        console.error('Failed to load table data:', err);
     });
 
 

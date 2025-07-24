@@ -101,6 +101,7 @@ unset($_SESSION['order_id']);
   </div>
   <div class="search <?php if (!$isLoggedIn) echo ' ' . 'hiddenDefault' ?>">
     <input type="text" name="search_name" id="searchInput" placeholder="Search Product">
+    <label for="searchInput"><i class="fa-solid fa-magnifying-glass"></i></label>
   </div>
   <div class="slider" id="slider">
 

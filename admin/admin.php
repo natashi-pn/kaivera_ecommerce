@@ -127,29 +127,41 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
                 </div>
 
                 <!-- Number of orders per day -->
-
-                <h1>Daily Orders (Sun - Sat)</h1>
-                <canvas id="ordersChart"></canvas>
-
+                <div class="chart">
+                    <h1>Daily Orders (Sun - Sat)</h1>
+                    <canvas id="ordersChart"></canvas>
+                </div>
 
                 <!-- Number of Orders By Category -->
+                <div class="chart">
+                    <h1>Orders by Category</h1>
+                    <canvas id="categoryOrdersChart"></canvas>
+                </div>
 
-                <h1>Orders by Category</h1>
-                <canvas id="categoryOrdersChart"></canvas>
+                <div class="grid-chart">
+                    <!-- Loyal Customers Chart -->
+                    <div class="loyal_chart">
+                        <h1>Top Loyal Customers by Orders</h1>
+                        <div id="loyalCustomersChart"></div>
+                    </div>
+
+                    <!-- Payment Methods Usesd By Customers -->
+                    <div class="payment_method_chart">
+                        <h1>Payment Methods Used</h1>
+                        <canvas id="paymentMethodsChart" height="50"></canvas>
+                    </div>
+
+                </div>
 
 
-                <!-- Loyal Customers Chart -->
+                <div class="chart">
+                    <!-- Best Selling Products -->
+                    <h1>Best Selling Products</h1>
+                    <canvas id="bestSellingProductsChart"></canvas>
+                </div>
 
-                <h1>Top Loyal Customers by Orders</h1>
-                <canvas id="loyalCustomersChart"></canvas>
 
-                <!-- Best Selling Products -->
-                <h1>Best Selling Products</h1>
-                <canvas id="bestSellingProductsChart"></canvas>
 
-                <!-- Payment Methods Usesd By Customers -->
-                <h1>Payment Methods Used</h1>
-                <canvas id="paymentMethodsChart" height="50"></canvas>
             </div>
         </section>
 

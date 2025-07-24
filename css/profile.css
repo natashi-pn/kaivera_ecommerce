@@ -60,12 +60,13 @@ a:active {
     gap: 10px;
     height: 100vh;
     position: fixed;
-    padding: 20px;
+    padding: 10px;
 
 }
 
 .sidebar a {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.211);
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.137);
     color: var(--white);
     text-decoration: none;
     padding: 12px 20px;
@@ -74,7 +75,6 @@ a:active {
     justify-content: space-between;
     align-items: center;
     transition: .15s linear;
-    border-radius: 8px;
 }
 
 .sidebar a h1 {
@@ -89,11 +89,12 @@ a:active {
 }
 
 .sidebar a:hover {
-    scale: 1.03;
+    scale: 1.02;
+    background: #2b2f36;
 }
 
 .sidebar a:active {
-    scale: 0.93;
+    scale: 0.95;
 }
 
 
@@ -318,7 +319,11 @@ form button:hover {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+}
+
+.profile>* {
+    margin: 0 5px;
 }
 
 
@@ -330,9 +335,11 @@ form button:hover {
 }
 
 .profile .profile_image {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
+    padding: 2px;
+    border: 1px solid var(--tropical);
 
 }
 

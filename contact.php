@@ -133,7 +133,7 @@ $isLoggedIn = isset($_SESSION['user_data']['user_type']);
 
         <div class="links">
           <p>Doesn't have an account ? <a href="signup.php">Sign Up</a></p>
-          <p>Already have an account ? <a href="login.php">Login</a></p>
+          <p>Already have an account ? <a href="signup.php?form=login">Login</a></p>
         </div>
       </div>
 

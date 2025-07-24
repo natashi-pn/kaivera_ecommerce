@@ -51,13 +51,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $status =  $stmt->execute([null, $user_name, $user_email, $hashed_password, $user_phone, 'user', '../uploads/profile_pictures/default_pf.jpg', null]);
 
     if ($status) {
-        $_SESSION["success"] = "Sign Up Successful! You May Login";
+        $_SESSION["login_success"] = "Sign Up Successful! You May Login";
     } else {
         $_SESSION["error"] = "Error while sign up";
     }
     $stmt = null;
     $conn = null;
-    header('Location: ../signup.php?form=signup');
+    header('Location: ../signup.php?form=login');
 
     exit;
 } else {

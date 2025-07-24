@@ -186,7 +186,7 @@ if (isset($_GET['form']) && $_GET['form'] === 'login') {
             const activeForm = "<?php echo $activeForm; ?>";
 
             if (activeForm === 'login') {
-                // console.log("login display");
+
                 gsap.set(".signup_wrapper", {
                     xPercent: -100,
                 })
@@ -196,7 +196,7 @@ if (isset($_GET['form']) && $_GET['form'] === 'login') {
                     clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)"
                 });
             } else {
-                // console.log("signup display");
+
                 gsap.set(".login_wrapper", {
                     xPercent: 100
                 });

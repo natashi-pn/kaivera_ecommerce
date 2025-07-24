@@ -63,9 +63,13 @@ html {
 }
 
 button:active,
-a:active {
+a:active,
+input[type=submit]:active,
+input[type=reset]:active {
   transform: scale(0.93);
 }
+
+
 
 .navigation-btn {
   position: fixed;
@@ -1732,14 +1736,13 @@ footer {
   pointer-events: none;
 }
 
-
 .search {
   text-align: center;
   width: 100%;
 }
 
 .search input {
-  padding: 12px 20px;
+  padding: 10px 20px;
   background: var(--black-olive);
   outline: none;
   border-bottom: 1px solid transparent;
@@ -1747,8 +1750,15 @@ footer {
   font-family: var(--smallFont);
   border-radius: 20px;
   transition: .2s linear;
-  width: 30%;
-  min-width: 50%;
+  min-width: 30%;
+}
+
+.search label i {
+  color: var(--second-white);
+  margin-left: 10px;
+  font-size: .9rem;
+  transition: .1s linear;
+  cursor: pointer;
 }
 
 .search input:focus {
@@ -1759,6 +1769,10 @@ footer {
 .search input:hover {
   border-color: var(--white);
 
+}
+
+.search input:hover~label i {
+  color: var(--white);
 }
 
 .search input::placeholder {
@@ -1818,7 +1832,6 @@ footer {
   flex-direction: column;
   background: var(--black-olive);
   border-radius: 25px;
-  margin-bottom: 30px;
   color: var(--white);
 }
 
