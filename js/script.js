@@ -833,7 +833,7 @@ function reloadWishlist(user_id) {
 
 
 function setUpNavigation() {
-  // Set initial positions navigation
+
   const navigation = document.querySelector(".navigation");
   const navBtn = document.querySelector(".nav-btn");
   const navigation_link = document.querySelectorAll('.navigation_links');
@@ -852,7 +852,7 @@ function setUpNavigation() {
     })
   })
   navBtn.addEventListener("click", () => {
-
+    console.log("click")
     if (!isOpen) {
 
       gsap.to(navigation, {

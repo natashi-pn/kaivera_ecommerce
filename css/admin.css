@@ -251,8 +251,6 @@ a {
 
 }
 
-
-
 .green_btn:hover,
 .red_btn:hover,
 button.green_btn:hover,
@@ -264,7 +262,6 @@ a:hover,
 .green_btn:hover,
 .red_btn:hover {
     scale: 1.1;
-
 }
 
 a:active {
@@ -272,9 +269,14 @@ a:active {
 
 }
 
-button:active {
-    scale: 0.93;
+
+.green_btn:active,
+.red_btn:active,
+button.green_btn:active,
+button.red_btn:active {
+    scale: 0.95;
 }
+
 
 .add_btn {
     position: relative;

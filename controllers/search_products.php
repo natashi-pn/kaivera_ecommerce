@@ -3,7 +3,6 @@ session_start();
 require_once 'dbconn.php';
 require_once 'functions.php';
 require_once("../includes/current_user_data.php");
-$isLoggedIn = isset($_SESSION['user_data']['user_type']);
 
 
 $searchTerm = $_GET['term'] ?? '';

@@ -47,8 +47,6 @@ html {
 
 
 
-
-
 ::-webkit-scrollbar {
   width: 0;
 }
@@ -88,6 +86,26 @@ input[type=reset]:active {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.navigation-btn>div {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation-btn>div:first-child {
+  justify-content: flex-start;
+  flex: 1 0 auto;
+}
+
+.navigation-btn>div:last-child {
+  justify-content: flex-end;
+}
+
+.nav-middle {
+  margin-right: 100px;
+}
+
 .nav-logo img {
   width: 100px;
   object-fit: cover;
@@ -112,8 +130,8 @@ input[type=reset]:active {
 
 .nav-menu .btn_wrapper {
   position: relative;
-  margin: 0 20px;
-  transition: .3s ease-in;
+  margin: 0 15px;
+  transition: .2s ease-in;
 }
 
 .nav-menu .btn_wrapper a {
@@ -133,7 +151,7 @@ input[type=reset]:active {
 
 }
 
-.nav-menu .nav-btn {
+.nav-btn {
   margin: 0 10px;
   width: 35px;
   height: 35px;
@@ -143,6 +161,8 @@ input[type=reset]:active {
   display: flex;
   justify-content: center;
   align-items: center;
+
+
 }
 
 .nav-btn i {
@@ -161,7 +181,7 @@ input[type=reset]:active {
   color: var(--black);
 }
 
-.nav-menu .nav-btn:active {
+.nav-btn:active {
   transform: scale(0.93);
 }
 
@@ -1255,9 +1275,7 @@ footer {
     font-size: 1rem;
   }
 
-  .nav-menu {
-    width: 70%;
-  }
+
 }
 
 @media (max-width: 850px) {
@@ -1272,16 +1290,13 @@ footer {
     font-size: 2.5rem;
   }
 
-  .navigation-btn {
-    justify-content: space-evenly;
-    padding: 5px;
-  }
+
 
 
 
   .nav-menu .btn_wrapper {
 
-    margin: 0 15px;
+    margin: 0 10px;
 
   }
 
@@ -1439,6 +1454,11 @@ footer {
     font-size: 9rem;
   }
 
+  .navigation-btn {
+    padding: 0;
+  }
+
+
 }
 
 @media (max-width:500px) {
@@ -1450,6 +1470,7 @@ footer {
 }
 
 @media (max-width: 400px) {
+
   .navigation .right .top p {
     width: 80%;
     font-size: 0.7rem;

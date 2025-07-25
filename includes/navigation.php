@@ -20,10 +20,14 @@
      <div class="btn_wrapper hide_nav">
        <a href="signup.php">Sign Up</a>
      </div>
-     <div class="nav-btn">
+
+   </div>
+   <div class="nav-menu">
+     <div class="nav-btn" id="nav-btn">
        <i class="fa-solid fa-caret-down"></i>
      </div>
    </div>
+
  </section>
 
  <section class="navigation">

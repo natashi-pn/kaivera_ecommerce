@@ -8,7 +8,7 @@
      <div class="nav-logo">
          <img src="assets/images/kaivera logo.png" alt="" />
      </div>
-     <div class="nav-menu">
+     <div class="nav-menu nav-middle">
          <div class="btn_wrapper hide_nav">
              <a href="home.php">Home</a>
          </div>
@@ -21,6 +21,9 @@
          <div class="btn_wrapper hide_nav">
              <a href="contact.php">Contact</a>
          </div>
+
+     </div>
+     <div class="nav-menu">
          <div class="btn_wrapper help-target-img" data-help-img="<?php echo htmlspecialchars($user_profile_image) ?>">
              <a href="admin/admin.php"><i class="fa-solid fa-screwdriver-wrench"></i></a>
          </div>

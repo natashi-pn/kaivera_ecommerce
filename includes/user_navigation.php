@@ -22,6 +22,8 @@
           <div class="btn_wrapper hide_nav">
               <a href="contact.php">Contact</a>
           </div>
+      </div>
+      <div class="nav-menu">
           <div class="btn_wrapper help-target-img" data-help-img="<?php echo htmlspecialchars($user['user_profile_image']) ?>">
               <a href="user/profile.php"><i class="fa-solid fa-user"></i></a>
           </div>
