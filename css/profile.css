@@ -90,7 +90,6 @@ a:active {
 
 .sidebar a:hover {
     scale: 1.02;
-    background: #2b2f36;
 }
 
 .sidebar a:active {
@@ -395,6 +394,7 @@ form button:hover {
     color: var(--second-white);
     font-family: var(--smallFont);
     font-size: .9rem;
+    margin: 5px 0;
 }
 
 

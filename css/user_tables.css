@@ -23,11 +23,13 @@
     }
 
     .sidebar a {
+        width: auto;
         position: absolute;
         right: 0px;
         background: rgb(243, 120, 120);
         border: none;
         margin-right: 20px;
+        border-radius: 10px;
     }
 
     .sidebar a:hover {

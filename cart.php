@@ -267,7 +267,7 @@ unset($_SESSION['alert_cart']);
                 </dl>
               </div>
 
-              <button type="submit" id="checkout_btn"
+              <button type="submit" id="checkout_btn" onclick="return confirm('Are you sure to place an order? You can cancel the order any time in your user profile.');"
                 class="flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-base font-medium text-black hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-white dark:hover:bg-[#e6e6e6] dark:focus:ring-primary-800">Proceed
                 to Checkout</button>
             </form>
