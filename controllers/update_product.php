@@ -8,22 +8,20 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 
   $filePath = null;
 
-  $fields = ['product_name', 'product_description', 'product_price', "product_category"];
-  foreach ($fields as $field) {
-    if (empty($_POST[$field])) {
-      die('All Inputs are required !');
-    }
-  }
-
-
   $update_product_id = $_POST['update_product_id'];
-
+  $existing_image = $_POST['existing_image'];
 
   $product_name = trim($_POST['product_name']);
   $product_description = trim($_POST['product_description']);
   $product_price = filter_var($_POST['product_price'], FILTER_VALIDATE_FLOAT);
   $product_category =  trim($_POST['product_category']);
 
+  $fields = [$product_name, $product_description, $product_price, $product_category];
+  foreach ($fields as $field) {
+    if (empty($field)) {
+      die('All Inputs are required !');
+    }
+  }
   if ($product_price == false) {
     die("Invalid Product Price");
   }
@@ -43,6 +41,8 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     if (!move_uploaded_file($fileTempPath, $filePath)) {
       die("Cant Upload File");
     };
+  } else {
+    $filePath = $existing_image;
   }
 
 

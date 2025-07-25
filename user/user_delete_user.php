@@ -1,11 +1,15 @@
 <?php
 session_start();
 require_once('../controllers/dbconn.php');
+require_once('../includes/current_user_data.php');
 
-$user_id = $_GET['id'];
+
+if (!isset($user_type) || $user_type !== 'user') {
+    header("Location: ../home.php");
+    exit;
+}
 
 if (isset($user_id)) {
-
 
     $query = "SELECT order_id FROM orders where user_id = ?;";
     $stmt = $conn->prepare($query);

@@ -10,7 +10,15 @@ $users = getUsers();
 if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 
     $filePath = null;
+
+    if (isset($_POST['existing_image'])) {
+        $existing_image = $_POST['existing_image'];
+    }
+
+
     $user_id = trim($_POST['update_user_id']);
+
+
     $user_name = trim($_POST['user_name']);
     $user_email = trim($_POST['user_email']);
 
@@ -45,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
             die("Cant Upload File");
         };
     } else {
-        $filePath = "../uploads/profile_pictures/default_pf.jpg";
+        $filePath = $existing_image;
     }
 
     $sql = "UPDATE users SET user_name=?,user_email=?,user_phone=?,user_type=?,user_profile_image=?

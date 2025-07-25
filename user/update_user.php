@@ -14,6 +14,11 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     $user_name = trim($_POST['user_name']);
     $user_phone =  trim($_POST['user_phone']);
 
+    if (isset($_POST['existing_image'])) {
+        $existing_image = $_POST['existing_image'];
+    }
+
+
 
     $fields = [$user_name, $user_phone];
     foreach ($fields as $field) {
@@ -32,6 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         }
     }
 
+    $newDirectory = "../uploads/profile_pictures/";
 
     if (isset($_FILES['user_profile_image']) && $_FILES['user_profile_image']['error'] === 0) {
 
@@ -43,17 +49,15 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         $newFileName = uniqid('user_', true) . '.' . $fileExtension;
 
 
-        $newDirectory = "../uploads/profile_pictures/";
+
         $filePath = $newDirectory . $newFileName;
 
         if (!move_uploaded_file($fileTempPath, $filePath)) {
             die("Cant Upload File");
         };
     } else {
-        $filePath = "../uploads/profile_pictures/default_pf.jpg";
+        $filePath = $existing_image;
     }
-
-
 
     $sql = "UPDATE users SET user_name=?,user_phone=?,user_profile_image=?
      WHERE user_id = ?;";

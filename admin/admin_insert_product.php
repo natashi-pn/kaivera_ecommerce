@@ -1,8 +1,16 @@
 <?php
+session_start();
 
 require_once("../controllers/functions.php");
+require_once("../includes/current_user_data.php");
+
 $categories = getCategories();
 $products = getProducts();
+
+
+if (!isset($user_type) || $user_type !== 'admin') {
+    header("Location: ../home.php");
+}
 ?>
 
 <!DOCTYPE html>

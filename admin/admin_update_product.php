@@ -1,12 +1,19 @@
 <?php
+session_start();
 
 require_once("../controllers/functions.php");
+require_once("../includes/current_user_data.php");
+
 $categories = getCategories();
 $products = getProducts();
 $searchProductId = $_GET['id'];
 
 $searchProducts = getSearchProducts($searchProductId);
 
+
+if (!isset($user_type) || $user_type !== 'admin') {
+    header("Location: ../home.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +36,7 @@ $searchProducts = getSearchProducts($searchProductId);
         <form method="POST" action="../controllers/update_product.php" enctype="multipart/form-data">
 
             <input type="hidden" name="update_product_id" id="id_input" value="<?php echo $searchProducts['product_id']; ?>">
+            <input type="hidden" name="existing_image" id="id_input" value="<?php echo $searchProducts['product_image']; ?>">
 
             <div class="input_field">
 

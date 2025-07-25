@@ -1,5 +1,11 @@
 <?php
 session_start();
+require_once("../includes/current_user_data.php");
+
+
+if (!isset($user_type) || $user_type !== 'admin') {
+    header("Location: ../home.php");
+}
 ?>
 
 <!DOCTYPE html>

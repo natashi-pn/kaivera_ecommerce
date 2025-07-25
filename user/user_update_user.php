@@ -2,8 +2,14 @@
 session_start();
 
 require_once('../controllers/functions.php');
-$user_id = $_GET['id'];
+require_once('../includes/current_user_data.php');
+
 $user = getSearchUser($user_id);
+
+
+if (!isset($user_type) || $user_type !== 'user') {
+    header("Location: ../home.php");
+}
 
 ?>
 
@@ -36,7 +42,10 @@ $user = getSearchUser($user_id);
             ?>
         </div>
         <form method="POST" action="update_user.php" enctype="multipart/form-data">
+
             <input type="hidden" name="update_user_id" id="id_input" value="<?php echo $user['user_id']; ?>">
+            <input type="hidden" name="existing_image" value="<?php echo $user['user_profile_image']; ?>">
+
             <div class="input_field">
 
                 <input type="text" name="user_name" id="name_input" value="<?php echo $user['user_name'] ?>" placeholder="Username">

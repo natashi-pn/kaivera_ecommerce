@@ -233,7 +233,8 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
                                                 echo "<a class='green_btn'><i class='fa-solid fa-circle-check'></i>Delivered!</a>";
                                             } else {
                                             ?>
-                                                <a href="../controllers/update_order.php?id=<?php echo $order['order_id'] ?>" class="green_btn">Set Delivered</a>
+                                                <a href="../controllers/update_order.php?id=<?php echo $order['order_id'] ?>" class="green_btn"
+                                                    onclick="return confirm('Are you sure this order is shipped?');">Set Delivered</a>
 
                                             <?php } ?>
                                             <a href="../controllers/delete_order.php?id=<?php echo $order['order_id'] ?>" class="red_btn" onclick="return confirm('Are you sure to delete this order ?');">Delete</a>

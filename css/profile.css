@@ -90,6 +90,7 @@ a:active {
 
 .sidebar a:hover {
     scale: 1.02;
+    background: rgb(42, 42, 50);
 }
 
 .sidebar a:active {

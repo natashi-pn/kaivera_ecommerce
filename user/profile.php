@@ -69,8 +69,8 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
                     <p>User Type : <?php echo $user['user_type'] ?></p>
                 </div>
                 <div class="action">
-                    <a href="user_update_user.php?id=<?php echo $user_id ?>" class="green_btn">Edit Account</a>
-                    <a href="user_delete_user.php?id=<?php echo $user_id ?>" class="red_btn"
+                    <a href="user_update_user.php" class="green_btn">Edit Account</a>
+                    <a href="user_delete_user.php" class="red_btn"
                         onclick="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">Delete Account</a>
                 </div>
             </div>

@@ -163,8 +163,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .input_btn button:hover {
-    background: transparent;
-    color: white;
+    scale: 1.02;
+}
+
+.input_btn button:active {
+    scale: 0.95;
 }
 
 .input_field select {
