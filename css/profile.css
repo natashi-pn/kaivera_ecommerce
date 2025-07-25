@@ -18,8 +18,8 @@
 }
 
 ::selection {
-    color: var(--black-olive);
-    background: var(--tropical);
+    color: var(--black);
+    background: var(--white);
 }
 
 html,
@@ -189,9 +189,7 @@ table {
 }
 
 .add_btn:hover {
-    background: transparent;
-    border-color: var(--white);
-    color: var(--white);
+    scale: 1.02;
 }
 
 .action {
@@ -260,6 +258,7 @@ form button:hover {
 
 .action .green_btn {
     background: rgb(139, 208, 151);
+    flex-shrink: 0;
 }
 
 .action .green_btn i {
@@ -268,6 +267,16 @@ form button:hover {
 
 .action .red_btn {
     background: rgb(208, 139, 139);
+}
+
+.table_row {
+    border-bottom: 1px solid rgba(4, 4, 4, 0.241);
+    transition: .1s linear;
+
+}
+
+.table_row:hover {
+    background: #b9c5e5;
 }
 
 /* Messages */

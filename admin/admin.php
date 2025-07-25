@@ -213,7 +213,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
                                 foreach ($orderDetails as $order) {
                                 ?>
-                                    <tr class=" bg-[#b7c8e8] text-gray-800">
+                                    <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
                                         <td class="p-2 md:p-4 text-center"> <?php echo $order['order_id'] ?></td>
                                         <td class="p-2 md:p-4 text-center"> <?php echo $order['user_id'] ?></td>
                                         <td class="p-2 md:p-4 "> <?php echo $order['user_name'] ?> </td>
@@ -233,10 +233,10 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
                                                 echo "<a class='green_btn'><i class='fa-solid fa-circle-check'></i>Delivered!</a>";
                                             } else {
                                             ?>
-                                                <a href="../controllers/update_order.php?id=<?php echo $order['order_id'] ?>" class="green_btn">Set As Delivered</a>
+                                                <a href="../controllers/update_order.php?id=<?php echo $order['order_id'] ?>" class="green_btn">Set Delivered</a>
 
                                             <?php } ?>
-                                            <a href="../controllers/delete_order.php?id=<?php echo $order['order_id'] ?>" class="red_btn">Delete</a>
+                                            <a href="../controllers/delete_order.php?id=<?php echo $order['order_id'] ?>" class="red_btn" onclick="return confirm('Are you sure to delete this order ?');">Delete</a>
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -288,7 +288,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
                                 foreach ($order_items as $order_item) {
                                 ?>
-                                    <tr class=" bg-[#b7c8e8] text-gray-800">
+                                    <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
                                         <td class="p-2 md:p-4 text-center"> <?php echo $order_item['order_item_id'] ?></td>
                                         <td class="p-2 md:p-4 text-center"> <?php echo $order_item['order_id'] ?></td>
                                         <td class="p-2 md:p-4 text-center"> <?php echo $order_item['product_id'] ?></td>
@@ -362,7 +362,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
                                 foreach ($products as $product) {
                                 ?>
-                                    <tr class=" bg-[#b7c8e8] text-gray-800">
+                                    <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
                                         <td class="p-2 md:p-4 text-center"> <?php echo $product['product_id'] ?></td>
                                         <td class="p-2 md:p-4"> <?php echo $product['product_name'] ?></td>
                                         <td class="p-2 md:p-4"> <?php echo $product['product_description'] ?></td>
@@ -379,7 +379,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
                                         <td class="p-2 md:p-4 text-center"><?php echo $product['created_at'] ?></td>
                                         <td class="relative action">
                                             <a href="admin_update_product.php?id=<?php echo $product['product_id'] ?>" class="green_btn">Edit</a>
-                                            <a href="../controllers/delete_product.php?id=<?php echo $product['product_id'] ?>" class="red_btn">Delete</a>
+                                            <a href="../controllers/delete_product.php?id=<?php echo $product['product_id'] ?>" class="red_btn" onclick="return confirm('Are you sure to delete this product?');">Delete</a>
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -393,12 +393,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
         <!-- Users Table -->
 
-        <?php
-        $active = "";
-        if (isset($go_to) == 'products') {
-            $active = "active";
-        }
-        ?>
+
         <section id="users" class="<?php echo ($go_to === 'users') ? 'active' : ''; ?>">
             <div class="heading">
                 <h1>Users Table</h1>
@@ -447,7 +442,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
                                 foreach ($users as $user) {
                                 ?>
-                                    <tr class=" bg-[#b7c8e8] text-gray-800">
+                                    <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
                                         <td class="p-2 md:p-4 text-center"> <?php echo $user['user_id'] ?></td>
                                         <td class="p-2 md:p-4 text-center profile_image_container"> <img src="<?php echo htmlspecialchars($user['user_profile_image']) ?>" alt="" style="width: 40px; height: 40px; object-fit: cover; border-radius : 50%;">
                                         </td>
@@ -463,7 +458,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
                                         <td class="relative p-2 md:p-4 action">
                                             <a href="admin_update_user.php?id=<?php echo $user['user_id'] ?>" class="green_btn">Edit</a>
-                                            <a href="../controllers/delete_user.php?id=<?php echo $user['user_id'] ?>" class="red_btn">Delete</a>
+                                            <a href="../controllers/delete_user.php?id=<?php echo $user['user_id'] ?>" class="red_btn" onclick="return confirm('Are you sure to delete this user?');">Delete</a>
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -519,7 +514,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
                                 foreach ($reviews as $review) {
                                 ?>
-                                    <tr class=" bg-[#b7c8e8] text-gray-800">
+                                    <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
                                         <td class="p-2 md:p-4 text-center"> <?php echo $review['review_id'] ?></td>
                                         <td class="p-2 md:p-4 text-center"> <?php echo $review['user_id'] ?></td>
                                         <td class="p-2 md:p-4 text-center"> <?php echo $review['user_name'] ?></td>
@@ -527,7 +522,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
                                         <td class="p-2 md:p-4 text-center"> <?php echo $review['comment'] ?></td>
                                         <td class="p-2 md:p-4 text-center"> <?php echo $review['review_date'] ?></td>
                                         <td class="relative p-2 md:p-4 action">
-                                            <a href="../controllers/delete_review.php?id=<?php echo $review['review_id'] ?>" class="red_btn">Delete</a>
+                                            <a href="../controllers/delete_review.php?id=<?php echo $review['review_id'] ?>" class="red_btn" onclick="return confirm('Are you sure to delete this review?');">Delete</a>
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -582,12 +577,12 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
                                 foreach ($discounts as $discount) {
                                 ?>
-                                    <tr class=" bg-[#b7c8e8] text-gray-800">
+                                    <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
                                         <td class="p-2 md:p-4 text-center"> <?php echo $discount['discount_id'] ?></td>
                                         <td class="p-2 md:p-4 text-center"><?php echo $discount['discount_code'] ?></td>
                                         <td class="p-2 md:p-4 text-center"><?php echo $discount['discount_percent'] ?></td>
                                         <td class="relative p-2 md:p-4 action ">
-                                            <a href="../controllers/delete_discount.php?id=<?php echo $discount['discount_id'] ?>" class="red_btn">Delete</a>
+                                            <a href="../controllers/delete_discount.php?id=<?php echo $discount['discount_id'] ?>" class="red_btn" onclick="return confirm('Are you sure to delete this discount?');">Delete</a>
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -597,8 +592,6 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
                 </div>
             </div>
         </section>
-
-
         <?php
         $active = "";
         if (isset($go_to) == 'messages') {
@@ -650,7 +643,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
                                 foreach ($messages as $message) {
                                 ?>
-                                    <tr class=" bg-[#b7c8e8] text-gray-800">
+                                    <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
                                         <td class="p-2 md:p-4 text-center"> <?php echo $message['message_id'] ?></td>
                                         <td class="p-2 md:p-4 text-center"> <?php echo $message['name'] ?></td>
                                         <td class="p-2 md:p-4 "> <?php echo $message['phone'] ?> </td>
@@ -660,7 +653,8 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
                                         <td class="p-2 md:p-4 text-center"><?php echo $message['messaged_at'] ?></td>
 
                                         <td class="relative p-2 md:p-4 action">
-                                            <a href="../controllers/delete_message.php?id=<?php echo $message['message_id'] ?>" class="red_btn">Delete</a>
+                                            <a href="../controllers/delete_message.php?id=<?php echo $message['message_id'] ?>" class="red_btn"
+                                                onclick="return confirm('Are you sure to delete this message?');">Delete</a>
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -670,14 +664,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
                 </div>
             </div>
         </section>
-
-
     </div>
-
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 

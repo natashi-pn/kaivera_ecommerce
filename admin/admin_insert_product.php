@@ -25,19 +25,19 @@ $products = getProducts();
         </div>
         <form method="POST" action="../controllers/insert_product.php" enctype="multipart/form-data">
             <div class="input_field">
-                <label for="name_input">Product Name</label>
-                <input type="text" name="product_name" id="name_input">
+
+                <input type="text" name="product_name" id="name_input" placeholder="Product Name">
             </div>
             <div class="input_field">
-                <label for="desc_input">Product Description</label>
-                <textarea name="product_description" id="desc_input"></textarea>
+
+                <textarea name="product_description" id="desc_input" placeholder="Description"></textarea>
             </div>
             <div class="input_field">
-                <label for="price_input">Product Price</label>
-                <input type="number" name="product_price" id="price_input" step="any">
+
+                <input type="number" name="product_price" id="price_input" step="any" placeholder="Price">
             </div>
-            <div class="input_field">
-                <label for="category_input">Product Category</label>
+            <div class="input_field input_row">
+
                 <select name="product_category" id="category_input">
                     <?php
                     foreach ($categories as $category) {
@@ -45,15 +45,13 @@ $products = getProducts();
                         <option value="<?php echo $category['category_id'] ?>"> <?php echo $category['category_name'] ?> </option>
                     <?php } ?>
                 </select>
-            </div>
-            <div class="input_field">
                 <label for="image_input" class="file_label">Upload Image</label>
                 <input type="file" name="product_image" id="image_input">
             </div>
 
+
             <div class="input_btn">
                 <button type="submit" class="green_btn">Insert</button>
-                <button type="reset" class="red_btn">Reset</button>
                 <a href="admin.php?to=products">Back</a>
             </div>
         </form>

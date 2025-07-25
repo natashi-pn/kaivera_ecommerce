@@ -19,8 +19,8 @@
 }
 
 ::selection {
-    color: var(--tropical);
-    background: var(--black-olive);
+    color: var(--black);
+    background: var(--white);
 }
 
 html {
@@ -87,8 +87,8 @@ form {
 .input_field {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
+    align-items: center;
+
     width: 100%;
 }
 
@@ -133,6 +133,7 @@ label {
     border: 1px solid transparent;
     outline: none;
     padding: 10px 20px;
+    transition: .1s linear;
 
 }
 
@@ -167,21 +168,34 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .input_field select {
-    width: 100%;
     padding: 10px 20px;
     border-radius: 20px;
-    background: var(--black-olive);
-    color: white;
+    background: var(--tropical);
+    color: black;
     font-size: 1rem;
     appearance: none;
     text-align: center;
     -webkit-appearance: none;
     -moz-appearance: none;
     background-image: none;
+    transition: .1s linear;
+}
+
+.input_row {
+    padding: 5px;
+
+}
+
+.input_row>* {
+    margin: 0 5px;
 }
 
 .input_field select::-ms-expand {
     display: none;
+}
+
+.input_field select:hover {
+    scale: 1.02;
 }
 
 .input_field input[type="file"] {
@@ -192,17 +206,14 @@ input[type=number]::-webkit-outer-spin-button {
     background: var(--tropical);
     padding: 10px 20px;
     color: black;
-
     border-radius: 20px;
     border: 1px solid transparent;
     transition: .2s linear;
-    width: 100%;
+
 }
 
 .input_field .file_label:hover {
-    background: transparent;
-    color: white;
-    border-color: white;
+    scale: 1.02;
 }
 
 a {

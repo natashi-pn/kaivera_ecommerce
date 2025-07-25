@@ -995,13 +995,18 @@ function setUpNavigation() {
 
   }
   rebindWishlist();
+  modeToggle();
 
+
+
+}
+
+function modeToggle() {
   document.addEventListener("DOMContentLoaded", function () {
     const light_mode = document.getElementById("light_mode");
     const dark_mode = document.getElementById("dark_mode");
 
     const savedMode = localStorage.getItem("mode");
-
 
     if (savedMode === "light") {
       document.body.classList.add("light");
@@ -1029,8 +1034,6 @@ function setUpNavigation() {
       localStorage.setItem("mode", "dark");
     });
   });
-
-
 }
 
 function rebindWishlist() {
@@ -1832,6 +1835,9 @@ function initAbout() {
 
 function initSignup() {
   setUpSignup();
+}
+function initAdmin() {
+  modeToggle();
 }
 
 // Reinitialize Page

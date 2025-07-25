@@ -110,7 +110,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
                         if (!empty($orders)) {
                             foreach ($orders as $order) {
                         ?>
-                                <tr class=" bg-[#b7c8e8] text-gray-800">
+                                <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
                                     <td class="p-2 md:p-4 text-center"> <?php echo $order['order_id'] ?></td>
                                     <td class="p-2 md:p-4 text-center"> <?php echo $order['order_date'] ?></td>
                                     <td class="p-2 md:p-4 text-center"> <?php echo $order['order_status'] ?></td>
@@ -130,7 +130,8 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
                                             <a class="red_btn">Already Delivered</a>
                                         <?php     } else {
                                         ?>
-                                            <a href="../controllers/delete_user_order.php?id=<?php echo $order['order_id'] ?>" class="red_btn">Cancel Order</a>
+                                            <a href="../controllers/delete_user_order.php?id=<?php echo $order['order_id'] ?>" class="red_btn"
+                                                onclick="return confirm('Are you sure to delete this order?');">Cancel Order</a>
                                         <?php } ?>
                                     </td>
                                 </tr>
@@ -138,7 +139,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
                         } else {
                             ?>
 
-                            <tr class=" bg-[#b7c8e8] text-gray-800">
+                            <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
                                 <td class="p-2 md:p-4 text-center">-</td>
 
                                 <td class="p-2 md:p-4 text-center">-</td>
@@ -192,7 +193,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
                                 if (!empty($order_items)) {
                                     foreach ($order_items as $order_item) {
                                 ?>
-                                        <tr class=" bg-[#b7c8e8] text-gray-800">
+                                        <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
                                             <td class="p-2 md:p-4 text-center"> <?php echo $order_item['order_item_id'] ?></td>
                                             <td class="p-2 md:p-4 text-center"> <?php echo $order_item['order_id'] ?></td>
                                             <td class="p-2 md:p-4 text-center"> <?php echo $order_item['product_id'] ?></td>
@@ -203,7 +204,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
                                         </tr>
                                     <?php }
                                 } else { ?>
-                                    <tr class=" bg-[#b7c8e8] text-gray-800">
+                                    <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
                                         <td class="p-2 md:p-4 text-center">-</td>
                                         <td class="p-2 md:p-4 text-center">-</td>
                                         <td class="p-2 md:p-4 text-center">-</td>
@@ -252,7 +253,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
                                 if (!empty($wishlists)) {
                                     foreach ($wishlists as $wishlist) {
                                 ?>
-                                        <tr class="bg-[#b7c8e8] text-gray-800">
+                                        <tr class="bg-[#c3cfe6] text-gray-800 table_row">
                                             <td class="p-2 md:p-4 text-center"> <?php echo $wishlist['wishlist_id'] ?></td>
 
                                             <td class="p-2 md:p-4 text-center"> <?php echo $wishlist['product_name'] ?></td>
@@ -260,13 +261,14 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
                                             </td>
                                             <td class="p-2 md:p-4 text-center">$<?php echo $wishlist['added_at'] ?></td>
                                             <td class="action">
-                                                <a href="../user/delete_user_wishlist.php?id=<?php echo $wishlist['wishlist_id'] ?>" class="red_btn">Remove Wishlist</a>
+                                                <a href="../user/delete_user_wishlist.php?id=<?php echo $wishlist['wishlist_id'] ?>" class="red_btn"
+                                                    onclick="return confirm('Are you sure to delete this wishlist?');">Remove Wishlist</a>
                                             </td>
                                         </tr>
                                     <?php }
                                 } else {
                                     ?>
-                                    <tr class=" bg-[#b7c8e8] text-gray-800">
+                                    <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
                                         <td class="p-2 md:p-4 text-center">-</td>
                                         <td class="p-2 md:p-4 text-center">-</td>
                                         <td class="p-2 md:p-4 text-center">You Haven't Wish Anything Yet</td>
@@ -316,18 +318,19 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
                                 if (!empty($reviews)) {
                                     foreach ($reviews as $review) {
                                 ?>
-                                        <tr class=" bg-[#b7c8e8] text-gray-800">
+                                        <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
                                             <td class="p-2 md:p-4 text-center"> <?php echo $review['review_id'] ?></td>
                                             <td class="p-2 md:p-4 text-center"> <?php echo $review['rating'] ?></td>
                                             <td class="p-2 md:p-4 text-center"> <?php echo $review['comment'] ?></td>
                                             <td class="p-2 md:p-4 text-center"> <?php echo $review['review_date'] ?></td>
                                             <td class="relative p-2 md:p-4 action">
-                                                <a href="../controllers/delete_user_review.php?id=<?php echo $review['review_id'] ?>" class="red_btn">Delete</a>
+                                                <a href="../controllers/delete_user_review.php?id=<?php echo $review['review_id'] ?>" class="red_btn"
+                                                    onclick="return confirm('Are you sure to delete this review?');">Delete</a>
                                             </td>
                                         </tr>
                                     <?php }
                                 } else { ?>
-                                    <tr class=" bg-[#b7c8e8] text-gray-800">
+                                    <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
                                         <td class="p-2 md:p-4 text-center">-</td>
                                         <td class="p-2 md:p-4 text-center">-</td>
                                         <td class="p-2 md:p-4 text-center">You Havn't Made A Review Yet</td>

@@ -27,6 +27,14 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         }
     }
 
+    if (!validatePassword($user_password)) {
+        $_SESSION["error"] = "Invalid Password";
+        header('Location: ../admin/admin_insert_user.php');
+        exit;
+    }
+
+
+
     if (isset($_FILES['user_profile_image']) && $_FILES['user_profile_image']['error'] === 0) {
 
 

@@ -529,7 +529,7 @@ input[type=reset]:active {
 .about-us .container .wrapper p {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   font-size: 1.3rem;
-  color: var(--white);
+  color: var(--second-white);
   font-family: var(--smallFont);
 }
 
@@ -1929,11 +1929,12 @@ footer {
 
 .product-section .product .product-content button:disabled {
   color: var(--black);
-  background: rgb(165, 193, 180);
+  background: rgb(205, 205, 205);
+
 }
 
 .product-section .product .product-content button:not(:disabled):hover {
-  scale: 1.03;
+  scale: 1.02;
 }
 
 
@@ -2125,7 +2126,8 @@ footer {
 
 .contact-form .input-btns .btn:disabled {
   color: var(--black);
-  background: #7f9c89;
+  background: #acacac;
+  cursor: not-allowed;
 }
 
 .contact-form .input-btns .btn:not(:disabled):hover {
@@ -3372,8 +3374,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .product_details_container .content .btn button:disabled {
-  background: #7e7e7e;
+  background: #949494;
   color: #000;
+  cursor: not-allowed;
 }
 
 .product_details_container .content .btn button i {
