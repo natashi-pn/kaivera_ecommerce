@@ -154,7 +154,7 @@ unset($_SESSION['order_id']);
     </section>
 
     <!-- Shirt Slide -->
-    <section class="slide <?php if (!$isLoggedIn) echo ' ' . 'hiddenDefault' ?>">
+    <section class="slide">
       <div class="product-container" id="product-container-2">
 
         <?php
@@ -199,7 +199,7 @@ unset($_SESSION['order_id']);
 
     <!-- Shoes Slide -->
 
-    <section class="slide <?php if (!$isLoggedIn) echo ' ' . 'hiddenDefault' ?>">
+    <section class="slide">
       <div class="product-container" id="product-container-3">
         <?php
         $category_id = 3;

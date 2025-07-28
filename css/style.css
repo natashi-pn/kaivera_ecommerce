@@ -2857,14 +2857,13 @@ input[type="number"]::-webkit-outer-spin-button {
   font-family: var(--smallFont);
   color: var(--black);
   background: var(--tropical);
-  transition: 0.2s linear;
+  transition: 0.1s linear;
 }
 
 .signup_section form button:hover {
-  color: var(--white);
-  border-color: var(--white);
-  background: transparent;
+  scale: 1.02;
 }
+
 
 .signup_section p {
   display: inline-block;

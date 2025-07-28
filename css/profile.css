@@ -271,7 +271,7 @@ form button:hover {
 }
 
 .table_row:hover {
-    background: #cbd1e4ff;
+    background: rgb(182, 194, 228);
 }
 
 /* Messages */
@@ -459,43 +459,3 @@ form button:hover {
     justify-content: center;
     height: 80px;
 }
-
-/* View Transitions */
-
-/* @view-transition {
-    navigation: auto;
-}
-
-::view-transition-old(root) {
-    animation: 1.3s cubic-bezier(0.87, 0.08, 0.25, 0.96) both move-out;
-}
-
-::view-transition-new(root) {
-    animation: 1.3s cubic-bezier(0.87, 0.08, 0.25, 0.96) both move-in;
-}
-
-@keyframes move-out {
-    from {
-        transform: translateY(0%);
-        opacity: 1;
-    }
-
-    to {
-        transform: translateY(-20%);
-        opacity: 0.5;
-    }
-}
-
-@keyframes move-in {
-    from {
-        transform: translateY(30%);
-        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
-        scale: 1.2;
-    }
-
-    to {
-        transform: translateY(0%);
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-        scale: 1;
-    }
-} */
