@@ -63,6 +63,19 @@ function getUsers()
     return $users;
 }
 
+function getUsersDesc()
+{
+    global $conn;
+    $Query = "Select * from users ORDER BY 
+    created_at DESC;";
+    $stmt = $conn->prepare($Query);
+    $stmt->execute();
+
+    $users =  $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $users;
+}
+
 function getSearchUser($user_id)
 {
     global $conn;
@@ -185,7 +198,7 @@ function getOrders()
     d.discount_percent
 FROM orders o
 JOIN users u ON o.user_id = u.user_id
-LEFT JOIN discounts d ON o.discount_id = d.discount_id;";
+LEFT JOIN discounts d ON o.discount_id = d.discount_id ORDER BY o.order_date DESC;";
     $stmt = $conn->prepare($query);
     $stmt->execute();
 
@@ -197,7 +210,7 @@ function getOrderItems()
 {
     global $conn;
 
-    $query =  "SELECT * FROM order_items;";
+    $query =  "SELECT * FROM order_items ORDER BY order_id DESC;";
     $stmt = $conn->prepare($query);
     $stmt->execute();
 

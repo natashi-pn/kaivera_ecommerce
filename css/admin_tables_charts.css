@@ -1,155 +1,142 @@
 :root {
-    --black: #1d2025;
-    --white: #dfedea;
-    --tropical: #abbee1;
-    --black-olive: #1a1c20;
-    --gray: #191b1b;
-    --second-white: #b8c2c2;
-    --bigFont: "bebas neue", sans-serif;
-    --smallFont: "Poppins", sans-serif;
-    --hand-written: "Lugrasimo", cursive;
+  --black: #1d2025;
+  --white: #e3eeec;
+  --tropical: #abbee1;
+  --black-olive: #1a1c20;
+  --gray: #191b1b;
+  --second-white: #b8c2c2;
+  --bigFont: "bebas neue", sans-serif;
+  --smallFont: "Poppins", sans-serif;
+  --hand-written: "Lugrasimo", cursive;
 }
-
 
 /* Charts CSS :v */
 
 .chart-container {
-    height: 100%;
-    width: 100%;
-
+  height: 100%;
+  width: 100%;
 }
 
 .chart-container h1 {
-    font-family: var(--bigFont);
-    color: var(--white);
-    font-size: 2rem;
-    margin: 20px;
-    line-height: 1;
+  font-family: var(--bigFont);
+  color: var(--white);
+  font-size: 2rem;
+  margin: 20px;
+  line-height: 1;
 }
 
 .chart-container .cards {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
-    justify-content: center;
-    gap: .5rem;
-    transition: .3s ease-in-out;
-
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
+  justify-content: center;
+  gap: 0.5rem;
+  transition: 0.3s ease-in-out;
 }
 
 .card {
-    height: 100px;
-    background: var(--white);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    transition: .3s ease-in-out;
-    cursor: pointer;
+  height: 100px;
+  background: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .card h1 {
-    font-family: var(--bigFont);
-    font-size: 2.2rem;
-    color: var(--black);
-    line-height: 1;
-    margin: 0;
-    padding: 0;
+  font-family: var(--bigFont);
+  font-size: 2.2rem;
+  color: var(--black);
+  line-height: 1;
+  margin: 0;
+  padding: 0;
 }
 
 .card p {
-    color: var(--gray);
-    font-size: .8rem;
-    font-family: var(--smallFont);
+  color: var(--gray);
+  font-size: 0.8rem;
+  font-family: var(--smallFont);
 }
 
-
 .chart-container .cards:hover .card {
-    opacity: .7;
+  opacity: 0.7;
 }
 
 .chart-container .cards:hover .card:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
-
 #paymentMethodsChart {
-    width: 100% !important;
-    height: auto !important;
-    max-height: 300px;
-
+  width: 100% !important;
+  height: auto !important;
+  max-height: 300px;
 }
 
 .grid-chart {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
-    margin: 50px 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+  margin: 50px 0;
 }
 
-.grid-chart>div {
-    padding: 10px;
-    background: var(--black-olive);
-    margin: 5px;
-    border-radius: 10px;
+.grid-chart > div {
+  padding: 10px;
+  background: var(--black-olive);
+  margin: 5px;
+  border-radius: 10px;
 }
-
 
 #loyalCustomersChart {
-    min-width: 50px;
+  min-width: 50px;
 }
 
 .chart {
-    max-width: 100vw;
-    margin: 50px 0;
-    background: var(--black-olive);
-    border-radius: 10px;
-    padding: 15px;
+  max-width: 100vw;
+  margin: 50px 0;
+  background: var(--black-olive);
+  border-radius: 10px;
+  padding: 15px;
 }
 
-
+.charts {
+  padding: 0 20px;
+}
 
 /* Admin Tables */
 
-@media(max-width : 800px) {
-    table {
-        font-size: .8rem;
-    }
+@media (max-width: 800px) {
+  table {
+    font-size: 0.8rem;
+  }
 
-    th {
-        font-size: .7rem;
-    }
+  th {
+    font-size: 0.7rem;
+  }
 }
 
+@media (max-width: 600px) {
+  .action a {
+    padding: 5px 8px;
+    font-size: 0.55rem;
+    margin: 3px;
+  }
 
+  table {
+    font-size: 0.55rem;
+  }
 
-@media(max-width : 600px) {
+  th {
+    font-size: 0.5rem;
+  }
 
+  .product_image {
+    width: 50px;
+    height: 50px;
+  }
 
-    section {
-        padding: 0;
-    }
-
-    .action a {
-        padding: 5px 8px;
-        font-size: .55rem;
-        margin: 3px;
-    }
-
-    table {
-        font-size: .55rem;
-    }
-
-    th {
-        font-size: .5rem;
-    }
-
-    .product_image {
-        width: 50px;
-        height: 50px;
-    }
-
-    .chart-container h1 {
-        font-size: 1.5rem;
-    }
+  .chart-container h1 {
+    font-size: 1.5rem;
+  }
 }

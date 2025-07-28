@@ -8,14 +8,18 @@ if (!isset($user_type) || $user_type !== 'admin') {
     header("Location: ../home.php");
 }
 
+// Normal Objects i think
+
 $categories = getCategories();
 $products = getProducts();
-$users = getUsers();
-$orderDetails = getOrders();
+$users = getUsersDesc();
 $order_items = getOrderItems();
 $discounts = getDiscounts();
 $messages = getMessages();
 $reviews = getReviews();
+
+
+
 
 
 $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
@@ -29,6 +33,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Kaivera Dashboard</title>
+    <link rel="icon" href="../assets/images/kaivera logo icon.png" type="image/png">
     <link rel="stylesheet" href="../css/profile.css">
     <link rel="stylesheet" href="../css/admin_tables_charts.css">
     <script src="https://kit.fontawesome.com/69e1242b61.js" crossorigin="anonymous"></script>
@@ -61,7 +66,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
             </div>
         </div>
         <a href="#dashboard" class="side_navigation">
-            <h1>Dashboard</h1><i class="fa-solid fa-house"></i>
+            <h1>Dashboard</h1><i class="fa-solid fa-chart-line"></i>
         </a>
         <a href="#orders" class="side_navigation">
             <h1>Orders</h1><i class="fa-solid fa-cart-shopping"></i>
@@ -125,42 +130,50 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
                     </div>
 
                 </div>
-
-                <!-- Number of orders per day -->
-                <div class="chart">
-                    <h1>Daily Orders (Sun - Sat)</h1>
-                    <canvas id="ordersChart"></canvas>
-                </div>
-
-                <!-- Number of Orders By Category -->
-                <div class="chart">
-                    <h1>Orders by Category</h1>
-                    <canvas id="categoryOrdersChart"></canvas>
-                </div>
-
-                <div class="grid-chart">
-                    <!-- Loyal Customers Chart -->
-                    <div class="loyal_chart">
-                        <h1>Top Loyal Customers by Orders</h1>
-                        <div id="loyalCustomersChart"></div>
+                <div class="charts">
+                    <!-- Number of orders per day -->
+                    <div class="chart">
+                        <h1>Daily Sales (Sun - Sat)</h1>
+                        <canvas id="ordersChart"></canvas>
                     </div>
 
-                    <!-- Payment Methods Usesd By Customers -->
-                    <div class="payment_method_chart">
-                        <h1>Payment Methods Used</h1>
-                        <canvas id="paymentMethodsChart" height="50"></canvas>
+                    <div class="grid-chart">
+                        <!-- Number of Orders By Category -->
+
+                        <div class="chart">
+                            <h1>Monthly/Yearly Sales</h1>
+                            <canvas id=""></canvas>
+                        </div>
+                        <div class="chart">
+                            <h1>Orders by Category</h1>
+                            <canvas id="categoryOrdersChart"></canvas>
+                        </div>
+                    </div>
+
+
+                    <div class="grid-chart">
+                        <!-- Loyal Customers Chart -->
+                        <div class="loyal_chart">
+                            <h1>Top Loyal Customers by Orders</h1>
+                            <div id="loyalCustomersChart"></div>
+                        </div>
+
+                        <!-- Payment Methods Usesd By Customers -->
+                        <div class="payment_method_chart">
+                            <h1>Payment Methods Used</h1>
+                            <canvas id="paymentMethodsChart" height="50"></canvas>
+                        </div>
+
+                    </div>
+
+
+                    <div class="chart">
+                        <!-- Best Selling Products -->
+                        <h1>Best Selling Products</h1>
+                        <canvas id="bestSellingProductsChart"></canvas>
                     </div>
 
                 </div>
-
-
-                <div class="chart">
-                    <!-- Best Selling Products -->
-                    <h1>Best Selling Products</h1>
-                    <canvas id="bestSellingProductsChart"></canvas>
-                </div>
-
-
 
             </div>
         </section>
@@ -170,6 +183,10 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
         <section id="orders" class="<?php echo ($go_to === 'orders') ? 'active' : ''; ?>">
             <div class="heading">
                 <h1>Orders Table</h1>
+                <form action="../controllers/admin_search/admin_search_order.php" method="POST">
+                    <input type="text" name="search_username" id="" placeholder="Enter Username">
+                    <button type="submit">Search</button>
+                </form>
             </div>
             <div class="table">
                 <!-- Classes Table -->
@@ -211,9 +228,18 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
                                 <?php
 
+                                // Conditional Rendering
+
+                                if (!isset($_SESSION['searched_orders'])) {
+                                    $orderDetails = getOrders();
+                                } else {
+                                    $orderDetails = $_SESSION['searched_orders'];
+                                    unset($_SESSION['searched_orders']);
+                                }
+
                                 foreach ($orderDetails as $order) {
                                 ?>
-                                    <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
+                                    <tr class=" bg-[#dde2ed] text-gray-800 table_row">
                                         <td class="p-2 md:p-4 text-center"> <?php echo $order['order_id'] ?></td>
                                         <td class="p-2 md:p-4 text-center"> <?php echo $order['user_id'] ?></td>
                                         <td class="p-2 md:p-4 "> <?php echo $order['user_name'] ?> </td>
@@ -253,6 +279,10 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
         <section id="order_items">
             <div class="heading">
                 <h1>Order Items Table</h1>
+                <form action="../controllers/admin_search_order_items.php" method="POST">
+                    <input type="text" name="" id="" placeholder="Enter Order ID">
+                    <button type="submit">Search</button>
+                </form>
             </div>
             <div class="table">
 
@@ -289,7 +319,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
                                 foreach ($order_items as $order_item) {
                                 ?>
-                                    <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
+                                    <tr class=" bg-[#dde2ed] text-gray-800 table_row">
                                         <td class="p-2 md:p-4 text-center"> <?php echo $order_item['order_item_id'] ?></td>
                                         <td class="p-2 md:p-4 text-center"> <?php echo $order_item['order_id'] ?></td>
                                         <td class="p-2 md:p-4 text-center"> <?php echo $order_item['product_id'] ?></td>
@@ -318,8 +348,12 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
         <section id="products" class="<?php echo ($go_to === 'products') ? 'active' : ''; ?>">
             <div class="heading">
                 <h1>Products Table</h1>
+                <form action="../controllers/admin_search_order.php" method="POST">
+                    <input type="text" name="" id="" placeholder="Enter Product Name">
+                    <button type="submit">Search</button>
+                </form>
                 <div class="add_btn">
-                    <a href="admin_insert_product.php">Add New Product</a>
+                    <a href="admin_insert_product.php">+ Add New Product</a>
                 </div>
             </div>
             <div class="table">
@@ -363,12 +397,18 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
                                 foreach ($products as $product) {
                                 ?>
-                                    <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
+                                    <tr class=" bg-[#dde2ed] text-gray-800 table_row">
                                         <td class="p-2 md:p-4 text-center"> <?php echo $product['product_id'] ?></td>
                                         <td class="p-2 md:p-4"> <?php echo $product['product_name'] ?></td>
                                         <td class="p-2 md:p-4"> <?php echo $product['product_description'] ?></td>
                                         <td class="p-2 md:p-4 text-center"> <?php echo $product['product_price'] ?></td>
-                                        <td class="p-2 md:p-4 "> <img src="<?php echo htmlspecialchars($product['product_image']) ?>" alt="" style="width: 80px; height: 80px; object-fit: contain;">
+                                        <td class="p-2 md:p-4 text-center w-[100px]">
+                                            <div class="flex justify-center items-center">
+                                                <img
+                                                    src="<?php echo htmlspecialchars($product['product_image']) ?>"
+                                                    alt="Product Image"
+                                                    class="max-w-[80px] max-h-[80px] object-contain">
+                                            </div>
                                         </td>
                                         <td class="p-2 md:p-4 text-center"> <?php
 
@@ -378,7 +418,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
                                                                             }
                                                                             ?></td>
                                         <td class="p-2 md:p-4 text-center"><?php echo $product['created_at'] ?></td>
-                                        <td class="relative action">
+                                        <td class="action relative top-[15px]">
                                             <a href="admin_update_product.php?id=<?php echo $product['product_id'] ?>" class="green_btn">Edit</a>
                                             <a href="../controllers/delete_product.php?id=<?php echo $product['product_id'] ?>" class="red_btn" onclick="return confirm('Are you sure to delete this product?');">Delete</a>
                                         </td>
@@ -398,8 +438,12 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
         <section id="users" class="<?php echo ($go_to === 'users') ? 'active' : ''; ?>">
             <div class="heading">
                 <h1>Users Table</h1>
+                <form action="../controllers/admin_search_order.php" method="POST">
+                    <input type="text" name="" id="" placeholder="Enter Username">
+                    <button type="submit">Search</button>
+                </form>
                 <div class="add_btn">
-                    <a href="admin_insert_user.php">Add New User</a>
+                    <a href="admin_insert_user.php">+ Add New User</a>
                 </div>
             </div>
             <div class="table">
@@ -443,9 +487,9 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
                                 foreach ($users as $user) {
                                 ?>
-                                    <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
+                                    <tr class=" bg-[#dde2ed] text-gray-800 table_row">
                                         <td class="p-2 md:p-4 text-center"> <?php echo $user['user_id'] ?></td>
-                                        <td class="p-2 md:p-4 text-center profile_image_container"> <img src="<?php echo htmlspecialchars($user['user_profile_image']) ?>" alt="" style="width: 40px; height: 40px; object-fit: cover; border-radius : 50%;">
+                                        <td class="text-center profile_image_container relative top-[15px]"> <img src="<?php echo htmlspecialchars($user['user_profile_image']) ?>" alt="" style="width: 40px; height: 40px; object-fit: cover; border-radius : 50%;">
                                         </td>
                                         <td class="p-2 md:p-4 text-center"> <?php echo $user['user_name'] ?></td>
                                         <td class="p-2 md:p-4 text-center"> <?php echo $user['user_email'] ?></td>
@@ -457,7 +501,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
 
 
-                                        <td class="relative p-2 md:p-4 action">
+                                        <td class="action relative bottom-[20px]">
                                             <a href="admin_update_user.php?id=<?php echo $user['user_id'] ?>" class="green_btn">Edit</a>
                                             <a href="../controllers/delete_user.php?id=<?php echo $user['user_id'] ?>" class="red_btn" onclick="return confirm('Are you sure to delete this user?');">Delete</a>
                                         </td>
@@ -515,7 +559,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
                                 foreach ($reviews as $review) {
                                 ?>
-                                    <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
+                                    <tr class=" bg-[#dde2ed] text-gray-800 table_row">
                                         <td class="p-2 md:p-4 text-center"> <?php echo $review['review_id'] ?></td>
                                         <td class="p-2 md:p-4 text-center"> <?php echo $review['user_id'] ?></td>
                                         <td class="p-2 md:p-4 text-center"> <?php echo $review['user_name'] ?></td>
@@ -548,7 +592,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
                 <form action="../controllers/insert_discount.php" method="POST">
                     <input type="text" name="code" id="" placeholder="Enter Disocunt Code">
                     <input type="number" name="percent" id="" placeholder="Enter Percentage">
-                    <button type="submit">Add</button>
+                    <button type="submit">+ Add</button>
                 </form>
             </div>
             <div class="table">
@@ -578,7 +622,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
                                 foreach ($discounts as $discount) {
                                 ?>
-                                    <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
+                                    <tr class=" bg-[#dde2ed] text-gray-800 table_row">
                                         <td class="p-2 md:p-4 text-center"> <?php echo $discount['discount_id'] ?></td>
                                         <td class="p-2 md:p-4 text-center"><?php echo $discount['discount_code'] ?></td>
                                         <td class="p-2 md:p-4 text-center"><?php echo $discount['discount_percent'] ?></td>
@@ -644,7 +688,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
                                 foreach ($messages as $message) {
                                 ?>
-                                    <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
+                                    <tr class=" bg-[#dde2ed] text-gray-800 table_row">
                                         <td class="p-2 md:p-4 text-center"> <?php echo $message['message_id'] ?></td>
                                         <td class="p-2 md:p-4 text-center"> <?php echo $message['name'] ?></td>
                                         <td class="p-2 md:p-4 "> <?php echo $message['phone'] ?> </td>

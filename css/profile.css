@@ -8,7 +8,7 @@
 
 :root {
     --black: #1d2025;
-    --white: #e7efee;
+    --white: #e3eeec;
     --tropical: #9fc9b7;
     --black-olive: #1a1c20;
     --gray: #191b1b;
@@ -27,9 +27,7 @@ body {
     height: 100%;
     scroll-behavior: auto;
     background: var(--black);
-
 }
-
 
 ::-webkit-scrollbar {
     width: 0px;
@@ -50,7 +48,6 @@ a:active {
     scale: 0.9;
 }
 
-
 .sidebar {
     width: 200px;
     background-color: var(--black-olive);
@@ -61,7 +58,6 @@ a:active {
     height: 100vh;
     position: fixed;
     padding: 10px;
-
 }
 
 .sidebar a {
@@ -74,18 +70,17 @@ a:active {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: .15s linear;
+    transition: 0.15s linear;
 }
 
 .sidebar a h1 {
-    font-size: .8rem;
+    font-size: 0.8rem;
     font-weight: 500;
 }
 
 .sidebar a i {
-    font-size: .8rem;
-    transition: .15s linear;
-
+    font-size: 0.8rem;
+    transition: 0.15s linear;
 }
 
 .sidebar a:hover {
@@ -96,7 +91,6 @@ a:active {
 .sidebar a:active {
     scale: 0.95;
 }
-
 
 .main-content {
     margin-left: 200px;
@@ -110,7 +104,7 @@ section {
     top: 0;
     left: 0;
     overflow-y: scroll;
-    /* padding: 10px; */
+    padding-top: 20px;
     display: none;
     background: var(--black);
 }
@@ -121,7 +115,6 @@ section.active {
 
 section .heading {
     margin: 20px 20px;
-
 }
 
 section .heading h1 {
@@ -136,7 +129,7 @@ section .heading p {
     color: var(--second-white);
     font-family: var(--smallFont);
     margin: 2px 0;
-    font-size: .9rem;
+    font-size: 0.9rem;
     text-transform: capitalize;
 }
 
@@ -148,7 +141,7 @@ section .table {
 }
 
 .table-header {
-    font-size: .8rem;
+    font-size: 0.8rem;
     color: var(--second-white);
     font-weight: 300;
     font-family: var(--smallFont);
@@ -170,7 +163,6 @@ table {
     object-fit: cover;
 }
 
-
 .add_btn {
     background: var(--white);
     text-align: right;
@@ -178,31 +170,33 @@ table {
     position: absolute;
     border: 1px solid transparent;
     right: 0;
-    top: 25px;
+    top: 80px;
     padding: 8px 10px;
     border-radius: 5px;
     color: var(--black);
     font-family: var(--smallFont);
-    font-size: .7rem;
+    font-size: 0.7rem;
     font-weight: 500;
-    transition: .2s linear;
+    transition: 0.2s linear;
 }
 
 .add_btn:hover {
     scale: 1.02;
 }
 
+.add_btn:active {
+    scale: 0.95;
+}
+
 .action {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
-
-
 form {
-    margin-top: 50px;
-
+    margin-top: 10px;
 }
 
 form input {
@@ -210,41 +204,43 @@ form input {
     border: none;
     outline: none;
     border-radius: 8px;
-    padding: 7px 8px;
+    padding: 8px 10px;
     color: black;
     margin: 3px;
+    font-size: 16px;
 }
 
 form input::placeholder {
     color: var(--black);
     font-family: var(--smallFont);
-    font-size: .8rem;
+    font-size: 0.8rem;
     line-height: 1;
 }
 
 form button {
-    padding: 8px;
+    padding: 8px 10px;
     color: var(--black);
     background: var(--tropical);
     font-family: var(--smallFont);
-    font-size: .9rem;
+    font-size: 0.8rem;
     border-radius: 10px;
-    transition: .2s linear;
+    transition: 0.1s linear;
+    margin-top: 5px;
 }
 
 form button:hover {
-    transform: scale(1.1);
+    transform: scale(1.03);
 }
 
 .action a {
     padding: 8px 12px;
-    font-size: .7rem;
+    font-size: 0.7rem;
     font-family: var(--smallFont);
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     margin: 3px;
     cursor: pointer;
-    transition: .2s linear;
+    transition: 0.2s linear;
     user-select: none;
 }
 
@@ -271,16 +267,14 @@ form button:hover {
 
 .table_row {
     border-bottom: 1px solid rgba(4, 4, 4, 0.241);
-    transition: .1s linear;
-
+    transition: 0.1s linear;
 }
 
 .table_row:hover {
-    background: #b9c5e5;
+    background: #cbd1e4ff;
 }
 
 /* Messages */
-
 
 .notification {
     text-align: center;
@@ -289,7 +283,7 @@ form button:hover {
     width: 100%;
     height: 15vh;
     z-index: 99;
-    font-size: .9rem;
+    font-size: 0.9rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -322,25 +316,25 @@ form button:hover {
     color: rgb(227, 79, 79);
 }
 
-
 .profile {
-    margin: 20px 0;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px 10px;
+    cursor: pointer;
 }
 
 .profile>* {
     margin: 0 5px;
+    flex-shrink: 0;
 }
-
 
 .profile h1 {
     font-family: var(--bigFont);
-    font-size: 1.5rem;
-    line-height: .9;
-
+    font-size: 1.3rem;
+    line-height: 0.9;
+    flex-shrink: 1;
 }
 
 .profile .profile_image {
@@ -349,7 +343,6 @@ form button:hover {
     border-radius: 50%;
     padding: 2px;
     border: 1px solid var(--tropical);
-
 }
 
 .profile .profile_image img {
@@ -357,7 +350,6 @@ form button:hover {
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-
 }
 
 .user_information {
@@ -373,7 +365,6 @@ form button:hover {
     height: 100%;
     aspect-ratio: 1;
     border-radius: 50%;
-
 }
 
 .user_information .profile_image img {
@@ -394,10 +385,9 @@ form button:hover {
 .user_information .info p {
     color: var(--second-white);
     font-family: var(--smallFont);
-    font-size: .9rem;
+    font-size: 0.9rem;
     margin: 5px 0;
 }
-
 
 @keyframes fade-in-out {
     from {
@@ -409,8 +399,7 @@ form button:hover {
     }
 }
 
-@media(max-width : 900px) {
-
+@media (max-width: 900px) {
     .sidebar {
         width: 80px;
     }
@@ -430,18 +419,16 @@ form button:hover {
         position: relative;
     }
 
-
     .add_btn {
-        top: 12px;
+        top: 25px;
     }
 
     section .heading h1 {
         font-size: 1.7rem;
-
     }
 
     section .heading p {
-        font-size: .75rem;
+        font-size: 0.75rem;
     }
 
     .profile {
@@ -464,48 +451,39 @@ form button:hover {
     .user_information .info {
         margin: 20px 0;
     }
-
 }
-
-
 
 .profile_image_container {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 80px;
 }
-
-
-
-
-
 
 
 /* View Transitions */
 
-@view-transition {
+/* @view-transition {
     navigation: auto;
 }
 
 ::view-transition-old(root) {
-    animation: 1.3s cubic-bezier(.87, .08, .25, .96) both move-out;
+    animation: 1.3s cubic-bezier(0.87, 0.08, 0.25, 0.96) both move-out;
 }
 
 ::view-transition-new(root) {
-    animation: 1.3s cubic-bezier(.87, .08, .25, .96) both move-in;
+    animation: 1.3s cubic-bezier(0.87, 0.08, 0.25, 0.96) both move-in;
 }
 
 @keyframes move-out {
     from {
         transform: translateY(0%);
         opacity: 1;
-
     }
 
     to {
         transform: translateY(-20%);
-        opacity: .5;
-
+        opacity: 0.5;
     }
 }
 
@@ -521,4 +499,4 @@ form button:hover {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         scale: 1;
     }
-}
+} */
