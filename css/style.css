@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lugrasimo&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lugrasimo&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
   margin: 0;
@@ -23,10 +23,7 @@
   background: var(--white);
 }
 
-
-
 body.light {
-
   --black: #ebf4f2;
   --white: #1d2025;
   --tropical: #525f79;
@@ -36,16 +33,12 @@ body.light {
   --bigFont: "bebas neue", sans-serif;
   --smallFont: "Poppins", sans-serif;
   --hand-written: "Lugrasimo", cursive;
-
 }
 
 html {
   background-color: var(--black);
   overflow-x: hidden;
 }
-
-
-
 
 ::-webkit-scrollbar {
   width: 0;
@@ -62,12 +55,10 @@ html {
 
 button:active,
 a:active,
-input[type=submit]:active,
-input[type=reset]:active {
+input[type="submit"]:active,
+input[type="reset"]:active {
   transform: scale(0.93);
 }
-
-
 
 .navigation-btn {
   position: fixed;
@@ -86,31 +77,13 @@ input[type=reset]:active {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.navigation-btn>div {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.navigation-btn>div:first-child {
-  justify-content: flex-start;
-  flex: 1 0 auto;
-}
 
-.navigation-btn>div:last-child {
-  justify-content: flex-end;
-}
-
-.nav-middle {
-  margin-right: 100px;
-}
 
 .nav-logo img {
   width: 100px;
   object-fit: cover;
   margin-left: 20px;
-
 }
 
 .nav-menu {
@@ -119,7 +92,6 @@ input[type=reset]:active {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
 }
 
 .nav-menu a {
@@ -127,11 +99,10 @@ input[type=reset]:active {
   font-size: 1rem;
 }
 
-
 .nav-menu .btn_wrapper {
   position: relative;
   margin: 0 15px;
-  transition: .2s ease-in;
+  transition: 0.2s ease-in;
 }
 
 .nav-menu .btn_wrapper a {
@@ -139,16 +110,13 @@ input[type=reset]:active {
   height: 100%;
   text-decoration: none;
   font-family: var(--smallFont);
-  font-size: .9rem;
-  transition: .2s linear;
+  font-size: 0.9rem;
+  transition: 0.2s linear;
   color: rgb(205, 205, 205);
-
 }
 
 .nav-menu .btn_wrapper a:hover {
-
   color: rgb(146, 146, 146);
-
 }
 
 .nav-btn {
@@ -161,20 +129,17 @@ input[type=reset]:active {
   display: flex;
   justify-content: center;
   align-items: center;
-
-
 }
 
 .nav-btn i {
   color: var(--black-olive);
-  font-size: .9rem;
+  font-size: 0.9rem;
   transition: 0.2s linear;
 }
 
 .nav-btn:hover {
   transform: scale(1.1);
   background: var(--white);
-
 }
 
 .nav-btn:hover i {
@@ -225,7 +190,6 @@ input[type=reset]:active {
 
 .navigation_bottom .icon i {
   color: var(--second-white);
-
 }
 
 .navigation_bottom .social_links {
@@ -234,22 +198,19 @@ input[type=reset]:active {
   justify-content: center;
   align-items: flex-start;
   font-family: var(--smallFont);
-  font-size: .9rem;
-
+  font-size: 0.9rem;
 }
 
 .navigation_bottom .social_links a {
-  transition: .1s linear;
+  transition: 0.1s linear;
   text-decoration: none;
   color: var(--second-white);
-
 }
 
 .navigation_bottom .social_links a i {
   margin: 0 5px;
   transform: rotate(45deg);
-  font-size: .9rem;
-
+  font-size: 0.9rem;
 }
 
 .navigation_bottom .social_links a:hover {
@@ -257,7 +218,6 @@ input[type=reset]:active {
 }
 
 .navigation_bottom .profile {
-
   width: 45px;
   height: 45px;
 }
@@ -266,9 +226,9 @@ input[type=reset]:active {
   width: 45px;
   height: 45px;
   color: var(--second-white);
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-family: var(--smallFont);
-  transition: .2s linear;
+  transition: 0.2s linear;
   position: absolute;
   padding: 10px;
   border-radius: 50%;
@@ -296,8 +256,6 @@ input[type=reset]:active {
   display: none;
 }
 
-
-
 .navigation .left {
   width: 100%;
   height: 100%;
@@ -317,12 +275,10 @@ input[type=reset]:active {
   line-height: 0.8;
   text-align: right;
   overflow: hidden;
-
-
 }
 
 .navigation .left ul li::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -331,7 +287,7 @@ input[type=reset]:active {
   background: var(--second-white);
   height: 0%;
   z-index: -1;
-  transition: .2s linear;
+  transition: 0.2s linear;
 }
 
 .navigation .left ul li a {
@@ -352,7 +308,6 @@ input[type=reset]:active {
 
 .navigation .left ul li:hover::before {
   height: 100%;
-
 }
 
 .navigation .left ul li:hover>a {
@@ -369,9 +324,7 @@ input[type=reset]:active {
   z-index: 3;
 }
 
-
 .navigation .right .bot {
-
   place-content: center;
 }
 
@@ -381,9 +334,7 @@ input[type=reset]:active {
   font-weight: 500;
   font-family: var(--bigFont);
   text-align: left;
-
 }
-
 
 /* Loader */
 
@@ -395,8 +346,6 @@ input[type=reset]:active {
   width: 100vw;
   height: 100vh;
 }
-
-
 
 .loader .text_content {
   position: absolute;
@@ -425,7 +374,6 @@ input[type=reset]:active {
   color: var(--white);
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   line-height: 1;
-
 }
 
 .loader .loader_bg {
@@ -440,7 +388,6 @@ input[type=reset]:active {
   background: var(--black);
   z-index: 1000000;
 }
-
 
 /* Landing Page */
 
@@ -471,7 +418,6 @@ input[type=reset]:active {
 }
 
 .landing-page .content {
-
   width: 100%;
   display: flex;
   align-items: center;
@@ -506,7 +452,6 @@ input[type=reset]:active {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
-
 /* Lines Animation */
 .linesAnimation {
   text-align: center;
@@ -514,14 +459,12 @@ input[type=reset]:active {
 
 /* Page Transition */
 .inTransition {
-
   z-index: 100002;
   background: var(--second-white);
   width: 100vw;
   height: 100vh;
   position: fixed;
 }
-
 
 /* About Us section */
 .about-us {
@@ -634,12 +577,11 @@ input[type=reset]:active {
   font-family: var(--smallFont);
   position: relative;
   left: -500px;
-  transition: .2s linear;
-
+  transition: 0.2s linear;
 }
 
 .horizontalText p::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -648,7 +590,7 @@ input[type=reset]:active {
   background: var(--white);
   height: 0%;
   z-index: -1;
-  transition: .2s linear;
+  transition: 0.2s linear;
 }
 
 .horizontalText p:hover {
@@ -657,12 +599,7 @@ input[type=reset]:active {
 
 .horizontalText p:hover::before {
   height: 100%;
-
 }
-
-
-
-
 
 /* Help Bubble CSS */
 .help-bubble {
@@ -680,7 +617,7 @@ input[type=reset]:active {
   transition: transform 0.4s;
   font-family: var(--smallFont);
   background: var(--tropical);
-  font-size: .8rem;
+  font-size: 0.8rem;
   cursor: none;
 }
 
@@ -703,10 +640,7 @@ input[type=reset]:active {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-
 }
-
-
 
 /* Top Essence */
 .top-essence {
@@ -811,7 +745,6 @@ input[type=reset]:active {
   right: 0px; */
   top: -10px;
   right: -10px;
-
 }
 
 .top-essence .product .product-content {
@@ -852,7 +785,7 @@ input[type=reset]:active {
   margin: 5px;
   border-radius: 50px;
   transition: 0.2s ease-in-out;
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: 400;
   font-family: var(--smallFont);
   text-align: center;
@@ -862,7 +795,6 @@ input[type=reset]:active {
 .top-essence .product .product-content a:hover {
   scale: 1.02;
   filter: brightness(1);
-
 }
 
 .top-essence .product .product-content a:active {
@@ -889,7 +821,6 @@ input[type=reset]:active {
   justify-content: center;
   position: relative;
   cursor: none;
-
 }
 
 .remove_cursor {
@@ -927,7 +858,6 @@ input[type=reset]:active {
   width: 100%;
   height: 100%;
   position: absolute;
-
 }
 
 .testimonial .testimonial-image .image {
@@ -935,13 +865,12 @@ input[type=reset]:active {
   background: url(../assets/images/mockup.webp);
   background-size: 100%;
   will-change: background-position;
-  opacity: .3;
-  transition: background-size .3s ease-in-out,
-    opacity .3s ease-in-out;
+  opacity: 0.3;
+  transition: background-size 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .testimonial:hover>.testimonial-image .image {
-  opacity: .4;
+  opacity: 0.4;
   background-size: 101%;
 }
 
@@ -960,7 +889,6 @@ input[type=reset]:active {
 
 .testimonial-card {
   transition: all 0.5s ease;
-
 }
 
 .testimonial_card_indi {
@@ -1121,7 +1049,6 @@ footer {
   font-family: var(--smallFont);
   cursor: pointer;
   background: var(--white);
-
 }
 
 .cart-section {
@@ -1152,8 +1079,6 @@ footer {
 }
 
 @media (max-width: 1055px) {
-
-
   .about-us .container .wrapper {
     width: 100%;
     padding: 10px;
@@ -1175,7 +1100,6 @@ footer {
   }
 
   .content-container .content .content-title h1:nth-child(1) {
-
     font-size: 6rem;
     font-weight: 400;
   }
@@ -1274,15 +1198,12 @@ footer {
     margin: 10px 0;
     font-size: 1rem;
   }
-
-
 }
 
 @media (max-width: 850px) {
   .hide_nav {
     display: none;
   }
-
 }
 
 @media (max-width: 700px) {
@@ -1290,16 +1211,9 @@ footer {
     font-size: 2.5rem;
   }
 
-
-
-
-
   .nav-menu .btn_wrapper {
-
     margin: 0 10px;
-
   }
-
 
   .navigation_container {
     width: 100%;
@@ -1314,7 +1228,6 @@ footer {
   }
 
   .navigation .right {
-
     height: 50%;
     width: 100%;
     justify-content: center;
@@ -1325,7 +1238,6 @@ footer {
   .navigation .left ul li a {
     text-align: center;
     font-size: 3rem;
-
   }
 
   .navigation .left ul li {
@@ -1338,36 +1250,24 @@ footer {
 
   .navigation_bottom .icon {
     font-size: 3rem;
-
   }
 
   .navigation_bottom .social_links {
-
-    font-size: .7rem;
-
+    font-size: 0.7rem;
   }
 
   .navigation_bottom .social_links a i {
-
-    font-size: .7rem;
-
+    font-size: 0.7rem;
   }
-
 
   .navigation_bottom .profile {
     margin: 0 5px;
-    font-size: .8rem;
-
+    font-size: 0.8rem;
   }
-
-
 
   .navigation_bottom {
     padding: 8px;
-
   }
-
-
 
   .content-container .content .content-title h1 {
     font-size: 1.5rem;
@@ -1376,7 +1276,6 @@ footer {
   }
 
   .content-container .content .content-title h1:nth-child(1) {
-
     font-size: 4rem;
     font-weight: 400;
   }
@@ -1446,10 +1345,9 @@ footer {
   .image-slider-text .title {
     font-size: 0.8rem;
   }
-
 }
 
-@media (max-width:600px) {
+@media (max-width: 600px) {
   .landing-page .content h1 {
     font-size: 9rem;
   }
@@ -1457,24 +1355,18 @@ footer {
   .navigation-btn {
     padding: 0;
   }
-
-
 }
 
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .landing-page .content h1 {
     font-size: 7rem;
   }
-
-
 }
 
 @media (max-width: 400px) {
-
   .navigation .right .top p {
     width: 80%;
     font-size: 0.7rem;
-
   }
 
   .navigation .left {
@@ -1483,19 +1375,15 @@ footer {
   }
 
   .navigation .left ul li a {
-
     font-size: 2rem;
-
   }
 
   .nav-menu .btn_wrapper {
-
     margin: 0 10px;
-
   }
 
   .nav-menu .btn_wrapper a {
-    font-size: .7rem;
+    font-size: 0.7rem;
   }
 
   .top-essence .title h1:nth-child(1) {
@@ -1516,7 +1404,6 @@ footer {
   }
 
   .content-container .content .content-title h1:nth-child(1) {
-
     font-size: 3rem;
     font-weight: 400;
   }
@@ -1528,8 +1415,7 @@ footer {
   .landing-page .content h1 {
     letter-spacing: 1px;
     font-size: 8rem;
-    line-height: .8;
-
+    line-height: 0.8;
   }
 
   .landing-page .content p {
@@ -1555,8 +1441,6 @@ footer {
   animation: fadeIn 0.8s ease-in-out;
 }
 
-
-
 .nav-button {
   transition: all 0.3s ease;
 }
@@ -1565,8 +1449,6 @@ footer {
   background-color: var(--tropical);
   color: black;
 }
-
-
 
 /* Header Part */
 .header {
@@ -1740,7 +1622,7 @@ footer {
 }
 
 .product-nav {
-  margin: .5rem 0;
+  margin: 0.5rem 0;
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -1753,7 +1635,7 @@ footer {
 }
 
 .product-nav.product_nav_hidden {
-  opacity: .3;
+  opacity: 0.3;
   pointer-events: none;
 }
 
@@ -1770,26 +1652,24 @@ footer {
   color: var(--white);
   font-family: var(--smallFont);
   border-radius: 20px;
-  transition: .2s linear;
+  transition: 0.2s linear;
   min-width: 30%;
 }
 
 .search label i {
   color: var(--second-white);
   margin-left: 10px;
-  font-size: .9rem;
-  transition: .1s linear;
+  font-size: 0.9rem;
+  transition: 0.1s linear;
   cursor: pointer;
 }
 
 .search input:focus {
   border-color: var(--tropical);
-
 }
 
 .search input:hover {
   border-color: var(--white);
-
 }
 
 .search input:hover~label i {
@@ -1798,7 +1678,7 @@ footer {
 
 .search input::placeholder {
   font-family: var(--smallFont);
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: var(--second-white);
 }
 
@@ -1885,7 +1765,7 @@ footer {
   right: 35px;
   font-weight: 100;
   font-family: var(--bigFont);
-  transition: .1s linear;
+  transition: 0.1s linear;
   z-index: 2;
 }
 
@@ -1896,7 +1776,6 @@ footer {
 .product-section .product-container .product .product-image button.added {
   color: rgb(218, 109, 142);
 }
-
 
 .product-section .product-image img {
   width: 60%;
@@ -1945,19 +1824,17 @@ footer {
   transition: 0.2s linear;
   color: var(--black);
   font-family: var(--smallFont);
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .product-section .product .product-content button:disabled {
   color: var(--black);
   background: rgb(205, 205, 205);
-
 }
 
 .product-section .product .product-content button:not(:disabled):hover {
   scale: 1.02;
 }
-
 
 @media (max-width: 1055px) {
   .product-section .product-header h1 {
@@ -2355,13 +2232,12 @@ footer {
   color: var(--white);
   border: 1px solid transparent;
   font-family: var(--smallFont);
-  transition: .2s linear;
+  transition: 0.2s linear;
   cursor: pointer;
 }
 
 .contact_us .input_container .field input:hover {
   border-color: var(--white);
-
 }
 
 .contact_us .input_container .field input:focus {
@@ -2370,15 +2246,14 @@ footer {
 
 .contact_us .input_container .field input::placeholder {
   color: var(--tropical);
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 
 .textarea_container {
   width: 100%;
@@ -2414,7 +2289,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .textarea_container textarea::placeholder {
   color: rgba(188, 234, 255, 0.467);
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .input_buttons {
@@ -2445,13 +2320,10 @@ input[type=number]::-webkit-outer-spin-button {
 
 .input_buttons button:hover {
   scale: 1.04;
-
 }
-
 
 .input_buttons input:hover {
   scale: 1.04;
-
 }
 
 @media (max-width: 1250px) {
@@ -2550,7 +2422,6 @@ input[type=number]::-webkit-outer-spin-button {
 
   .contact_us {
     padding: 2rem 1rem;
-
   }
 
   .contact_us .textarea_container {
@@ -2600,8 +2471,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   .contact_us {
-
-    padding: 2rem .5rem;
+    padding: 2rem 0.5rem;
   }
 }
 
@@ -2639,7 +2509,6 @@ input[type=number]::-webkit-outer-spin-button {
   background: var(--black);
 }
 
-
 .about-content .about-video {
   width: 100%;
   height: 80vh;
@@ -2653,7 +2522,6 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .about-content .about-firstSection {
-
   height: 100vh;
   display: flex;
   justify-content: space-evenly;
@@ -2785,7 +2653,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   .about-content .about-firstSection .paragraph p {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 
   .about-secondSection,
@@ -2848,7 +2716,6 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 
-
 /* SignUp Login Part */
 
 .signup_section {
@@ -2867,7 +2734,6 @@ input[type=number]::-webkit-outer-spin-button {
   object-fit: cover;
   width: 100%;
   height: 100%;
-
 }
 
 .signup_section .signup_wrapper {
@@ -2896,7 +2762,6 @@ input[type=number]::-webkit-outer-spin-button {
   justify-content: center;
   align-items: center;
   will-change: transform;
-
 }
 
 .signup_section form {
@@ -2909,7 +2774,6 @@ input[type=number]::-webkit-outer-spin-button {
   gap: 10px;
   padding: 5px;
   font-size: 16px;
-
 }
 
 .signup_section h1 {
@@ -2938,7 +2802,7 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: var(--tropical);
   color: var(--black);
   border-radius: 10px 0 0 10px;
-  font-size: .9rem;
+  font-size: 0.9rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2955,12 +2819,12 @@ input[type=number]::-webkit-outer-spin-button {
   color: var(--white);
   font-family: var(--smallFont);
   font-size: 16px;
-  transition: .2s linear;
+  transition: 0.2s linear;
 }
 
 .signup_section form span {
   font-family: var(--smallFont);
-  font-size: .6rem;
+  font-size: 0.6rem;
   position: absolute;
   right: 0;
   height: 100%;
@@ -2993,7 +2857,7 @@ input[type=number]::-webkit-outer-spin-button {
   font-family: var(--smallFont);
   color: var(--black);
   background: var(--tropical);
-  transition: .2s linear;
+  transition: 0.2s linear;
 }
 
 .signup_section form button:hover {
@@ -3006,21 +2870,20 @@ input[type=number]::-webkit-outer-spin-button {
   display: inline-block;
   font-family: var(--smallFont);
   color: var(--white);
-  font-size: .8rem;
+  font-size: 0.8rem;
   pointer-events: none;
-
 }
 
 .signup_section p button {
   cursor: pointer;
-  transition: .2s linear;
+  transition: 0.2s linear;
   text-decoration: none;
   color: var(--tropical);
   pointer-events: all;
   background: none;
   outline: none;
   border: none;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .signup_section p button:hover {
@@ -3028,9 +2891,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .signup_section a {
-  font-size: .8rem;
+  font-size: 0.8rem;
   color: var(--tropical);
-  transition: .2s linear;
+  transition: 0.2s linear;
   font-family: var(--smallFont);
 }
 
@@ -3041,9 +2904,8 @@ input[type=number]::-webkit-outer-spin-button {
 .signup_section .error_message {
   margin: 10px 0;
   width: 80%;
-  font-size: .9rem;
+  font-size: 0.9rem;
   text-align: center;
-
 }
 
 .signup_section .error_message p {
@@ -3054,7 +2916,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 .signup_section .incorrect label {
   background: rgb(214, 102, 102);
-
 }
 
 .signup_section form div.incorrect input {
@@ -3069,14 +2930,11 @@ input[type=number]::-webkit-outer-spin-button {
   font-family: var(--smallFont);
   color: var(--white);
   display: inline-block;
-  font-size: .8rem;
+  font-size: 0.8rem;
   margin: 5px 0;
 }
 
-
-
-
-@media(max-width: 1100px) {
+@media (max-width: 1100px) {
   .signup_section .signup_wrapper {
     width: min(600px, 100%);
     border-radius: 0;
@@ -3087,9 +2945,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 
-@media(max-width: 500px) {
-
-
+@media (max-width: 500px) {
   .signup_section form div {
     flex-direction: column;
     position: relative;
@@ -3116,11 +2972,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .hiddenDefault {
-  opacity: .3;
+  opacity: 0.3;
   pointer-events: none;
-
 }
-
 
 .product_details {
   width: 100vw;
@@ -3159,8 +3013,6 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 20px;
   background: var(--black-olive);
   border-radius: 20px 0 0 20px;
-
-
 }
 
 .product_details_container .image .image_container {
@@ -3179,12 +3031,12 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .product_details_container .image span {
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: var(--white);
   font-weight: 300;
   position: relative;
   margin: 20px 15px;
-  transition: .2s linear;
+  transition: 0.2s linear;
 }
 
 .product_details_container .image span:hover {
@@ -3199,9 +3051,8 @@ input[type=number]::-webkit-outer-spin-button {
   position: absolute;
   left: 0;
   bottom: 0;
-  font-size: .9rem;
-  transition: .2s linear;
-
+  font-size: 0.9rem;
+  transition: 0.2s linear;
 }
 
 .product_details_container .image a:hover {
@@ -3237,7 +3088,7 @@ input[type=number]::-webkit-outer-spin-button {
 .product_details_container .content .desc span {
   color: var(--second-white);
   font-family: var(--smallFont);
-  font-size: .8rem;
+  font-size: 0.8rem;
   margin: 10px 0;
 }
 
@@ -3247,23 +3098,20 @@ input[type=number]::-webkit-outer-spin-button {
   color: var(--white);
   font-size: 1rem;
   line-height: 1.2;
-
 }
 
 .product_details_container .content .color {
   display: flex;
   flex-direction: column;
   width: 100%;
-
 }
 
 .product_details_container .content .color span {
   color: var(--second-white);
   font-family: var(--smallFont);
-  font-size: .8rem;
+  font-size: 0.8rem;
   margin: 5px 0;
 }
-
 
 .product_details_container .content .color .input-fields input {
   display: none;
@@ -3273,13 +3121,12 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 1rem;
   margin-right: 10px;
   border: 1px solid transparent;
-  transition: .2s linear;
+  transition: 0.2s linear;
   cursor: pointer;
-
 }
 
 .product_details_container .content .color .input-fields label:hover {
-  filter: brightness(.8);
+  filter: brightness(0.8);
 }
 
 .product_details_container .content .color .input-fields label:nth-child(1) {
@@ -3308,7 +3155,6 @@ input[type=number]::-webkit-outer-spin-button {
   justify-content: center;
   align-items: flex-start;
   width: 100%;
-
 }
 
 .product_details_container .content .quantity .input {
@@ -3323,19 +3169,18 @@ input[type=number]::-webkit-outer-spin-button {
   color: black;
   border-radius: 5px;
   padding: 5px;
-  transition: .2s linear;
+  transition: 0.2s linear;
 }
 
 .product_details_container .content .quantity .input button i {
-  font-size: .9rem;
+  font-size: 0.9rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
 .product_details_container .content .quantity .input button:hover {
-  filter: brightness(.7);
+  filter: brightness(0.7);
 }
 
 .product_details_container .content .quantity .input input {
@@ -3344,14 +3189,14 @@ input[type=number]::-webkit-outer-spin-button {
   background: none;
   color: var(--white);
   font-family: var(--smallFont);
-  font-size: .9rem;
+  font-size: 0.9rem;
   text-align: center;
 }
 
 .product_details_container .content .quantity span {
   color: var(--second-white);
   font-family: var(--smallFont);
-  font-size: .8rem;
+  font-size: 0.8rem;
   margin: 5px 0;
 }
 
@@ -3365,7 +3210,7 @@ input[type=number]::-webkit-outer-spin-button {
 .product_details_container .content .price span {
   color: var(--second-white);
   font-family: var(--smallFont);
-  font-size: .8rem;
+  font-size: 0.8rem;
   margin: 5px 0;
 }
 
@@ -3389,9 +3234,9 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: var(--tropical);
   outline: none;
   border: 1px solid transparent;
-  transition: .2s linear;
+  transition: 0.2s linear;
   font-family: var(--smallFont);
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .product_details_container .content .btn button:disabled {
@@ -3406,15 +3251,13 @@ input[type=number]::-webkit-outer-spin-button {
 
 .product_details_container .content .btn button:not(:disabled):hover {
   scale: 1.02;
-
 }
 
 #productImage {
-  transition: filter .2s linear;
+  transition: filter 0.2s linear;
 }
 
-
-@media (max-width : 800px) {
+@media (max-width: 800px) {
   .product_details .product_details_container {
     flex-direction: column;
     width: 90%;
@@ -3451,7 +3294,6 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;
     align-items: center;
     justify-content: center;
-
   }
 
   .product_details .product_details_container .image a {
@@ -3471,7 +3313,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   .product_details_container .content .desc p {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   .product_details_container .content>div span {
@@ -3493,15 +3335,12 @@ input[type=number]::-webkit-outer-spin-button {
   .product_details_container .content .price {
     width: 100%;
   }
-
-
 }
 
-@media (max-width : 700px) {
+@media (max-width: 700px) {
   .product_details_container .content {
     padding: 20px;
     width: 100%;
-
   }
 
   .product_details .product_details_container .image span {
@@ -3519,7 +3358,6 @@ input[type=number]::-webkit-outer-spin-button {
 
   .product_details_container .content .price h1 {
     font-size: 1.25rem;
-
   }
 
   .product_details_container .content .btn {
@@ -3528,12 +3366,10 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   .product_details_container .content .btn button {
-    font-size: .7rem;
+    font-size: 0.7rem;
     padding: 8px 10px;
   }
-
 }
-
 
 .success {
   position: fixed;
@@ -3594,11 +3430,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .payment_method {
-  transition: .2s linear;
+  transition: 0.2s linear;
   outline: none;
   border: 1px solid transparent;
   background: rgb(225, 225, 225);
-  font-size: .8rem;
+  font-size: 0.8rem;
   text-align: center;
   color: black;
   font-family: var(--smallFont);
@@ -3613,7 +3449,6 @@ input[type=number]::-webkit-outer-spin-button {
 .payment_method:hover {
   border-color: black;
 }
-
 
 .payment_method option {
   text-align: center;
@@ -3630,7 +3465,6 @@ input[type=number]::-webkit-outer-spin-button {
   backdrop-filter: blur(5px);
   background: rgba(0, 0, 0, 0.5);
   display: none;
-
 }
 
 .receipt .warning {
@@ -3643,9 +3477,8 @@ input[type=number]::-webkit-outer-spin-button {
 .receipt .warning p {
   text-align: center;
   color: white;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-family: var(--smallFont);
-
 }
 
 .receipt.open {
@@ -3670,7 +3503,6 @@ input[type=number]::-webkit-outer-spin-button {
   width: 100%;
   height: 10%;
   margin: 5px 0;
-
 }
 
 .receipt .receipt_card .header h1 {
@@ -3684,16 +3516,13 @@ input[type=number]::-webkit-outer-spin-button {
   filter: brightness(0);
 }
 
-
 .receipt .receipt_card .receipt-info {
   margin: 20px 0;
   width: 100%;
   text-align: center;
   font-family: var(--smallFont);
-  font-size: .7rem;
+  font-size: 0.7rem;
   color: rgb(30, 30, 30);
-
-
 }
 
 .receipt .receipt_card .order_info {
@@ -3711,7 +3540,7 @@ input[type=number]::-webkit-outer-spin-button {
   grid-template-columns: 2fr 1fr 1fr;
   gap: 5px;
   width: 100%;
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: black;
 
   align-items: flex-start;
@@ -3719,15 +3548,14 @@ input[type=number]::-webkit-outer-spin-button {
 
 .receipt .receipt_card .order_info .row:nth-child(1) {
   color: rgb(32, 32, 32);
-  font-size: .7rem;
+  font-size: 0.7rem;
   margin: 8px 0;
   font-weight: bold;
-
 }
 
 .receipt .receipt_card .order_info .total {
   font-weight: bold;
-  font-size: .7rem;
+  font-size: 0.7rem;
   color: black;
   margin-top: 10px;
   border-top: 1px solid white;
@@ -3737,13 +3565,12 @@ input[type=number]::-webkit-outer-spin-button {
 .receipt .receipt_card .download-btn {
   text-align: right;
   width: 100%;
-
 }
 
 .receipt .receipt_card .download-btn button {
   color: rgb(150, 150, 150);
-  transition: .2s linear;
-  font-size: .9rem;
+  transition: 0.2s linear;
+  font-size: 0.9rem;
 }
 
 .receipt .receipt_card .download-btn button:hover {
@@ -3766,9 +3593,7 @@ input[type=number]::-webkit-outer-spin-button {
   pointer-events: auto;
   transform: translateX(400px);
   will-change: transform;
-
 }
-
 
 .wishlist .heading {
   width: 100%;
@@ -3782,7 +3607,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .wishlist .heading h1 {
   font-family: var(--bigFont);
-  line-height: .8;
+  line-height: 0.8;
   font-size: 2rem;
   font-weight: 500;
 }
@@ -3797,7 +3622,7 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: .2s linear;
+  transition: 0.2s linear;
 }
 
 .wishlist .heading button:hover {
@@ -3836,12 +3661,11 @@ input[type=number]::-webkit-outer-spin-button {
 .wishlist .product_container .product .image {
   width: 130px;
   aspect-ratio: 1;
-
 }
 
 .wishlist .product_container .product button {
   width: 100%;
-  font-size: .7rem;
+  font-size: 0.7rem;
   color: rgb(193, 92, 92);
   font-family: var(--smallFont);
   text-align: center;
@@ -3870,37 +3694,34 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 1.5rem;
   text-transform: uppercase;
   width: 100%;
-  line-height: .9;
+  line-height: 0.9;
 }
-
 
 .product_info span {
   color: rgb(59, 100, 59);
   font-size: 1rem;
   font-weight: 600;
   margin: 0 15px;
-
 }
 
 .product_info p {
-  font-size: .7rem;
+  font-size: 0.7rem;
   font-family: var(--smallFont);
   width: 100%;
   line-height: 1;
   margin: 12px 0;
   text-align: justify;
   color: rgb(43, 43, 43);
-
 }
 
 .product_info a {
   background: var(--tropical);
   border-radius: 15px;
   padding: 8px 10px;
-  font-size: .7rem;
+  font-size: 0.7rem;
   font-family: var(--smallFont);
   border: 1px solid transparent;
-  transition: .2s linear;
+  transition: 0.2s linear;
 }
 
 .product_info a:hover {
@@ -3923,7 +3744,6 @@ input[type=number]::-webkit-outer-spin-button {
   object-fit: contain;
   object-position: center;
   filter: saturate(0);
-
 }
 
 /* Alert Cart */
@@ -3954,13 +3774,12 @@ input[type=number]::-webkit-outer-spin-button {
   width: 100vw;
   height: 15vh;
   z-index: 9999;
-  font-size: .9rem;
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
   justify-content: center;
   pointer-events: none;
 }
-
 
 .notification .success_msg {
   position: absolute;
@@ -3996,11 +3815,10 @@ input[type=number]::-webkit-outer-spin-button {
   color: rgb(227, 79, 79);
 }
 
-
 #vecteezy {
   font-family: var(--smallFont);
   color: var(--gray);
-  font-size: .9rem;
+  font-size: 0.9rem;
   text-align: center;
 }
 
@@ -4011,24 +3829,22 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 ::view-transition-old(root) {
-  animation: 1.3s cubic-bezier(.78, .07, .16, .94) both move-out;
+  animation: 1.3s cubic-bezier(0.78, 0.07, 0.16, 0.94) both move-out;
 }
 
 ::view-transition-new(root) {
-  animation: 1.3s cubic-bezier(.78, .07, .16, .94) both move-in;
+  animation: 1.3s cubic-bezier(0.78, 0.07, 0.16, 0.94) both move-in;
 }
 
 @keyframes move-out {
   from {
     transform: translateY(0%);
     opacity: 1;
-
   }
 
   to {
     transform: translateY(-20%);
-    opacity: .5;
-
+    opacity: 0.5;
   }
 }
 

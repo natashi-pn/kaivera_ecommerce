@@ -365,24 +365,29 @@ function aboutAnimation() {
   linesScrollAnimationSplit.forEach((split) => split.revert());
   linesScrollAnimationSplit = [];
 
-  linesScrollAnimation.forEach((el) => {
-    el.innerHTML = el.textContent;
+  document.fonts.ready.then(() => {
 
-    const split = new SplitText(el, {
-      type: "lines",
-      linesClass: "line-wrapper",
+
+    linesScrollAnimation.forEach((el) => {
+      el.innerHTML = el.textContent;
+
+      const split = new SplitText(el, {
+        type: "lines",
+        linesClass: "line-wrapper",
+      });
+
+      split.lines.forEach((line) => {
+        const inner = document.createElement("span");
+        inner.classList.add("line");
+        inner.innerHTML = line.innerHTML;
+        line.innerHTML = "";
+        line.appendChild(inner);
+      });
+
+      linesScrollAnimationSplit.push(split);
     });
+  })
 
-    split.lines.forEach((line) => {
-      const inner = document.createElement("span");
-      inner.classList.add("line");
-      inner.innerHTML = line.innerHTML;
-      line.innerHTML = "";
-      line.appendChild(inner);
-    });
-
-    linesScrollAnimationSplit.push(split);
-  });
 
   linesScrollAnimationSplit.forEach((split) => {
     split.lines.forEach((lineWrapper) => {
@@ -852,7 +857,6 @@ function setUpNavigation() {
     })
   })
   navBtn.addEventListener("click", () => {
-    console.log("click")
     if (!isOpen) {
 
       gsap.to(navigation, {
@@ -1790,6 +1794,7 @@ function setUpCart() {
   });
 
 }
+
 
 // Page Load Functions
 function initGlobal() {
