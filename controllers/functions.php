@@ -99,7 +99,6 @@ function getUserType($user_email)
     return $user;
 }
 
-
 function getReviews()
 {
     global $conn;

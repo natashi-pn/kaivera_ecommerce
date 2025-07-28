@@ -1790,15 +1790,6 @@ function setUpCart() {
   });
 
 }
-const setUpTransition = () => {
-  const links = document.querySelectorAll("a");
-
-  links.forEach(link => {
-
-  });
-};
-
-
 
 // Page Load Functions
 function initGlobal() {
