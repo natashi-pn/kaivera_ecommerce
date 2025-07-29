@@ -8,20 +8,10 @@ if (!isset($user_type) || $user_type !== 'admin') {
     header("Location: ../home.php");
 }
 
-// Normal Objects i think
-
 $categories = getCategories();
-$products = getProducts();
-$users = getUsersDesc();
-$order_items = getOrderItems();
 $discounts = getDiscounts();
 $messages = getMessages();
 $reviews = getReviews();
-
-
-
-
-
 $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 ?>
 
@@ -276,11 +266,11 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
         <!-- Order Items Section -->
 
-        <section id="order_items">
+        <section id="order_items" class="<?php echo ($go_to === 'order_items') ? 'active' : ''; ?>">
             <div class="heading">
                 <h1>Order Items Table</h1>
-                <form action="../controllers/admin_search_order_items.php" method="POST">
-                    <input type="text" name="" id="" placeholder="Enter Order ID">
+                <form action="../controllers/admin_search/admin_search_order_items.php" method="POST">
+                    <input type="text" name="search_username" id="" placeholder="Enter Order ID">
                     <button type="submit">Search</button>
                 </form>
             </div>
@@ -317,6 +307,14 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
                                 <?php
 
+                                // Conditional Rendering
+
+                                if (!isset($_SESSION['searched_order_items'])) {
+                                    $order_items = getOrderItems();
+                                } else {
+                                    $order_items = $_SESSION['searched_order_items'];
+                                    unset($_SESSION['searched_order_items']);
+                                }
                                 foreach ($order_items as $order_item) {
                                 ?>
                                     <tr class=" bg-[#dde2ed] text-gray-800 table_row">
@@ -348,8 +346,8 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
         <section id="products" class="<?php echo ($go_to === 'products') ? 'active' : ''; ?>">
             <div class="heading">
                 <h1>Products Table</h1>
-                <form action="../controllers/admin_search_order.php" method="POST">
-                    <input type="text" name="" id="" placeholder="Enter Product Name">
+                <form action="../controllers/admin_search/admin_search_product.php" method="POST">
+                    <input type="text" name="search" id="" placeholder="Enter Product Name">
                     <button type="submit">Search</button>
                 </form>
                 <div class="add_btn">
@@ -395,6 +393,14 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
                                 <?php
 
+                                // Conditional Rendering
+
+                                if (!isset($_SESSION['searched_products'])) {
+                                    $products = getProducts();
+                                } else {
+                                    $products = $_SESSION['searched_products'];
+                                    unset($_SESSION['searched_products']);
+                                }
                                 foreach ($products as $product) {
                                 ?>
                                     <tr class=" bg-[#dde2ed] text-gray-800 table_row">
@@ -438,8 +444,8 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
         <section id="users" class="<?php echo ($go_to === 'users') ? 'active' : ''; ?>">
             <div class="heading">
                 <h1>Users Table</h1>
-                <form action="../controllers/admin_search_order.php" method="POST">
-                    <input type="text" name="" id="" placeholder="Enter Username">
+                <form action="../controllers/admin_search/admin_search_user.php" method="POST">
+                    <input type="text" name="search" id="" placeholder="Enter Username">
                     <button type="submit">Search</button>
                 </form>
                 <div class="add_btn">
@@ -485,6 +491,14 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
                                 <?php
 
+                                // Conditional Rendering
+
+                                if (!isset($_SESSION['searched_users'])) {
+                                    $users = getUsersDesc();
+                                } else {
+                                    $users = $_SESSION['searched_users'];
+                                    unset($_SESSION['searched_users']);
+                                }
                                 foreach ($users as $user) {
                                 ?>
                                     <tr class=" bg-[#dde2ed] text-gray-800 table_row">

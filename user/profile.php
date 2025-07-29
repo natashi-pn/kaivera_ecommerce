@@ -23,6 +23,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Kaivera Profile</title>
+    <link rel="icon" href="../assets/images/kaivera logo icon.png" type="image/png">
     <link rel="stylesheet" href="../css/profile.css">
     <link rel="stylesheet" href="../css/user_tables.css">
     <script src="https://kit.fontawesome.com/69e1242b61.js" crossorigin="anonymous"></script>
