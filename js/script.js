@@ -1005,15 +1005,17 @@ function modeToggle() {
   document.addEventListener("DOMContentLoaded", function () {
     const light_mode = document.getElementById("light_mode");
     const dark_mode = document.getElementById("dark_mode");
-
+    const logo = document.getElementById("logo");
     const savedMode = localStorage.getItem("mode");
 
     if (savedMode === "light") {
       document.body.classList.add("light");
+      logo.src = "../assets/images/kaivera logo dark.webp";
       light_mode.classList.add("hidden");
       dark_mode.classList.remove("hidden");
     } else {
       document.body.classList.remove("light");
+      logo.src = "../assets/images/kaivera logo.png";
       dark_mode.classList.add("hidden");
       light_mode.classList.remove("hidden");
     }
@@ -1023,6 +1025,7 @@ function modeToggle() {
       light_mode.classList.add("hidden");
       dark_mode.classList.remove("hidden");
       document.body.classList.add("light");
+      logo.src = "../assets/images/kaivera logo dark.webp";
       localStorage.setItem("mode", "light");
     });
 
@@ -1031,6 +1034,8 @@ function modeToggle() {
       dark_mode.classList.add("hidden");
       light_mode.classList.remove("hidden");
       document.body.classList.remove("light");
+      logo.src = "../assets/images/kaivera logo.png";
+
       localStorage.setItem("mode", "dark");
     });
   });
