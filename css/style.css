@@ -73,7 +73,7 @@ input[type="reset"]:active {
   z-index: 102;
   pointer-events: none;
   border-radius: 15px;
-  backdrop-filter: blur(30px);
+  backdrop-filter: blur(40px);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -112,19 +112,18 @@ input[type="reset"]:active {
   font-family: var(--smallFont);
   font-size: 0.9rem;
   transition: 0.2s linear;
-  color: rgb(205, 205, 205);
+  color: var(--white);
 }
 
 .nav-menu .btn_wrapper a:hover {
-  color: rgb(146, 146, 146);
+  color: var(--tropical);
 }
 
 .nav-btn {
-  margin: 0 10px;
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background: rgb(166, 166, 166);
+  background: var(--white);
   transition: 0.2s linear;
   display: flex;
   justify-content: center;
@@ -399,9 +398,10 @@ input[type="reset"]:active {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  background: var(--black);
 }
 
-.hero-img {
+/* .hero-img {
   position: absolute;
   top: 0;
   left: 0;
@@ -415,29 +415,74 @@ input[type="reset"]:active {
   width: 100%;
   object-fit: cover;
   will-change: transform;
-}
+  opacity: 0;
+} */
 
 .landing-page .content {
   width: 100%;
+  height: 50%;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   place-content: center;
+  position: absolute;
+  bottom: 0;
 }
 
 .landing-page .content h1 {
+  position: absolute;
   margin: 20px 0;
   width: 100%;
   text-align: center;
   font-size: 15vw;
-  color: white;
+  color: var(--white);
   font-family: var(--smallFont);
   text-transform: uppercase;
-  letter-spacing: -10px;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  letter-spacing: -3px;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   line-height: 0.8;
+  white-space: nowrap;
+  transition: .2s ease;
 }
+
+.landing-page .content h1:nth-child(1) {
+  bottom: 0;
+}
+
+.landing-page .content h1:nth-child(2) {
+  font-size: 14.5vw;
+  bottom: 100px;
+  clip-path: polygon(0 0, 100% 0, 100% 57%, 0 57%);
+  opacity: .5;
+
+}
+
+.landing-page .content h1:nth-child(3) {
+  font-size: 14.3vw;
+  bottom: 165px;
+  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+  opacity: .3;
+
+}
+
+.landing-page .content h1:nth-child(4) {
+  font-size: 14vw;
+
+  bottom: 190px;
+  clip-path: polygon(0 0, 100% 0, 100% 15%, 0 15%);
+  opacity: .1;
+
+}
+
+.landing-page .content:hover>h1 {
+  opacity: .5;
+}
+
+.landing-page .content:hover>h1:hover {
+  opacity: 1;
+}
+
 
 .landing-page .content p {
   margin: 20px 0;
@@ -457,20 +502,14 @@ input[type="reset"]:active {
   text-align: center;
 }
 
-/* Page Transition */
-.inTransition {
-  z-index: 100002;
-  background: var(--second-white);
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-}
 
 /* About Us section */
 .about-us {
   width: 100%;
   background: var(--black);
   padding: 50px;
+  position: relative;
+
 }
 
 .about-us .container {
@@ -534,7 +573,7 @@ input[type="reset"]:active {
 }
 
 .content-container .content .content-title h1 {
-  color: var(--white);
+  color: var(--second-white);
   font-family: var(--bigFont);
   font-size: 1.8rem;
   font-weight: 500;
@@ -653,10 +692,11 @@ input[type="reset"]:active {
   color: var(--white);
   text-align: center;
   cursor: pointer;
-  margin-top: 80px;
+  margin-top: 10px;
 }
 
 .top-essence .title h1:nth-child(1) {
+  color: var(--white);
   font-size: 5rem;
   font-family: var(--bigFont);
   font-weight: 300;
@@ -672,9 +712,6 @@ input[type="reset"]:active {
   font-family: var(--smallFont);
 }
 
-.top-essence .title h1 span {
-  color: var(--tropical);
-}
 
 .top-essence .product-container {
   display: grid;
@@ -1167,9 +1204,7 @@ footer {
     padding: 2rem;
   }
 
-  .landing-page .content h1 {
-    letter-spacing: -1px;
-  }
+
 
   .landing-page .content p {
     width: 50%;
@@ -1207,8 +1242,26 @@ footer {
 }
 
 @media (max-width: 700px) {
+
+  .landing-page .content h1:nth-child(2) {
+    bottom: 80px;
+  }
+
+  .landing-page .content h1:nth-child(3) {
+    bottom: 140px;
+  }
+
+  .landing-page .content h1:nth-child(4) {
+    bottom: 180px;
+  }
+
   .top-essence .title h1:nth-child(1) {
-    font-size: 2.5rem;
+    font-size: 3rem;
+    white-space: nowrap;
+  }
+
+  .top-essence {
+    padding: 10px;
   }
 
   .nav-menu .btn_wrapper {
@@ -1318,10 +1371,7 @@ footer {
     width: 80%;
   }
 
-  .landing-page .content h1 {
-    letter-spacing: -5px;
-    font-size: 11rem;
-  }
+
 
   .image-slider {
     width: 100%;
@@ -1348,22 +1398,18 @@ footer {
 }
 
 @media (max-width: 600px) {
-  .landing-page .content h1 {
-    font-size: 9rem;
-  }
+
 
   .navigation-btn {
     padding: 0;
   }
 }
 
-@media (max-width: 500px) {
-  .landing-page .content h1 {
-    font-size: 7rem;
-  }
-}
+
 
 @media (max-width: 400px) {
+
+
   .navigation .right .top p {
     width: 80%;
     font-size: 0.7rem;
@@ -1384,6 +1430,18 @@ footer {
 
   .nav-menu .btn_wrapper a {
     font-size: 0.7rem;
+  }
+
+  .landing-page .content h1:nth-child(2) {
+    bottom: 50px;
+  }
+
+  .landing-page .content h1:nth-child(3) {
+    bottom: 90px;
+  }
+
+  .landing-page .content h1:nth-child(4) {
+    bottom: 115px;
   }
 
   .top-essence .title h1:nth-child(1) {
@@ -1412,11 +1470,6 @@ footer {
     font-size: 1rem;
   }
 
-  .landing-page .content h1 {
-    letter-spacing: 1px;
-    font-size: 8rem;
-    line-height: 0.8;
-  }
 
   .landing-page .content p {
     font-size: 0.7rem;

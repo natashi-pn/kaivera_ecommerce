@@ -18,6 +18,7 @@ $topProducts = getTopProducts();
   <script src="https://kit.fontawesome.com/69e1242b61.js" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="js/script.js" defer></script>
+  <script src="js/scrollText.js" defer></script>
 </head>
 
 <body data-page="home" class="light">
@@ -59,16 +60,11 @@ $topProducts = getTopProducts();
 
   <section class="landing-page" id="landing-page">
 
-    <div class="hero-img">
-      <img src="assets/images/hero-img5.webp" alt="" data-speed="0.45" class="image-parallax" />
-    </div>
     <div class="content">
       <h1>Wildcrafted</h1>
-      <p class="heroPara">
-        Kaivera is more than a brand, it’s a state of being. From sun-washed
-        shores to urban streets, our pieces carry the spirit of nature and the
-        polish of design. Meticulously crafted. Undeniably distinct.
-      </p>
+      <h1>Wildcrafted</h1>
+      <h1>Wildcrafted</h1>
+      <h1>Wildcrafted</h1>
     </div>
   </section>
 
@@ -77,7 +73,7 @@ $topProducts = getTopProducts();
   <section class="about-us">
     <div class="container">
       <div class="wrapper">
-        <p class="linesAnimation">
+        <p class="linesAnimation about_text">
           Kaivera blends timeless design with the quiet elegance of nature,
           offering a refined lifestyle rooted in quality and intention. Each
           piece whether worn or carried is a reflection of subtle luxury,
@@ -93,8 +89,8 @@ $topProducts = getTopProducts();
     <div class="content-container" id="content-container">
       <div class="content">
         <div class="content-title">
-          <h1 class="charsAnimation">01</h1>
-          <h1 class="charsAnimation">ElEGANT</h1>
+          <h1 class="linesAnimation">01</h1>
+          <h1 class="linesAnimation">ElEGANT</h1>
         </div>
         <div class="content-desc">
           <p class="linesAnimation">
@@ -105,8 +101,8 @@ $topProducts = getTopProducts();
       </div>
       <div class="content">
         <div class="content-title">
-          <h1 class="charsAnimation">02</h1>
-          <h1 class="charsAnimation">TROPICAL</h1>
+          <h1 class="linesAnimation">02</h1>
+          <h1 class="linesAnimation">TROPICAL</h1>
         </div>
         <div class="content-desc">
           <p class="linesAnimation">
@@ -116,8 +112,8 @@ $topProducts = getTopProducts();
       </div>
       <div class="content">
         <div class="content-title">
-          <h1 class="charsAnimation">03</h1>
-          <h1 class="charsAnimation">TIMELESS</h1>
+          <h1 class="linesAnimation">03</h1>
+          <h1 class="linesAnimation">TIMELESS</h1>
         </div>
         <div class="content-desc">
           <p class="linesAnimation">
@@ -157,7 +153,7 @@ $topProducts = getTopProducts();
   <!-- Top Essence Products -->
   <section class="top-essence">
     <div class="title">
-      <h1 class="charsAnimation">Top Essence of Kaivera</h1>
+      <h1 class="linesAnimation">Top Essence of Kaivera</h1>
       <p class="linesAnimation">
         Discover our signature designer sneakers where tropical soul meets
         timeless luxury.

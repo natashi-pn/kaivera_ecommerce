@@ -235,14 +235,10 @@ function setUpHome() {
           },
         });
       });
-      gsap.from(".landing-page .hero-img img", {
-        scale: 1.3,
-        duration: 3,
-        ease: "power4.inOut",
-        delay: delay,
-      });
+
     }
   });
+
 
   // Scroll Trigger
   gsap.set(".horizontalText p", {
@@ -365,28 +361,28 @@ function aboutAnimation() {
   linesScrollAnimationSplit.forEach((split) => split.revert());
   linesScrollAnimationSplit = [];
 
-  document.fonts.ready.then(() => {
 
 
-    linesScrollAnimation.forEach((el) => {
-      el.innerHTML = el.textContent;
 
-      const split = new SplitText(el, {
-        type: "lines",
-        linesClass: "line-wrapper",
-      });
+  linesScrollAnimation.forEach((el) => {
+    el.innerHTML = el.textContent;
 
-      split.lines.forEach((line) => {
-        const inner = document.createElement("span");
-        inner.classList.add("line");
-        inner.innerHTML = line.innerHTML;
-        line.innerHTML = "";
-        line.appendChild(inner);
-      });
-
-      linesScrollAnimationSplit.push(split);
+    const split = new SplitText(el, {
+      type: "lines",
+      linesClass: "line-wrapper",
     });
-  })
+
+    split.lines.forEach((line) => {
+      const inner = document.createElement("span");
+      inner.classList.add("line");
+      inner.innerHTML = line.innerHTML;
+      line.innerHTML = "";
+      line.appendChild(inner);
+    });
+
+    linesScrollAnimationSplit.push(split);
+  });
+
 
 
   linesScrollAnimationSplit.forEach((split) => {
