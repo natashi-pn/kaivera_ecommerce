@@ -52,4 +52,25 @@ gsap.to(heroText4, {
 })
 
 
+const video_container = document.querySelector(".hero-video");
+const video = document.querySelector(".hero-video .video");
 
+
+gsap.to(video, {
+    y: "730px",
+    width: "96vw",
+    height: "75vh",
+    scrollTrigger: {
+        trigger: video,
+        start: "-100px top",
+        end: "600px center",
+        scrub: 1,
+    }
+})
+
+const hero_video = document.getElementById("load_video");
+const hero_spinner = document.getElementById("hero_spinner")
+
+hero_video.addEventListener("canplaythrough", () => {
+    hero_spinner.style.display = "none"
+})

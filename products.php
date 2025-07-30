@@ -55,7 +55,12 @@ unset($_SESSION['order_id']);
   <!-- Header Section -->
   <section class="header">
     <div class="background-video">
-      <video src="assets/videos/Gradientsection.mp4" autoplay muted loop playsinline></video>
+      <div class="spinner" id="spinner">
+        <div class="absolute top-0 right-0 h-screen w-screen z-50 flex justify-center items-center">
+          <div class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2"></div>
+        </div>
+      </div>
+      <video src="assets/videos/Gradientsection.mp4" id="header_video" autoplay muted loop playsinline></video>
     </div>
     <div class="header-content">
       <div class="header-links">

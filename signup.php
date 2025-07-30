@@ -52,7 +52,12 @@ if (isset($_GET['form']) && $_GET['form'] === 'login') {
 
     <section class="signup_section">
         <div class="video">
-            <video src="assets/videos/Gradientsection.mp4" autoplay muted playsinline loop></video>
+            <div class="spinner" id="spinner">
+                <div class="absolute top-0 right-0 h-screen w-screen z-50 flex justify-center items-center">
+                    <div class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2"></div>
+                </div>
+            </div>
+            <video src="assets/videos/Gradientsection.mp4" id="header_video" autoplay muted playsinline loop></video>
         </div>
 
         <div class="signup_wrapper">

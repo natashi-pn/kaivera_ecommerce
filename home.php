@@ -18,7 +18,7 @@ $topProducts = getTopProducts();
   <script src="https://kit.fontawesome.com/69e1242b61.js" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="js/script.js" defer></script>
-  <script src="js/scrollText.js" defer></script>
+  <script src="js/script2.js" defer></script>
 </head>
 
 <body data-page="home" class="light">
@@ -59,7 +59,9 @@ $topProducts = getTopProducts();
   <!-- Home Page Section -->
 
   <section class="landing-page" id="landing-page">
-
+    <div class="hero-img">
+      <img src="assets/images/hero-img5.webp" alt="">
+    </div>
     <div class="content">
       <h1>Wildcrafted</h1>
       <h1>Wildcrafted</h1>
@@ -68,18 +70,28 @@ $topProducts = getTopProducts();
     </div>
   </section>
 
+  <section class="hero-video">
+
+    <div class="video">
+      <div class="video_container">
+        <div id="hero_spinner" class="absolute w-full h-full z-1000 flex justify-center items-center bg-gray-400 rounded-[10px]">
+          <div class="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2"></div>
+        </div>
+
+        <video src="assets/videos/Aboutus.mp4" id="load_video" autoplay muted playsinline loop></video>
+      </div>
+    </div>
+  </section>
 
   <!-- About us Section -->
   <section class="about-us">
     <div class="container">
       <div class="wrapper">
         <p class="linesAnimation about_text">
-          Kaivera blends timeless design with the quiet elegance of nature,
-          offering a refined lifestyle rooted in quality and intention. Each
-          piece whether worn or carried is a reflection of subtle luxury,
-          crafted to elevate the everyday. Inspired by tropical calm and
-          minimalist sophistication, Kaivera invites you to step into a world
-          where beauty feels effortless and enduring.
+          Kaivera blends timeless design with the quiet elegance of nature
+          offering a refined lifestyle rooted in quality. Each
+          piece whether worn or carried is a reflection of subtle luxury. We invites you to step into a world
+          where beauty feels effortless.
         </p>
 
         <a href="about.php">About Us</a>
@@ -94,8 +106,7 @@ $topProducts = getTopProducts();
         </div>
         <div class="content-desc">
           <p class="linesAnimation">
-            A refined fusion of minimalist aesthetics and luxurious
-            sophistication in every detail.
+            A refined fusion of minimalist aesthetics sophistication in every detail.
           </p>
         </div>
       </div>
@@ -117,7 +128,7 @@ $topProducts = getTopProducts();
         </div>
         <div class="content-desc">
           <p class="linesAnimation">
-            Designed beyond the constraints of trends quality, and quiet
+            Designed beyond the constraints of trends quality and
             confidence.
           </p>
         </div>
@@ -134,8 +145,8 @@ $topProducts = getTopProducts();
       </div>
       <div class="paragraph">
         <p class="scrollLine">
-          Kaivera is more than just a brand it's a lifestyle inspired by the
-          elegance of nature and the spirit of tropical escape.
+          Kaivera is more than just a brand it's a lifestyle with the
+          elegance of nature.
         </p>
       </div>
     </div>

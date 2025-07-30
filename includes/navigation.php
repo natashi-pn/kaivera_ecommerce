@@ -4,20 +4,14 @@
      <img src="assets/images/kaivera logo.png" id="logo" alt="" />
    </div>
 
-   <div class="nav-menu">
-     <div class="btn_wrapper hide_nav">
-       <a href="home.php">Home</a>
-     </div>
-     <div class="btn_wrapper hide_nav">
-       <a href="products.php">Products</a>
-     </div>
-     <div class="btn_wrapper hide_nav">
+   <div class="nav-menu-middle">
+     <div class="btn_wrapper hide_nav middle">
        <a href="about.php">About</a>
      </div>
-     <div class="btn_wrapper hide_nav">
+     <div class="btn_wrapper hide_nav middle">
        <a href="contact.php">Contact</a>
      </div>
-     <div class="btn_wrapper hide_nav">
+     <div class="btn_wrapper hide_nav middle">
        <a href="signup.php">Sign Up</a>
      </div>
 

@@ -53,6 +53,7 @@ html {
   background: transparent;
 }
 
+
 button:active,
 a:active,
 input[type="submit"]:active,
@@ -67,23 +68,20 @@ input[type="reset"]:active {
   right: 10px;
   height: 10vh;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 20px;
   z-index: 102;
   pointer-events: none;
   border-radius: 15px;
   backdrop-filter: blur(40px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
-
-
 
 
 .nav-logo img {
   width: 100px;
   object-fit: cover;
-  margin-left: 20px;
 }
 
 .nav-menu {
@@ -92,6 +90,29 @@ input[type="reset"]:active {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  z-index: 100;
+}
+
+.nav-menu-middle {
+  display: flex;
+  width: 97.5%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 99;
+  pointer-events: all;
+}
+
+.nav-menu-middle .btn_wrapper a {
+  color: var(--white);
+  font-size: 1rem;
+  margin: 0 20px;
+}
+
+.nav-menu-middle .btn_wrapper a:hover {
+  color: var(--tropical);
+
 }
 
 .nav-menu a {
@@ -103,6 +124,10 @@ input[type="reset"]:active {
   position: relative;
   margin: 0 15px;
   transition: 0.2s ease-in;
+}
+
+.nav-menu .btn_wrapper.middle {
+  margin-right: 50px;
 }
 
 .nav-menu .btn_wrapper a {
@@ -128,6 +153,7 @@ input[type="reset"]:active {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 5px;
 }
 
 .nav-btn i {
@@ -146,8 +172,10 @@ input[type="reset"]:active {
 }
 
 .nav-btn:active {
-  transform: scale(0.93);
+  transform: scale(0.95);
 }
+
+
 
 /* Navigation */
 
@@ -217,15 +245,14 @@ input[type="reset"]:active {
 }
 
 .navigation_bottom .profile {
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
 }
 
 .navigation_bottom .profile button {
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   color: var(--second-white);
-  font-size: 0.9rem;
   font-family: var(--smallFont);
   transition: 0.2s linear;
   position: absolute;
@@ -235,20 +262,39 @@ input[type="reset"]:active {
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: modeToggle 2s infinite;
+}
+
+
+@keyframes modeToggle {
+  0% {
+    background: transparent;
+
+  }
+
+  50% {
+    background: rgba(127, 127, 127, 0.15);
+
+  }
+
+  100% {
+    background: transparent;
+
+  }
 }
 
 .navigation_bottom .profile button:hover {
-  transform: scale(1.03);
-  background: rgba(127, 127, 127, 0.15);
+  transform: scale(1.1);
+
 }
 
 .navigation_bottom .profile button:active {
-  scale: 0.93;
+  scale: 0.98;
 }
 
 .navigation_bottom .profile button i {
   color: var(--white);
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .navigation_bottom .profile button.hidden {
@@ -401,13 +447,13 @@ input[type="reset"]:active {
   background: var(--black);
 }
 
-/* .hero-img {
+.hero-img {
   position: absolute;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100vw;
-  z-index: -1;
+  z-index: 2;
 }
 
 .hero-img img {
@@ -415,8 +461,7 @@ input[type="reset"]:active {
   width: 100%;
   object-fit: cover;
   will-change: transform;
-  opacity: 0;
-} */
+}
 
 .landing-page .content {
   width: 100%;
@@ -489,12 +534,49 @@ input[type="reset"]:active {
   place-content: center;
   place-self: center;
   width: 35%;
-
   text-align: center;
   color: rgb(176, 176, 176);
   font-size: 0.8rem;
   font-family: var(--smallFont);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* Hero Video */
+.hero-video {
+  position: absolute;
+  top: 90px;
+  width: 100vw;
+  height: 300px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-video .video {
+  border-radius: 10px;
+  width: 330px;
+  height: 200px;
+  will-change: transform;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+
+}
+
+.video_container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  border-radius: 10px;
+
+}
+
+.video_container video {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+
 }
 
 /* Lines Animation */
@@ -505,17 +587,20 @@ input[type="reset"]:active {
 
 /* About Us section */
 .about-us {
-  width: 100%;
-  background: var(--black);
   padding: 50px;
+  padding-top: 530px;
+  width: 100vw;
+  background: var(--black);
   position: relative;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .about-us .container {
   place-items: center;
   width: 100%;
-  place-content: center;
 }
 
 .about-us .container .wrapper {
@@ -562,7 +647,7 @@ input[type="reset"]:active {
 
 .content-container .content {
   padding: 0 5px;
-  border-left: 2px solid var(--white);
+  border-left: 1px solid rgba(132, 132, 132, 0.6);
   display: flex;
   flex-direction: column;
   height: 500px;
@@ -580,6 +665,8 @@ input[type="reset"]:active {
   line-height: 0.9;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   cursor: pointer;
+  text-align: left;
+
 }
 
 .content-container .content .content-title h1:nth-child(1) {
@@ -707,7 +794,7 @@ input[type="reset"]:active {
 
 .top-essence .title p {
   font-size: 1.1rem;
-  font-weight: 300;
+  font-weight: 400;
 
   font-family: var(--smallFont);
 }
@@ -1116,9 +1203,10 @@ footer {
 }
 
 @media (max-width: 1055px) {
+
   .about-us .container .wrapper {
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -1134,6 +1222,7 @@ footer {
     font-size: 1.6rem;
     font-weight: 400;
     line-height: 0.9;
+    text-align: left;
   }
 
   .content-container .content .content-title h1:nth-child(1) {
@@ -1401,7 +1490,7 @@ footer {
 
 
   .navigation-btn {
-    padding: 0;
+    padding: 10px;
   }
 }
 
@@ -1525,6 +1614,23 @@ footer {
   height: 100%;
   object-fit: cover;
   background-position: center;
+}
+
+.spinner {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1d2025;
+  z-index: 50;
+}
+
+.animate-spin {
+  color: var(--tropical);
+  border-color: var(--tropical);
 }
 
 .header .header-content {
@@ -3635,7 +3741,8 @@ input[type="number"]::-webkit-outer-spin-button {
   position: fixed;
   top: 0;
   right: 0;
-  width: 400px;
+  max-width: 400px;
+  width: 100vw;
   height: 100vh;
   backdrop-filter: blur(20px);
   z-index: 99;

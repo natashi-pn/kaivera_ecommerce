@@ -15,7 +15,6 @@ function showNotification(html) {
 
 }
 function setUpLoader() {
-  //Telling the browser to load the animations.js file
 
   function init() {
     setUpAnimation();
@@ -29,6 +28,7 @@ function setUpLoader() {
     }
   });
 }
+
 
 function setUpHome() {
   const showLoader = !sessionStorage.getItem("kaiveraVisited");
@@ -82,10 +82,10 @@ function setUpHome() {
           setTimeout(updateCounter, delay);
         }
       }
-      // document.querySelector('.loader').style.display = "block";
 
       const loader_bg = document.querySelectorAll(".loader .loader_bg");
       const loading_text = document.querySelectorAll(".loader .text_content h1");
+
       const arr_text = [];
 
       loading_text.forEach((el) => {
@@ -144,6 +144,8 @@ function setUpHome() {
         delay: 3
 
       });
+
+
       gsap.to(".loader .loader_bg_bottom", {
         clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
         duration: 1.3,
@@ -162,6 +164,7 @@ function setUpHome() {
         },
       });
 
+
       gsap.to(".loader", {
         delay: 6,
         onComplete: () => {
@@ -171,11 +174,11 @@ function setUpHome() {
 
 
       updateCounter();
-      startMainAnimation(2.5);
+      startMainAnimation(3.5);
 
 
     } else {
-
+      document.querySelector(".hero-img").style.display = "none"
       document.querySelector(".loader").style.display = "none";
       lenis.start();
       requestAnimationFrame(raf);
@@ -194,6 +197,9 @@ function setUpHome() {
 
       const heroPara = document.querySelectorAll(".heroPara");
       const heroParaSplit = [];
+
+      const video = document.querySelector(".hero-video .video");
+
 
       heroPara.forEach((el) => {
         const split = new SplitText(el, {
@@ -235,6 +241,33 @@ function setUpHome() {
           },
         });
       });
+      gsap.set(".hero-img", {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        scale: 1.3,
+      });
+      gsap.to(".hero-img", {
+        scale: 1,
+        duration: 2,
+        ease: "power4.inOut",
+        delay: delay
+      })
+      gsap.to(".hero-img", {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+        duration: 3,
+        ease: "power4.inOut",
+        delay: delay,
+        onComplete: () => {
+          document.querySelector(".hero-img").style.display = "none"
+        }
+      })
+
+      gsap.from(video, {
+        duration: 1.5,
+        ease: "power4.inOut",
+        delay: delay + 1.3,
+        clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)"
+      })
+
 
     }
   });
@@ -968,7 +1001,6 @@ function setUpNavigation() {
 
           })
 
-
           open = false;
         }
       });
@@ -988,16 +1020,9 @@ function setUpNavigation() {
       });
     }
 
-
-
-
-
-
   }
   rebindWishlist();
   modeToggle();
-
-
 
 }
 
@@ -1010,11 +1035,15 @@ function modeToggle() {
 
     if (savedMode === "light") {
       document.body.classList.add("light");
+
+      document.querySelector(".navigation-btn").style.background = "#ebf4f280";
       logo.src = "../assets/images/kaivera logo dark.webp";
       light_mode.classList.add("hidden");
       dark_mode.classList.remove("hidden");
     } else {
       document.body.classList.remove("light");
+      document.querySelector(".navigation-btn").style.background = "transparent";
+
       logo.src = "../assets/images/kaivera logo.png";
       dark_mode.classList.add("hidden");
       light_mode.classList.remove("hidden");
@@ -1025,12 +1054,17 @@ function modeToggle() {
       light_mode.classList.add("hidden");
       dark_mode.classList.remove("hidden");
       document.body.classList.add("light");
+
+      document.querySelector(".navigation-btn").style.background = "#ebf4f280";
+
       logo.src = "../assets/images/kaivera logo dark.webp";
       localStorage.setItem("mode", "light");
     });
 
     dark_mode.addEventListener("click", function (e) {
       e.preventDefault();
+      document.querySelector(".navigation-btn").style.background = "transparent";
+
       dark_mode.classList.add("hidden");
       light_mode.classList.remove("hidden");
       document.body.classList.remove("light");
@@ -1301,9 +1335,13 @@ function setUpProduct() {
       });
     });
 
-    document.querySelector(".go_to_cart").addEventListener('click', () => {
-      alert_cart.classList.remove("added");
-    });
+
+    if (document.querySelector(".go_to_cart")) {
+      document.querySelector(".go_to_cart").addEventListener('click', () => {
+        alert_cart.classList.remove("added");
+      });
+    }
+
 
 
 
@@ -1797,6 +1835,15 @@ function setUpCart() {
 }
 
 
+function setUpVideoLoads() {
+  const spinner = document.querySelector(".spinner");
+  const video = document.getElementById("header_video");
+  video.addEventListener("canplaythrough", () => {
+    spinner.style.display = "none";
+  })
+
+}
+
 // Page Load Functions
 function initGlobal() {
   setUpHelpBubble();
@@ -1810,27 +1857,27 @@ function initHome() {
   setUpParallax();
   setUpSliderImage();
   aboutAnimation();
-
 }
 
 function initProduct() {
   setUpLenis();
   setUpProduct();
-
+  setUpVideoLoads()
 }
 
 function initCart() {
   setUpCart();
   setUpLenis();
-
+  setUpVideoLoads()
 }
 function initContact() {
   setUpLenis();
   setUpContact();
+
 }
 
 function initAbout() {
-
+  setUpVideoLoads()
   setUpLenis();
   setUpAbout();
   setUpSliderImage();
@@ -1839,6 +1886,7 @@ function initAbout() {
 }
 
 function initSignup() {
+  setUpVideoLoads()
   setUpSignup();
 }
 function initAdmin() {
