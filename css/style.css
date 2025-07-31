@@ -40,6 +40,7 @@ html {
   overflow-x: hidden;
 }
 
+
 ::-webkit-scrollbar {
   width: 0;
 }
@@ -85,7 +86,6 @@ input[type="reset"]:active {
 }
 
 .nav-menu {
-  padding: 10px;
   pointer-events: all;
   display: flex;
   justify-content: flex-end;
@@ -148,27 +148,40 @@ input[type="reset"]:active {
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background: var(--white);
+  border: 1px solid rgba(129, 129, 129, 0.644);
   transition: 0.2s linear;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 5px;
+  position: relative;
 }
 
-.nav-btn i {
-  color: var(--black-olive);
-  font-size: 0.9rem;
-  transition: 0.2s linear;
+.nav-btn:before {
+  content: "";
+  background: var(--white);
+  position: absolute;
+  z-index: 2;
+  width: 16px;
+  height: 1px;
+  top: 14px;
+}
+
+.nav-btn:after {
+  content: "";
+  background: var(--white);
+  position: absolute;
+  z-index: 2;
+  width: 10px;
+  height: 1px;
+  top: 18px;
+  right: 10px;
 }
 
 .nav-btn:hover {
   transform: scale(1.1);
-  background: var(--white);
-}
+  background: rgba(129, 129, 129, 0.1);
 
-.nav-btn:hover i {
-  color: var(--black);
 }
 
 .nav-btn:active {
@@ -187,7 +200,7 @@ input[type="reset"]:active {
   height: 100vh;
   width: 100vw;
   padding: 3rem;
-  background: var(--black);
+  background: var(--black-olive);
 }
 
 .navigation_bottom {
@@ -483,6 +496,7 @@ input[type="reset"]:active {
   font-size: 15vw;
   color: var(--white);
   font-family: var(--smallFont);
+  font-weight: 300;
   text-transform: uppercase;
   letter-spacing: -3px;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
@@ -742,7 +756,7 @@ input[type="reset"]:active {
   pointer-events: none;
   transition: transform 0.4s;
   font-family: var(--smallFont);
-  background: var(--tropical);
+  background: var(--white);
   font-size: 0.8rem;
   cursor: none;
 }
@@ -795,8 +809,9 @@ input[type="reset"]:active {
 .top-essence .title p {
   font-size: 1.1rem;
   font-weight: 400;
-
+  color: var(--second-white);
   font-family: var(--smallFont);
+  margin-top: 10px;
 }
 
 
@@ -947,9 +962,6 @@ input[type="reset"]:active {
   cursor: none;
 }
 
-.remove_cursor {
-  cursor: none;
-}
 
 .testimonial .testimonial-text {
   width: 50%;
@@ -1432,7 +1444,7 @@ footer {
 
   .top-essence .title p {
     font-size: 0.8rem;
-    font-weight: 200;
+
   }
 
   .testimonial-title {

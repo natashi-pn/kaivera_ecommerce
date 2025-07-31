@@ -18,7 +18,6 @@
    </div>
    <div class="nav-menu">
      <div class="nav-btn" id="nav-btn">
-       <i class="fa-solid fa-caret-down"></i>
      </div>
    </div>
 
@@ -55,10 +54,6 @@
      </div>
    </div>
    <section class="navigation_bottom">
-
-     <div class="icon help-target" data-help="Our Partner">
-       <a href="#"><i class="fa-brands fa-pied-piper"></i></a>
-     </div>
      <div class="social_links help-target" data-help="Social Links">
        <a href="#">Instagram<i class="fa-solid fa-arrow-up"></i></a>
        <a href="#">facebook<i class="fa-solid fa-arrow-up"></i></a>

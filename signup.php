@@ -25,10 +25,6 @@ if (isset($_GET['form']) && $_GET['form'] === 'login') {
 
 <body data-page="signup">
 
-    <div class="notification"></div>
-
-    <!-- Help Bubble -->
-    <div class="help-bubble"></div>
 
     <!-- Navigation -->
 
@@ -49,102 +45,107 @@ if (isset($_GET['form']) && $_GET['form'] === 'login') {
     ?>
 
     <!-- Navigation ends -->
+    <div class="notification"></div>
+    <main>
 
-    <section class="signup_section">
-        <div class="video">
-            <div class="spinner" id="spinner">
-                <div class="absolute top-0 right-0 h-screen w-screen z-50 flex justify-center items-center">
-                    <div class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2"></div>
+        <!-- Help Bubble -->
+        <div class="help-bubble"></div>
+        <section class="signup_section">
+            <div class="video">
+                <div class="spinner" id="spinner">
+                    <div class="absolute top-0 right-0 h-screen w-screen z-50 flex justify-center items-center">
+                        <div class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2"></div>
+                    </div>
                 </div>
+                <video src="assets/videos/Gradientsection.mp4" id="header_video" autoplay muted playsinline loop></video>
             </div>
-            <video src="assets/videos/Gradientsection.mp4" id="header_video" autoplay muted playsinline loop></video>
-        </div>
 
-        <div class="signup_wrapper">
-            <h1>Sign Up</h1>
-            <?php
+            <div class="signup_wrapper">
+                <h1>Sign Up</h1>
+                <?php
 
-            if (isset($_SESSION['success'])) {
-                echo "<p style='color: #9fc9b7;'>{$_SESSION['success']}</p>";
-                unset($_SESSION['success']);
-            }
-            if (isset($_SESSION['error'])) {
-                echo "<p style='color: rgb(214, 102, 102);'>{$_SESSION['error']}</p>";
-                unset($_SESSION['error']);
-            }
+                if (isset($_SESSION['success'])) {
+                    echo "<p style='color: #9fc9b7;'>{$_SESSION['success']}</p>";
+                    unset($_SESSION['success']);
+                }
+                if (isset($_SESSION['error'])) {
+                    echo "<p style='color: rgb(214, 102, 102);'>{$_SESSION['error']}</p>";
+                    unset($_SESSION['error']);
+                }
 
-            ?>
+                ?>
 
 
-            <form action="controllers/signup.php" id="signup_form" enctype="multipart/form-data" method="POST">
-                <div>
-                    <label for="username_input"><i class="fa-solid fa-user"></i></label>
-                    <input type="text" name="username" id="username_input" placeholder="Username" onkeyup="checkAvailability('username', this.value)">
-                    <span id="username_status"></span>
+                <form action="controllers/signup.php" id="signup_form" enctype="multipart/form-data" method="POST">
+                    <div>
+                        <label for="username_input"><i class="fa-solid fa-user"></i></label>
+                        <input type="text" name="username" id="username_input" placeholder="Username" onkeyup="checkAvailability('username', this.value)">
+                        <span id="username_status"></span>
+                    </div>
+                    <div>
+                        <label for="email_input"><i class="fa-solid fa-envelope"></i></label>
+                        <input type="email" name="email" id="email_input" placeholder="Email" onkeyup="checkAvailability('email', this.value)">
+                        <span id="email_status"></span>
+                    </div>
+                    <div>
+                        <label for="phone_input"><i class="fa-solid fa-phone"></i></label>
+                        <input type="number" name="phone" id="phone_input" placeholder="Phone">
+                    </div>
+                    <div>
+                        <label for="password_input"><i class="fa-solid fa-key"></i></label>
+                        <input type="password" name="password" id="password_input" placeholder="Set Password">
+                    </div>
+                    <div>
+                        <label for="repeat_password_input"><i class="fa-solid fa-key"></i></label>
+                        <input type="password" name="repeat_password" id="repeat_password_input" placeholder="Repeat Password">
+                    </div>
+                    <button type="submit">SignUp</button>
+                </form>
+                <div class="error_message">
+                    <p id="signup_error_message"></p>
                 </div>
-                <div>
-                    <label for="email_input"><i class="fa-solid fa-envelope"></i></label>
-                    <input type="email" name="email" id="email_input" placeholder="Email" onkeyup="checkAvailability('email', this.value)">
-                    <span id="email_status"></span>
-                </div>
-                <div>
-                    <label for="phone_input"><i class="fa-solid fa-phone"></i></label>
-                    <input type="number" name="phone" id="phone_input" placeholder="Phone">
-                </div>
-                <div>
-                    <label for="password_input"><i class="fa-solid fa-key"></i></label>
-                    <input type="password" name="password" id="password_input" placeholder="Set Password">
-                </div>
-                <div>
-                    <label for="repeat_password_input"><i class="fa-solid fa-key"></i></label>
-                    <input type="password" name="repeat_password" id="repeat_password_input" placeholder="Repeat Password">
-                </div>
-                <button type="submit">SignUp</button>
-            </form>
-            <div class="error_message">
-                <p id="signup_error_message"></p>
+                <p>Already Have An Account ? <button id="loginBtn">Login</button></p>
             </div>
-            <p>Already Have An Account ? <button id="loginBtn">Login</button></p>
-        </div>
 
-        <!-- Login Form -->
+            <!-- Login Form -->
 
-        <div class="login_wrapper">
-            <h1>Login</h1>
-            <?php
+            <div class="login_wrapper">
+                <h1>Login</h1>
+                <?php
 
-            if (isset($_SESSION['login_success'])) {
-                echo "<p style='color: #9fc9b7;'>{$_SESSION['login_success']}</p>";
-                unset($_SESSION['login_success']);
-            }
-            if (isset($_SESSION['login_error'])) {
-                echo "<p style='color: rgb(214, 102, 102);'>{$_SESSION['login_error']}</p>";
-                unset($_SESSION['login_error']);
-            }
+                if (isset($_SESSION['login_success'])) {
+                    echo "<p style='color: #9fc9b7;'>{$_SESSION['login_success']}</p>";
+                    unset($_SESSION['login_success']);
+                }
+                if (isset($_SESSION['login_error'])) {
+                    echo "<p style='color: rgb(214, 102, 102);'>{$_SESSION['login_error']}</p>";
+                    unset($_SESSION['login_error']);
+                }
 
 
-            ?>
-            <form action="controllers/login.php" id="login_form" method="POST">
-                <div>
-                    <label for="login_email_input"><i class="fa-solid fa-envelope"></i></label>
-                    <input type="email" name="email" id="login_email_input" placeholder="Email">
+                ?>
+                <form action="controllers/login.php" id="login_form" method="POST">
+                    <div>
+                        <label for="login_email_input"><i class="fa-solid fa-envelope"></i></label>
+                        <input type="email" name="email" id="login_email_input" placeholder="Email">
+                    </div>
+                    <div>
+                        <label for="login_password_input"><i class="fa-solid fa-key"></i></label>
+                        <input type="password" name="password" id="login_password_input" placeholder="Set Password">
+                    </div>
+
+                    <button type="submit">Login</button>
+                </form>
+                <div class="error_message">
+                    <p id="login_error_message"></p>
                 </div>
-                <div>
-                    <label for="login_password_input"><i class="fa-solid fa-key"></i></label>
-                    <input type="password" name="password" id="login_password_input" placeholder="Set Password">
-                </div>
-
-                <button type="submit">Login</button>
-            </form>
-            <div class="error_message">
-                <p id="login_error_message"></p>
+                <span>Forgot Password ? <a href="user/reset_password.php">Reset Password</a></span>
+                <p>Doesn't Have An Account ? <button id="signUpBtn">Sign Up</button></p>
             </div>
-            <span>Forgot Password ? <a href="user/reset_password.php">Reset Password</a></span>
-            <p>Doesn't Have An Account ? <button id="signUpBtn">Sign Up</button></p>
-        </div>
-    </section>
+        </section>
+    </main>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/CustomEase.min.js"></script>
 
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"

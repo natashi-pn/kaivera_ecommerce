@@ -221,7 +221,7 @@ fetch('../dashboard/payment_methods.php')
         const { labels, data } = result;
 
         const backgroundColors = [
-            '#6752d2ff', '#2196f3', '#255a73ff', '#47be6fff', '#80d783ff', '#00bcd4'
+            '#6752d2ff', '#6fb0e5ff', '#5eccd6ff', '#e1e1e1ff',
         ];
 
         new Chart(document.getElementById('paymentMethodsChart').getContext('2d'), {
@@ -231,7 +231,7 @@ fetch('../dashboard/payment_methods.php')
                 datasets: [{
                     data: data,
                     backgroundColor: backgroundColors.slice(0, labels.length),
-                    borderWidth: 1,
+                    borderWidth: 0,
                     borderColor: '#fff',
                 }]
             },

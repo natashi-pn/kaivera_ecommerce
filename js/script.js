@@ -1,6 +1,8 @@
 gsap.registerPlugin(SplitText);
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(CustomEase);
 
+CustomEase.create("hop", ".87, 0, .13, 1");
 reinitializePage();
 
 const message_area = document.querySelector(".notification");
@@ -174,7 +176,7 @@ function setUpHome() {
 
 
       updateCounter();
-      startMainAnimation(3.5);
+      startMainAnimation(3);
 
 
     } else {
@@ -253,9 +255,9 @@ function setUpHome() {
       })
       gsap.to(".hero-img", {
         clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-        duration: 3,
+        duration: 2,
         ease: "power4.inOut",
-        delay: delay,
+        delay: delay + .2,
         onComplete: () => {
           document.querySelector(".hero-img").style.display = "none"
         }
@@ -264,7 +266,7 @@ function setUpHome() {
       gsap.from(video, {
         duration: 1.5,
         ease: "power4.inOut",
-        delay: delay + 1.3,
+        delay: delay + 2,
         clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)"
       })
 
@@ -792,8 +794,8 @@ function setUpHelpBubble() {
 
   document.addEventListener("mousemove", (e) => {
     if (active) {
-      helpBubble.style.left = `${e.clientX - 50}px`;
-      helpBubble.style.top = `${e.clientY - 50}px`;
+      helpBubble.style.left = `${e.clientX}px`;
+      helpBubble.style.top = `${e.clientY}px`;
     }
   });
 
@@ -803,12 +805,12 @@ function setUpHelpBubble() {
       helpBubble.textContent = helpText;
       helpBubble.style.transform = "scale(1)";
       active = true;
-      document.body.classList.add(".remove_cursor");
+
     });
 
     div.addEventListener("mouseleave", () => {
       helpBubble.style.transform = "scale(0)";
-      document.body.classList.remove(".remove_cursor");
+
 
       active = false;
     });
@@ -876,62 +878,63 @@ function setUpNavigation() {
   let isOpen = false;
 
   gsap.set(navigation, {
-
     clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)"
+  })
 
+  gsap.set(navigation_link, {
+    y: 100
   })
-  navigation_link.forEach((link) => {
-    gsap.set(link, {
-      y: 100
-    })
-  })
+
   navBtn.addEventListener("click", () => {
     if (!isOpen) {
 
       gsap.to(navigation, {
+        opacity: 1,
         y: "0%",
-        duration: 1.3,
-        ease: "power4.out",
-
-      })
-      gsap.to(navigation, {
-        duration: 1.5,
-        ease: "power4.out",
+        duration: 1,
+        ease: "hop",
         clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)"
-
+      })
+      gsap.to("main", {
+        opacity: 0.3,
+        y: "50svh",
+        duration: 1,
+        ease: "hop"
+      })
+      gsap.to(navigation_link, {
+        y: 0,
+        duration: 2,
+        ease: "hop",
+        stagger: 0.075,
+        delay: -0.3
       })
 
-      navigation_link.forEach((link) => {
-        gsap.to(link, {
-          y: 0,
-          duration: 1.2,
-          ease: "power4.out",
-          stagger: 1
-        })
-      })
 
     } else {
       gsap.to(navigation, {
         y: "-100%",
-        duration: 1.5,
-        ease: "power4.inOut",
-
-      })
-
-      gsap.to(navigation, {
-        duration: 1.3,
-        ease: "power3.inOut",
+        opacity: 0.3,
+        duration: 1,
+        ease: "hop",
         clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)"
+
+      })
+      gsap.to("main", {
+        opacity: 1,
+        y: "-5svh",
+        duration: 1,
+        ease: "hop"
+      })
+      gsap.to(navigation_link, {
+        y: 100,
+        duration: .5,
+        ease: "hop",
+        stagger: {
+          each: 0.05,
+          from: "end"
+        }
       })
 
-      navigation_link.forEach((link) => {
-        gsap.to(link, {
-          y: 100,
-          duration: 1,
-          ease: "power4.inOut",
-          stagger: 1
-        })
-      })
       navigation.classList.remove("visible");
     }
 

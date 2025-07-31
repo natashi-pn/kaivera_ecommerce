@@ -25,7 +25,6 @@
              <a href="admin/admin.php"><i class="fa-solid fa-screwdriver-wrench"></i></a>
          </div>
          <div class="nav-btn">
-             <i class="fa-solid fa-caret-down"></i>
          </div>
      </div>
  </section>
@@ -64,10 +63,6 @@
      </div>
 
      <section class="navigation_bottom">
-
-         <div class="icon help-target" data-help="Our Partner">
-             <a href="#"><i class="fa-brands fa-pied-piper"></i></a>
-         </div>
          <div class="social_links help-target" data-help="Social Links">
              <a href="#">Instagram<i class="fa-solid fa-arrow-up"></i></a>
              <a href="#">facebook<i class="fa-solid fa-arrow-up"></i></a>
@@ -76,6 +71,7 @@
          </div>
 
          <div class="profile">
+
              <button id="light_mode" class="hidden"><i class="fa-solid fa-sun"></i></button>
              <button id="dark_mode"><i class="fa-solid fa-moon"></i></button>
          </div>
