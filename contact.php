@@ -67,17 +67,17 @@ $isLoggedIn = isset($_SESSION['user_data']['user_type']);
             </p>
           </div>
           <div class="contact-row">
-            <h1>Personalized Support, Always</h1>
+            <h1>Personalized Support</h1>
             <p>
-              Our customer care team is dedicated to providing tailored
-              assistance with grace and precision.
+              Our customer care team is dedicated to providing
+              assistance with patience and precision.
             </p>
           </div>
           <div class="contact-row">
             <h1>Connect with Kaivera</h1>
             <p>
               Feel free to reach out through our contact form, email, or social
-              platforms. We aim to respond within 24 hours.
+              platforms.
             </p>
           </div>
         </div>

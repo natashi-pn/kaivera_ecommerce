@@ -1,8 +1,10 @@
  <!-- Navigation -->
  <section class="navigation-btn">
-   <div class="nav-logo">
-     <img src="assets/images/kaivera logo.png" id="logo" alt="" />
-   </div>
+
+     <div class="nav-logo">
+       <img src="assets/images/kaivera logo.png" id="logo" alt="" />
+     </div>
+
 
    <div class="nav-menu-middle">
      <div class="btn_wrapper hide_nav middle">

@@ -863,6 +863,7 @@ function reloadWishlist(user_id) {
       wishlistContainer.innerHTML = html;
     })
     .catch(err => {
+      // showNotification(err);
       console.error("Error loading wishlist items:", err);
     });
 }
@@ -903,17 +904,16 @@ function setUpNavigation() {
       })
       gsap.to(navigation_link, {
         y: 0,
-        duration: 2,
+        duration: 1.5,
         ease: "hop",
         stagger: 0.075,
-        delay: -0.3
+        delay: -0.35,
       })
 
 
     } else {
       gsap.to(navigation, {
         y: "-100%",
-        opacity: 0.3,
         duration: 1,
         ease: "hop",
         clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)"
@@ -921,18 +921,20 @@ function setUpNavigation() {
       })
       gsap.to("main", {
         opacity: 1,
-        y: "-5svh",
+        y: "0svh",
         duration: 1,
         ease: "hop"
       })
       gsap.to(navigation_link, {
         y: 100,
-        duration: .5,
+        duration: .8,
         ease: "hop",
         stagger: {
           each: 0.05,
           from: "end"
-        }
+        },
+        delay: -0.3,
+
       })
 
       navigation.classList.remove("visible");
@@ -1027,6 +1029,7 @@ function setUpNavigation() {
   rebindWishlist();
   modeToggle();
 
+
 }
 
 function modeToggle() {
@@ -1039,7 +1042,7 @@ function modeToggle() {
     if (savedMode === "light") {
       document.body.classList.add("light");
 
-      document.querySelector(".navigation-btn").style.background = "#ebf4f280";
+      document.querySelector(".navigation-btn").style.background = "#ffffff7b";
       logo.src = "../assets/images/kaivera logo dark.webp";
       light_mode.classList.add("hidden");
       dark_mode.classList.remove("hidden");
@@ -1058,7 +1061,7 @@ function modeToggle() {
       dark_mode.classList.remove("hidden");
       document.body.classList.add("light");
 
-      document.querySelector(".navigation-btn").style.background = "#ebf4f280";
+      document.querySelector(".navigation-btn").style.background = "#ffffff7b";
 
       logo.src = "../assets/images/kaivera logo dark.webp";
       localStorage.setItem("mode", "light");
@@ -1086,6 +1089,7 @@ function rebindWishlist() {
 
       const user_id = button.dataset.userId;
       const product_id = button.dataset.productId;
+
       const formData = new FormData();
       formData.append("user_id", user_id);
       formData.append("product_id", product_id);
@@ -1117,6 +1121,9 @@ function rebindWishlist() {
       const user_id = btn.dataset.userId;
       const product_id = btn.dataset.productId;
 
+      if (!user_id || !product_id) return;
+
+
       const isAdded = btn.classList.contains("added");
 
       const formData = new FormData();
@@ -1128,7 +1135,12 @@ function rebindWishlist() {
         method: "POST",
         body: formData
       })
-        .then(res => res.text())
+        .then(res => {
+          if (!res.ok) {
+            return res.text().then(msg => { throw new Error(msg); });
+          }
+          return res.text();
+        })
         .then(response => {
           showNotification(response);
           if (isAdded) {
@@ -1400,7 +1412,7 @@ function setUpSliderImage() {
     const videoFilters = [
       "sepia(0.9) saturate(1.8) brightness(1.1)",
       "grayscale(1) saturate(0)",
-      "grayscale(0.4) sepia(0.2) saturate(1.5) hue-rotate(150deg)",
+      "grayscale(0.4) sepia(0.2) saturate(1.3) hue-rotate(70deg)",
     ];
 
     const strip = document.getElementById("strip");

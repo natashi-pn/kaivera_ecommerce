@@ -134,12 +134,10 @@ require_once("controllers/functions.php");
       <div class="container">
         <div class="wrapper">
           <p class="linesAnimation">
-            Kaivera blends timeless design with the quiet elegance of nature,
-            offering a refined lifestyle rooted in quality and intention. Each
-            piece whether worn or carried is a reflection of subtle luxury,
-            crafted to elevate the everyday. Inspired by tropical calm and
-            minimalist sophistication, Kaivera invites you to step into a world
-            where beauty feels effortless and enduring.
+            Kaivera blends timeless design with the quiet elegance of nature
+            offering a refined lifestyle rooted in quality. Each
+            piece whether worn or carried is a reflection of subtle luxury. We invites you to step into a world
+            where beauty feels effortless.
           </p>
 
           <a href="products.php">Check Out Now</a>
@@ -149,20 +147,19 @@ require_once("controllers/functions.php");
       <div class="content-container" id="content-container">
         <div class="content">
           <div class="content-title">
-            <h1 class="charsAnimation">01</h1>
-            <h1 class="charsAnimation">ElEGANT</h1>
+            <h1 class="linesAnimation">01</h1>
+            <h1 class="linesAnimation">ElEGANT</h1>
           </div>
           <div class="content-desc">
             <p class="linesAnimation">
-              A refined fusion of minimalist aesthetics and luxurious
-              sophistication in every detail.
+              A refined fusion of minimalist aesthetics sophistication in every detail.
             </p>
           </div>
         </div>
         <div class="content">
           <div class="content-title">
-            <h1 class="charsAnimation">02</h1>
-            <h1 class="charsAnimation">TROPICAL</h1>
+            <h1 class="linesAnimation">02</h1>
+            <h1 class="linesAnimation">TROPICAL</h1>
           </div>
           <div class="content-desc">
             <p class="linesAnimation">
@@ -172,12 +169,12 @@ require_once("controllers/functions.php");
         </div>
         <div class="content">
           <div class="content-title">
-            <h1 class="charsAnimation">03</h1>
-            <h1 class="charsAnimation">TIMELESS</h1>
+            <h1 class="linesAnimation">03</h1>
+            <h1 class="linesAnimation">TIMELESS</h1>
           </div>
           <div class="content-desc">
             <p class="linesAnimation">
-              Designed beyond the constraints of trends quality, and quiet
+              Designed beyond the constraints of trends quality and
               confidence.
             </p>
           </div>

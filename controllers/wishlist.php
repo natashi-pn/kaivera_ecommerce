@@ -1,12 +1,20 @@
 <?php
 session_start();
 require_once 'dbconn.php';
+require_once '../includes/current_user_data.php';
+
 
 $user_id = $_POST['user_id'] ?? null;
 $product_id = $_POST['product_id'] ?? null;
 $action = $_POST['action'] ?? 'add';
 
-if (!$user_id || !$product_id) {
+if (!isset($user_id)) {
+    http_response_code(400);
+    echo "<p class='error_msg'><i class='fa-solid fa-circle-exclamation'></i>Missing Data</p>";
+    echo "we see this";
+    exit();
+}
+if (!$product_id) {
     http_response_code(400);
     echo "<p class='error_msg'><i class='fa-solid fa-circle-exclamation'></i>Missing Data</p>";
 
@@ -29,5 +37,5 @@ if ($action === 'add') {
     }
 } else {
     http_response_code(400);
-    echo "<p class='error_msg'><i class='fa-solid fa-circle-exclamation'></i>Invalid Actino</p>";
+    echo "<p class='error_msg'><i class='fa-solid fa-circle-exclamation'></i>Invalid Action</p>";
 }
