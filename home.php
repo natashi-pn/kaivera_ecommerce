@@ -36,8 +36,6 @@ $topProducts = getTopProducts();
     <div class="loader_bg loader_bg_bottom"></div>
   </section>
 
-
-
   <?php
 
   if (isset($user_type)) {
