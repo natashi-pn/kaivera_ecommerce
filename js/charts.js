@@ -3,7 +3,6 @@ const sections = document.querySelectorAll('section');
 
 links.forEach(link => {
     link.addEventListener('click', e => {
-        // e.preventDefault();
         const targetId = link.getAttribute('href').substring(1);
 
         sections.forEach(section => {
@@ -124,31 +123,31 @@ fetch('../dashboard/top_loyal_customers.php')
 
         const { labels, data } = result;
 
-        // Reference to the container where table will be placed
+
         const container = document.getElementById('loyalCustomersChart');
 
-        // Clear previous content (in case of re-render)
+
         container.innerHTML = '';
 
-        // Create table element
+
         const table = document.createElement('table');
         table.style.width = '100%';
         table.style.borderCollapse = 'collapse';
         table.style.marginTop = '20px';
 
-        // Add basic styling (optional)
+
         table.innerHTML = `
             <thead>
-                <tr style="background-color: #1d2025; color: white;">
-                    <th style="padding: 10px;">Customer</th>
-                    <th style="padding: 10px;">Total Orders</th>
+                <tr style="color: white; border-bottom : 1px solid #9e9e9e2e;">
+                    <th style="padding: 15px 10px;">Customer</th>
+                    <th style="padding: 15px 10px;">Total Orders</th>
                 </tr>
             </thead>
             <tbody>
                 ${labels.map((label, index) => `
                     <tr>
-                        <td style="background-color: #2b2f36; padding: 10px; color: silver;">${label}</td>
-                        <td style="background-color: #2b2f36; padding: 10px; color: silver;">${data[index]}</td>
+                        <td style="padding: 10px; color: silver; border-bottom : 1px solid #9e9e9e2e;">${label}</td>
+                        <td style="padding: 10px; color: silver; border-bottom : 1px solid #9e9e9e2e;">${data[index]}</td>
                     </tr>
                 `).join('')}
             </tbody>
@@ -258,6 +257,54 @@ fetch('../dashboard/payment_methods.php')
         console.error('Failed to load chart data:', err);
     });
 
+// Chart 6
+
+fetch('../dashboard/monthly-yearly-sales.php')
+    .then(res => res.json())
+    .then(data => {
+        const monthlyLabels = Object.keys(data.monthly);
+        const monthlyValues = Object.values(data.monthly).map(Number);
+
+        const yearlyLabels = Object.keys(data.yearly);
+        const yearlyValues = Object.values(data.yearly).map(Number);
+
+        const ctx = document.getElementById('salesChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [...monthlyLabels, ...yearlyLabels],
+                datasets: [
+                    {
+                        label: 'Monthly Sales (This Year)',
+                        data: [...monthlyValues, ...Array(yearlyLabels.length).fill(null)],
+                        backgroundColor: '#5c6c83ff'
+                    },
+                    {
+                        label: 'Yearly Sales',
+                        data: [...Array(monthlyLabels.length).fill(null), ...yearlyValues],
+                        backgroundColor: '#435a8bff'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' },
+                    tooltip: { mode: 'index', intersect: false }
+                },
+                scales: {
+                    x: {
+                        ticks: { color: '#a4a4a4ff' },
+                        stacked: false
+                    },
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: '#b6b6b6ff' }
+                    }
+                }
+            }
+        });
+    });
 
 // Dashboard Cards
 

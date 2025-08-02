@@ -78,8 +78,7 @@ unset($_SESSION['order_id']);
         <div class="desc">
           <div class="para-wrapper">
             <p class="introLineAnimation">
-              Step into the world of Kaivera where every sneaker, fragrance, and
-              bag is crafted with intention. Rooted in nature, refined for the
+              Step into the world of Kaivera where every sneaker, dress and shirt is crafted with intention.Fefined for the
               modern explorer. Discover pieces that speak in silence
             </p>
           </div>
@@ -99,9 +98,9 @@ unset($_SESSION['order_id']);
         </div>
     </a>
     <div class="product-nav">
-      <button class="category-btn active" onclick="goToSlide(0)" data-category-id="1">Dresses</button>
-      <button class="category-btn" onclick="goToSlide(1)" data-category-id="2">Shirts</button>
-      <button class="category-btn" onclick="goToSlide(2)" data-category-id="3">Shoes</button>
+      <button class="category-btn active" data-category-id="1">Dresses</button>
+      <button class="category-btn" data-category-id="2">Shirts</button>
+      <button class="category-btn" data-category-id="3">Shoes</button>
 
     </div>
     <div class="search <?php if (!$isLoggedIn) echo ' ' . 'hiddenDefault' ?>">

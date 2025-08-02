@@ -97,8 +97,6 @@ $isLoggedIn = isset($_SESSION['user_data']['user_type']);
           <h1>Rate and Review</h1>
           <p>Give Us A Honest Feedback On Our Performance So Far</p>
 
-
-
           <form method="POST" id="ratingForm">
             <div class="radio-field">
               <input type="radio" name="rating" id="rating1" value="5" />
@@ -125,13 +123,12 @@ $isLoggedIn = isset($_SESSION['user_data']['user_type']);
               <input type="reset" class="btn" value="Refresh" <?php if (!$isLoggedIn) echo 'disabled' ?> />
             </div>
           </form>
-
-
-
-          <div class="links">
-            <p>Doesn't have an account ? <a href="signup.php">Sign Up</a></p>
-            <p>Already have an account ? <a href="signup.php?form=login">Login</a></p>
-          </div>
+          <?php if (!$isLoggedIn) { ?>
+            <div class="links">
+              <p>Doesn't have an account ? <a href="signup.php">Sign Up</a></p>
+              <p>Already have an account ? <a href="signup.php?form=login">Login</a></p>
+            </div>
+          <?php } ?>
         </div>
 
         <div class="contact-info">

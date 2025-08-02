@@ -77,10 +77,10 @@
 
       <section class="navigation_bottom">
           <div class="social_links help-target" data-help="Social Links">
-              <a href="#">Instagram<i class="fa-solid fa-arrow-up"></i></a>
-              <a href="#">facebook<i class="fa-solid fa-arrow-up"></i></a>
-              <a href="#">linkedin<i class="fa-solid fa-arrow-up"></i></a>
-              <a href="#">x<i class="fa-solid fa-arrow-up"></i></a>
+              <a href="https://github.com/natashi-pn">Github<i class="fa-solid fa-arrow-up"></i></a>
+              <a href="https://www.instagram.com/natashi_pn?igsh=MXZid2RnbmgxcGwwOA%3D%3D&utm_source=qr">Instagram<i class="fa-solid fa-arrow-up"></i></a>
+              <a href="https://www.facebook.com/share/1ASE4immeE/?mibextid=wwXIfr">Facebook<i class="fa-solid fa-arrow-up"></i></a>
+              <a href="https://discord.gg/P9Fad8WKNy">Discord<i class="fa-solid fa-arrow-up"></i></a>
           </div>
           <div class="profile">
 

@@ -863,7 +863,6 @@ function reloadWishlist(user_id) {
       wishlistContainer.innerHTML = html;
     })
     .catch(err => {
-      // showNotification(err);
       console.error("Error loading wishlist items:", err);
     });
 }
@@ -897,7 +896,7 @@ function setUpNavigation() {
         clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)"
       })
       gsap.to("main", {
-        opacity: 0.3,
+        opacity: 0.2,
         y: "50svh",
         duration: 1,
         ease: "hop"

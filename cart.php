@@ -78,9 +78,8 @@ unset($_SESSION['alert_cart']);
         <div class="desc">
           <div class="para-wrapper">
             <p class="introLineAnimation">
-              Secure your piece of tropical luxury with a single click. Whether
-              it’s our handcrafted sneakers, signature perfumes, or timeless
-              bags your curated style journey begins the moment you add it to
+              Secure your piece of luxury with a single click. Whether
+              it’s our handcrafted sneakers, dresses, shirts, your curated style journey begins the moment you add it to
               your cart.
             </p>
           </div>
@@ -250,10 +249,10 @@ unset($_SESSION['alert_cart']);
                   </div>
 
                   <dl class="flex items-center justify-between gap-4 border-t border-gray-200 pt-2 dark:border-gray-700">
-                    <dt class="text-base font-bold text-gray-900 cart_text">
+                    <dt class="text-base font-bold cart_text">
                       Total
                     </dt>
-                    <dd class="text-base font-bold text-gray-900 cart_text">
+                    <dd class="text-base font-bold cart_text">
                       <?php
                       $total_price = ($original_price + $tax) - $discount;
                       echo "$" . $total_price;

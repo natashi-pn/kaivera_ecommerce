@@ -81,13 +81,13 @@ require_once("controllers/functions.php");
 
     <section class="about-btn">
       <a href="contact.php">Contact Us</a>
-      <a href="#">Explore Work</a>
+      <a href="products.php">Explore Work</a>
     </section>
 
     <section class="about-content">
       <div class="about-video">
 
-        <video src="assets/videos/Aboutus.webm" muted loop autoplay playsinline preload="none"></video>
+        <video src="assets/videos/Aboutus.mp4" muted loop autoplay playsinline preload="none"></video>
       </div>
 
       <div class="about-firstSection">

@@ -84,7 +84,8 @@ $topProducts = getTopProducts();
     </section>
 
     <!-- About us Section -->
-    <section class="about-us pt-[530px]">
+    <section class="about-us pt-[600px] sm:pt-[530px]">
+
       <div class="container">
         <div class="wrapper">
           <p class="linesAnimation about_text">

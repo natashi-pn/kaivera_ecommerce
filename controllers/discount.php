@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "<p class='success_msg'><i class='fa-solid fa-circle-check'></i>Discount applied: " . $_SESSION['discount']['discount_percent'] . "% Refresh!</p>";
         exit;
     } else {
-        echo "<p class='error_msg'><i class='fa-solid fa-circle-exclamation'></i>Something went wrong</p>";
+        echo "<p class='error_msg'><i class='fa-solid fa-circle-exclamation'></i>Invalid Voucher Code</p>";
 
         exit;
     }

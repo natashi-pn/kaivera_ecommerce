@@ -132,7 +132,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
                         <div class="chart">
                             <h1>Monthly/Yearly Sales</h1>
-                            <canvas id=""></canvas>
+                            <canvas id="salesChart"></canvas>
                         </div>
                         <div class="chart">
                             <h1>Orders by Category</h1>
@@ -142,9 +142,10 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
 
                     <div class="grid-chart">
-                        <!-- Loyal Customers Chart -->
+
                         <div class="loyal_chart">
-                            <h1>Top Loyal Customers by Orders</h1>
+                            <!-- Loyal Customers Chart -->
+                            <h1>Top 5 Loyal Customers</h1>
                             <div id="loyalCustomersChart"></div>
                         </div>
 
@@ -153,14 +154,14 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
                             <h1>Payment Methods Used</h1>
                             <canvas id="paymentMethodsChart" height="50"></canvas>
                         </div>
-
                     </div>
 
 
                     <div class="chart">
                         <!-- Best Selling Products -->
-                        <h1>Best Selling Products</h1>
+                        <h1>Top 10 Best Selling Products</h1>
                         <canvas id="bestSellingProductsChart"></canvas>
+
                     </div>
 
                 </div>
@@ -323,7 +324,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
                                         <td class="p-2 md:p-4 text-center"> <?php echo $order_item['product_id'] ?></td>
                                         <td class="p-2 md:p-4 text-center"> <?php echo $order_item['product_name'] ?></td>
                                         <td class="p-2 md:p-4 text-center"> <?php echo $order_item['quantity'] ?></td>
-                                        <td class="p-2 md:p-4 text-center"> <?php echo $order_item['price'] ?></td>
+                                        <td class="p-2 md:p-4 text-center"> $<?php echo $order_item['price'] ?></td>
 
                                     </tr>
                                 <?php } ?>
@@ -407,7 +408,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
                                         <td class="p-2 md:p-4 text-center"> <?php echo $product['product_id'] ?></td>
                                         <td class="p-2 md:p-4"> <?php echo $product['product_name'] ?></td>
                                         <td class="p-2 md:p-4"> <?php echo $product['product_description'] ?></td>
-                                        <td class="p-2 md:p-4 text-center"> <?php echo $product['product_price'] ?></td>
+                                        <td class="p-2 md:p-4 text-center"> $<?php echo $product['product_price'] ?></td>
                                         <td class="p-2 md:p-4 text-center w-[100px]">
                                             <div class="flex justify-center items-center">
                                                 <img

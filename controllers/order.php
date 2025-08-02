@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     if (empty($user_id) || empty($payment_method) || empty($total_price) || empty($cart)) {
 
-        echo "<p class='error_msg'><i class='fa-solid fa-circle-exclamation'></i>Some Data Aren't Being passed properly or Empty</p>";
+        echo "<p class='error_msg'><i class='fa-solid fa-circle-exclamation'></i>The cart is Empty</p>";
 
         exit;
     } else {
