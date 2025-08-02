@@ -29,7 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         if ($user['user_name'] === $user_name && $user['user_id'] != $user_id) {
             $_SESSION['error'] = 'Username Exists';
             header('Location: user_update_user.php');
-
             exit;
         }
     }
@@ -65,8 +64,15 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         $filePath = $newDirectory . $newFileName;
 
         if (!move_uploaded_file($fileTempPath, $filePath)) {
-            die("Cant Upload File");
+            $_SESSION['error'] = 'Cant Upload File';
+            header('Location: user_update_user.php');
+            exit;
         };
+
+        $defaultImagePath = '../uploads/profile_pictures/default_pf.jpg';
+        if ($existing_image  && file_exists($existing_image) && $existing_image !== $filePath && $existing_image !== $defaultImagePath) {
+            unlink($existing_image);
+        }
     } else {
         $filePath = $existing_image;
     }

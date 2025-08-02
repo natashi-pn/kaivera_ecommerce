@@ -34,9 +34,28 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     }
 
 
+    $maxFileSize = 2 * 1024 * 1024;
+    $allowedMimeTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
 
     if (isset($_FILES['user_profile_image']) && $_FILES['user_profile_image']['error'] === 0) {
 
+        // First check the valid size and type
+
+        if ($_FILES['user_profile_image']['size'] > $maxFileSize) {
+            $_SESSION['error'] = 'File size must not exceed 2MB';
+            header('Location: ../admin/admin_insert_user.php');
+            exit;
+        }
+
+        $finfo = finfo_open(FILEINFO_MIME_TYPE);
+        $mimeType = finfo_file($finfo, $_FILES['user_profile_image']['tmp_name']);
+        finfo_close($finfo);
+
+        if (!in_array($mimeType, $allowedMimeTypes)) {
+            $_SESSION['error'] = 'Only image files (JPG, PNG, GIF, WEBP) are allowed';
+            header('Location: ../admin/admin_insert_user.php');
+            exit;
+        }
 
         $fileTempPath = $_FILES['user_profile_image']['tmp_name'];
         $fileName = basename($_FILES['user_profile_image']['name']);

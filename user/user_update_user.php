@@ -6,7 +6,6 @@ require_once('../includes/current_user_data.php');
 
 $user = getSearchUser($user_id);
 
-
 if (!isset($user_type) || $user_type !== 'user') {
     header("Location: ../home.php");
 }

@@ -27,12 +27,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $stmt->execute([$product_id]);
   }
 
+  $stmt = $conn->prepare("SELECT product_image FROM products WHERE product_id = ?");
+  $stmt->execute([$product_id]);
+  $image = $stmt->fetchColumn();
+
   $sql = "delete from products where product_id = ?;";
   $stmt =   $conn->prepare($sql);
   $status = $stmt->execute([$product_id]);
 
 
   if ($status) {
+
+    if (file_exists($image)) {
+      unlink($image);
+    }
     $_SESSION['success'] = "Deleted 1 Product Successfully";
     header("Location: ../admin/admin.php?to=products");
     die();

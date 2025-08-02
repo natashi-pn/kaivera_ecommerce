@@ -20,6 +20,14 @@ if (isset($user_id)) {
         $stmt->execute($order_ids);
     }
 
+    $stmt = $conn->prepare("SELECT user_profile_image FROM users WHERE user_id = ?");
+    $stmt->execute([$user_id]);
+    $image = $stmt->fetchColumn();
+
+    $defaultImagePath = '../uploads/profile_pictures/default_pf.jpg';
+    if ($image !== $defaultImagePath && file_exists($image)) {
+        unlink($image);
+    }
 
     $query = "delete from reviews where user_id = ?;";
     $stmt = $conn->prepare($query);
@@ -39,8 +47,9 @@ if (isset($user_id)) {
     $status =  $stmt->execute([$user_id]);
 
 
-
     if ($status) {
+
+
         $_SESSION['success'] = 'Deleted 1 User Successfully';
         header('Location: ../admin/admin.php?to=users');
         exit;

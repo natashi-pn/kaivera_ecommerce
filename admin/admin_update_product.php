@@ -34,6 +34,17 @@ if (!isset($user_type) || $user_type !== 'admin') {
     <div class="form_wrapper">
         <div class="heading">
             <h1>Update Product Data</h1>
+            <?php
+            if (isset($_SESSION['success'])) {
+                echo "<p style='color: #9fc9b7;'>{$_SESSION['success']}</p>";
+                unset($_SESSION['success']);
+            }
+            if (isset($_SESSION['error'])) {
+                echo "<p style='color: rgb(214, 102, 102);'>{$_SESSION['error']}</p>";
+                unset($_SESSION['error']);
+            }
+
+            ?>
         </div>
         <form method="POST" action="../controllers/update_product.php" enctype="multipart/form-data">
 
