@@ -377,37 +377,34 @@ button.red_btn:active {
 }
 
 ::view-transition-old(root) {
-    animation: 1.3s cubic-bezier(.78, .07, .16, .94) both move-out;
+    animation: 1s cubic-bezier(.58, .13, .16, .93) both move-out;
 }
 
 ::view-transition-new(root) {
-    animation: 1.3s cubic-bezier(.78, .07, .16, .94) both move-in;
+    animation: 1s cubic-bezier(.58, .13, .16, .93) both move-in;
 }
 
 @keyframes move-out {
     from {
         transform: translateY(0%);
         opacity: 1;
-
     }
 
     to {
-        transform: translateY(-20%);
+        transform: translateY(20%);
         opacity: .5;
-
     }
 }
 
 @keyframes move-in {
     from {
-        transform: translateY(50%);
-        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
-        scale: 1.5;
+        transform: translateY(-20%) scale(1.5);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
     }
 
     to {
-        transform: translateY(0%);
+        transform: translateY(0%) scale(1);
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-        scale: 1;
     }
 }

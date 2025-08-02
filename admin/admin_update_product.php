@@ -23,6 +23,8 @@ if (!isset($user_type) || $user_type !== 'admin') {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Update Product</title>
+    <link rel="icon" href="../assets/images/kaivera logo icon.png" type="image/png">
+
     <link rel="stylesheet" href="../css/admin.css">
     <script src="https://kit.fontawesome.com/69e1242b61.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
