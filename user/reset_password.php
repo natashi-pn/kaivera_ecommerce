@@ -2,10 +2,6 @@
 session_start();
 require_once('../controllers/functions.php');
 
-if (!isset($user_type) || $user_type !== 'user') {
-    header("Location: ../home.php");
-}
-
 ?>
 
 <!DOCTYPE html>

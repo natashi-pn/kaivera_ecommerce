@@ -7,6 +7,10 @@ require_once "../includes/current_user_data.php";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
+    if (!isset($user_id)) {
+        echo "<p class='error_msg'><i class='fa-solid fa-circle-exclamation'></i>Sign Up First</p>";
+        exit;
+    }
     $user_id = $_SESSION['user_data']['user_id'];
     $payment_method = $_POST["payment_method"];
     $total_price = $_POST['total_price'];
@@ -18,9 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
 
     if (empty($user_id) || empty($payment_method) || empty($total_price) || empty($cart)) {
-
         echo "<p class='error_msg'><i class='fa-solid fa-circle-exclamation'></i>The cart is Empty</p>";
-
         exit;
     } else {
 

@@ -90,7 +90,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
         <section id="dashboard" class="<?php echo ($go_to === 'admin') ? 'active' : ''; ?>">
             <div class="heading">
                 <h1>Admin Dashboard</h1>
-                <p>This is Admin Dashboard</p>
+
             </div>
             <div class="chart-container">
                 <div class="cards">

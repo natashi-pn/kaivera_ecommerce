@@ -99,6 +99,7 @@ input[type="reset"]:active {
   color: var(--white);
   font-size: 1rem;
   margin: 0 20px;
+  transition: .2s linear;
 }
 
 .nav-menu-middle .btn_wrapper a:hover {
