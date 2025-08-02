@@ -17,7 +17,7 @@
         margin: 0;
         padding: 0;
         position: absolute;
-        z-index: 999;
+        z-index: 9;
         background: transparent;
         padding: 20px;
     }
@@ -26,7 +26,7 @@
         width: auto;
         position: absolute;
         right: 0px;
-        background: rgb(243, 120, 120);
+        background: rgb(126, 142, 186);
         border: none;
         margin-right: 20px;
         border-radius: 10px;
@@ -34,6 +34,8 @@
 
     .sidebar a:hover {
         scale: 1.03;
+        background: rgb(126, 142, 186);
+
     }
 
     .sidebar a:active {

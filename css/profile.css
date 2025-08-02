@@ -331,10 +331,11 @@ form button:hover {
 }
 
 .profile h1 {
-    font-family: var(--bigFont);
-    font-size: 1.3rem;
-    line-height: 0.9;
+    font-family: var(--smallFont);
+    font-size: 1rem;
+    line-height: 1;
     flex-shrink: 1;
+    font-weight: 500;
 }
 
 .profile .profile_image {
@@ -377,16 +378,17 @@ form button:hover {
 }
 
 .user_information .info h1 {
-    font-size: 1.7rem;
-    font-family: var(--bigFont);
+    font-size: 1.2rem;
+    font-family: var(--smallFont);
     color: var(--white);
+    font-weight: 500;
 }
 
 .user_information .info p {
     color: var(--second-white);
     font-family: var(--smallFont);
     font-size: 0.9rem;
-    margin: 5px 0;
+    margin: 2px 0;
 }
 
 @keyframes fade-in-out {

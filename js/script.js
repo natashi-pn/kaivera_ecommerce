@@ -747,7 +747,7 @@ function setUpContact() {
   message_btn.addEventListener("click", function (e) {
     e.preventDefault();
     const message_form = document.getElementById("message_form");
-    console.log("clilck")
+
     const formData = new FormData(message_form);
 
     fetch("controllers/message.php", {

@@ -65,9 +65,9 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
                     <img src="<?php echo $user['user_profile_image'] ?>" alt="">
                 </div>
                 <div class="info">
-                    <h1>Username : <?php echo $user['user_name'] ?></h1>
-                    <p>Email : <?php echo $user['user_email'] ?></p>
-                    <p>User Type : <?php echo $user['user_type'] ?></p>
+                    <h1>Username: <?php echo $user['user_name'] ?></h1>
+                    <p>Email: <?php echo $user['user_email'] ?></p>
+                    <p>User Type: <?php echo $user['user_type'] ?></p>
                 </div>
                 <div class="action">
                     <a href="user_update_user.php" class="green_btn">Edit Account</a>

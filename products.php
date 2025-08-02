@@ -251,72 +251,6 @@ unset($_SESSION['order_id']);
     </div>
     </section>
 
-    <section class="product_details hidden" id="product-popup">
-      <div class="product_details_container popup-content">
-        <div class="image help-target" id="product_image" data-help="Double Click to Close">
-          <span class="close-btn"><i class="fa-solid fa-arrow-left"></i></span>
-          <div class="image_container"><img id="productImage" src="" alt=""></div>
-
-          <a href="cart.php" class="help-target" data-help="Cart"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-        <div class="content">
-          <form action="controllers/add_to_cart.php" method="POST" enctype="multipart/form-data">
-            <div class="title">
-              <h1 id="popup-name"></h1>
-            </div>
-            <div class="desc">
-              <span>Description</span>
-              <p id="popup-desc"></p>
-            </div>
-            <div class="color">
-              <span>Color</span>
-              <div class="input-fields ">
-                <label for="radioD"><i class="fa-solid fa-circle"></i></label>
-                <input type="radio" name="color" id="radioD" value="Primary" checked required>
-
-                <label for="radio1"><i class="fa-solid fa-circle"></i></label>
-                <input type="radio" name="color" id="radio1" value="Veil" required>
-
-                <label for="radio2"><i class="fa-solid fa-circle"></i></label>
-                <input type="radio" name="color" id="radio2" value="Azure" required>
-
-                <label for="radio3"><i class="fa-solid fa-circle"></i></label>
-                <input type="radio" name="color" id="radio3" value="Emerald" required>
-
-                <label for="radio4"><i class="fa-solid fa-circle"></i></label>
-                <input type="radio" name="color" id="radio4" value="Frost" required>
-              </div>
-            </div>
-
-            <div class="quantity">
-              <span>Quantity</span>
-              <div class="input">
-                <button class="decrease" type="button"><i class="fa-solid fa-minus"></i></button>
-                <input type="number" class="quantityInput" name="quantity" value="1" min="1">
-                <button class="increase" type="button"><i class="fa-solid fa-plus"></i></button>
-              </div>
-
-            </div>
-
-            <div class="price">
-              <span>Price</span>
-              <h1 id="totalPrice"></h1>
-            </div>
-
-            <div class="btn">
-              <input type="text" name="product_id" id="id_input" value="98" hidden>
-              <input type="text" name="product_name" id="name_input" value="" hidden>
-              <input type="text" name="product_image" id="image_input" value="" hidden>
-              <input type="text" name="product_price" id="price_input" value="" hidden>
-              <button type="button" class="submit-btn add-cart-btn" <?php if (!$isLoggedIn) echo 'disabled'; ?>>Add to Cart<i class="fa-solid fa-cart-shopping"></i></button>
-              <a href="cart.php">
-                <button type="button" class="submit-btn add-cart-btn" <?php if (!$isLoggedIn) echo 'disabled'; ?>>Add & Go Cart <i class="fa-solid fa-arrow-right"></i></button>
-              </a>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
 
 
     <!-- Footer -->
@@ -326,6 +260,76 @@ unset($_SESSION['order_id']);
     ?>
 
   </main>
+
+  <!-- Product Details -->
+
+  <section class="product_details hidden" id="product-popup">
+    <div class="product_details_container popup-content">
+      <div class="image help-target" id="product_image" data-help="Double Click to Close">
+        <span class="close-btn"><i class="fa-solid fa-arrow-left"></i></span>
+        <div class="image_container"><img id="productImage" src="" alt=""></div>
+
+        <a href="cart.php" class="help-target" data-help="Cart"><i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
+      <div class="content">
+        <form action="controllers/add_to_cart.php" method="POST" enctype="multipart/form-data">
+          <div class="title">
+            <h1 id="popup-name"></h1>
+          </div>
+          <div class="desc">
+            <span>Description</span>
+            <p id="popup-desc"></p>
+          </div>
+          <div class="color">
+            <span>Color</span>
+            <div class="input-fields ">
+              <label for="radioD"><i class="fa-solid fa-circle"></i></label>
+              <input type="radio" name="color" id="radioD" value="Primary" checked required>
+
+              <label for="radio1"><i class="fa-solid fa-circle"></i></label>
+              <input type="radio" name="color" id="radio1" value="Veil" required>
+
+              <label for="radio2"><i class="fa-solid fa-circle"></i></label>
+              <input type="radio" name="color" id="radio2" value="Azure" required>
+
+              <label for="radio3"><i class="fa-solid fa-circle"></i></label>
+              <input type="radio" name="color" id="radio3" value="Emerald" required>
+
+              <label for="radio4"><i class="fa-solid fa-circle"></i></label>
+              <input type="radio" name="color" id="radio4" value="Frost" required>
+            </div>
+          </div>
+
+          <div class="quantity">
+            <span>Quantity</span>
+            <div class="input">
+              <button class="decrease" type="button"><i class="fa-solid fa-minus"></i></button>
+              <input type="number" class="quantityInput" name="quantity" value="1" min="1">
+              <button class="increase" type="button"><i class="fa-solid fa-plus"></i></button>
+            </div>
+
+          </div>
+
+          <div class="price">
+            <span>Price</span>
+            <h1 id="totalPrice"></h1>
+          </div>
+
+          <div class="btn">
+            <input type="text" name="product_id" id="id_input" value="98" hidden>
+            <input type="text" name="product_name" id="name_input" value="" hidden>
+            <input type="text" name="product_image" id="image_input" value="" hidden>
+            <input type="text" name="product_price" id="price_input" value="" hidden>
+            <button type="button" class="submit-btn add-cart-btn" <?php if (!$isLoggedIn) echo 'disabled'; ?>>Add to Cart<i class="fa-solid fa-cart-shopping"></i></button>
+            <a href="cart.php">
+              <button type="button" class="submit-btn add-cart-btn" <?php if (!$isLoggedIn) echo 'disabled'; ?>>Add & Go Cart <i class="fa-solid fa-arrow-right"></i></button>
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/CustomEase.min.js"></script>
 
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>

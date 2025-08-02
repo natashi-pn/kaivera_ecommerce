@@ -78,7 +78,7 @@ $topProducts = getTopProducts();
             <div class="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2"></div>
           </div>
 
-          <video src="assets/videos/Aboutus.mp4" id="load_video" autoplay muted playsinline loop></video>
+          <video src="assets/videos/hero_video.webm" id="load_video" autoplay muted playsinline loop></video>
         </div>
       </div>
     </section>
