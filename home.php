@@ -21,7 +21,7 @@ $topProducts = getTopProducts();
   <script src="js/script2.js" defer></script>
 </head>
 
-<body data-page="home" class="light">
+<body data-page="home">
 
 
   <!-- Loader -->
@@ -50,6 +50,8 @@ $topProducts = getTopProducts();
     require_once("includes/navigation.php");
   }
   ?>
+
+  <div class="fade-overlay"></div>
 
   <!-- Home Page Section -->
   <div class="notification"></div>

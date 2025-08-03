@@ -30,9 +30,6 @@ unset($_SESSION['alert_cart']);
 
 <body data-page="cart">
 
-
-
-
   <?php
 
   if (isset($user_type)) {
@@ -51,6 +48,9 @@ unset($_SESSION['alert_cart']);
   <!-- Help Bubble -->
   <div class="help-bubble"></div>
   <div class="notification"></div>
+
+  <div class="fade-overlay"></div>
+
   <main>
 
 

@@ -48,6 +48,9 @@ unset($_SESSION['order_id']);
   <!-- Help Bubble -->
   <div class="help-bubble"></div>
   <div class="notification"></div>
+
+  <div class="fade-overlay"></div>
+
   <main>
 
 
@@ -93,7 +96,7 @@ unset($_SESSION['order_id']);
           <h1 class="introLineAnimation">Essence of Kaivera</h1>
           <p class="linesAnimation">
             Discover our signature designer sneakers where tropical soul meets
-            timeless luxury.
+            timeless luxury
           </p>
         </div>
     </a>

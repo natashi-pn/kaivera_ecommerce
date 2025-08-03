@@ -37,6 +37,9 @@ require_once("controllers/functions.php");
     require_once("includes/navigation.php");
   }
   ?>
+
+  <div class="fade-overlay"></div>
+
   <main>
 
     <!-- Help Bubble -->
@@ -124,7 +127,7 @@ require_once("controllers/functions.php");
           </p>
         </div>
         <div class="image">
-          <img src="assets/images/mockup1.webp" class="animateImage2" alt="" />
+          <img src="assets/images/mockup2.webp" class="animateImage2" alt="" />
         </div>
       </div>
     </section>
@@ -285,7 +288,7 @@ require_once("controllers/functions.php");
           <div class="paragraph">
             <p>
               A lifestyle shoot blending movement, fashion, and
-              nature—showcasing how Kaivera pieces live effortlessly in everyday
+              nature showcasing how Kaivera pieces live effortlessly in everyday
               moments
             </p>
           </div>

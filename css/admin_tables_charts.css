@@ -15,6 +15,7 @@
 .chart-container {
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
 }
 
 .chart-container h1 {
@@ -81,7 +82,7 @@
   margin: 50px 0;
 }
 
-.grid-chart > div {
+.grid-chart>div {
   padding: 10px;
   background: var(--black-olive);
   margin: 5px;
@@ -97,7 +98,7 @@
   margin: 50px 0;
   background: var(--black-olive);
   border-radius: 10px;
-  padding: 15px;
+  padding: 5px;
 }
 
 .charts {
@@ -135,6 +136,11 @@
     width: 50px;
     height: 50px;
   }
+
+  .charts {
+    padding: 0 5px;
+  }
+
 
   .chart-container h1 {
     font-size: 1.5rem;

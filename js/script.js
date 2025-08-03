@@ -896,8 +896,12 @@ function setUpNavigation() {
         clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)"
       })
       gsap.to("main", {
-        opacity: 0.2,
         y: "50svh",
+        duration: 1,
+        ease: "hop"
+      })
+      gsap.to(".fade-overlay", {
+        opacity: 1,
         duration: 1,
         ease: "hop"
       })
@@ -919,8 +923,13 @@ function setUpNavigation() {
 
       })
       gsap.to("main", {
-        opacity: 1,
+
         y: "0svh",
+        duration: 1,
+        ease: "hop"
+      })
+      gsap.to(".fade-overlay", {
+        opacity: 0,
         duration: 1,
         ease: "hop"
       })
@@ -1038,20 +1047,25 @@ function modeToggle() {
     const logo = document.getElementById("logo");
     const savedMode = localStorage.getItem("mode");
 
-    if (savedMode === "light") {
-      document.body.classList.add("light");
 
+    if (savedMode === "dark") {
+      document.body.classList.remove("light");
+      document.querySelector(".navigation-btn").style.background = "transparent";
+      logo.src = "../assets/images/kaivera logo.png";
+      dark_mode.classList.add("hidden");
+      light_mode.classList.remove("hidden");
+    } else {
+
+      document.body.classList.add("light");
       document.querySelector(".navigation-btn").style.background = "#ffffff7b";
       logo.src = "../assets/images/kaivera logo dark.webp";
       light_mode.classList.add("hidden");
       dark_mode.classList.remove("hidden");
-    } else {
-      document.body.classList.remove("light");
-      document.querySelector(".navigation-btn").style.background = "transparent";
 
-      logo.src = "../assets/images/kaivera logo.png";
-      dark_mode.classList.add("hidden");
-      light_mode.classList.remove("hidden");
+
+      if (!savedMode) {
+        localStorage.setItem("mode", "light");
+      }
     }
 
     light_mode.addEventListener("click", function (e) {
@@ -1059,9 +1073,7 @@ function modeToggle() {
       light_mode.classList.add("hidden");
       dark_mode.classList.remove("hidden");
       document.body.classList.add("light");
-
       document.querySelector(".navigation-btn").style.background = "#ffffff7b";
-
       logo.src = "../assets/images/kaivera logo dark.webp";
       localStorage.setItem("mode", "light");
     });
@@ -1069,12 +1081,10 @@ function modeToggle() {
     dark_mode.addEventListener("click", function (e) {
       e.preventDefault();
       document.querySelector(".navigation-btn").style.background = "transparent";
-
       dark_mode.classList.add("hidden");
       light_mode.classList.remove("hidden");
       document.body.classList.remove("light");
       logo.src = "../assets/images/kaivera logo.png";
-
       localStorage.setItem("mode", "dark");
     });
   });

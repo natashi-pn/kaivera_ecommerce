@@ -173,7 +173,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
         <section id="orders" class="<?php echo ($go_to === 'orders') ? 'active' : ''; ?>">
             <div class="heading">
-                <h1>Orders Table</h1>
+                <h1>Orders</h1>
                 <form action="../controllers/admin_search/admin_search_order.php" method="POST">
                     <input type="text" name="search_username" id="" placeholder="Enter Username">
                     <button type="submit">Search</button>
@@ -269,7 +269,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
         <section id="order_items" class="<?php echo ($go_to === 'order_items') ? 'active' : ''; ?>">
             <div class="heading">
-                <h1>Order Items Table</h1>
+                <h1>Order Items</h1>
                 <form action="../controllers/admin_search/admin_search_order_items.php" method="POST">
                     <input type="text" name="search_username" id="" placeholder="Enter Order ID">
                     <button type="submit">Search</button>
@@ -346,7 +346,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
         ?>
         <section id="products" class="<?php echo ($go_to === 'products') ? 'active' : ''; ?>">
             <div class="heading">
-                <h1>Products Table</h1>
+                <h1>Products</h1>
                 <form action="../controllers/admin_search/admin_search_product.php" method="POST">
                     <input type="text" name="search" id="" placeholder="Enter Product Name">
                     <button type="submit">Search</button>
@@ -444,7 +444,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
         <section id="users" class="<?php echo ($go_to === 'users') ? 'active' : ''; ?>">
             <div class="heading">
-                <h1>Users Table</h1>
+                <h1>Users</h1>
                 <form action="../controllers/admin_search/admin_search_user.php" method="POST">
                     <input type="text" name="search" id="" placeholder="Enter Username">
                     <button type="submit">Search</button>
@@ -534,7 +534,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
         <section id="reviews" class="<?php echo ($go_to === 'reviews') ? 'active' : ''; ?>">
             <div class="heading">
-                <h1>Reviews Table</h1>
+                <h1>Reviews</h1>
             </div>
             <div class="table">
 
@@ -603,7 +603,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
         ?>
         <section id="discounts" class="<?php echo ($go_to === 'discounts') ? 'active' : ''; ?>">
             <div class="heading">
-                <h1>Discount Tables</h1>
+                <h1>Discount</h1>
                 <form action="../controllers/insert_discount.php" method="POST">
                     <input type="text" name="code" id="" placeholder="Enter Disocunt Code">
                     <input type="number" name="percent" id="" placeholder="Enter Percentage">

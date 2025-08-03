@@ -26,9 +26,10 @@
         width: auto;
         position: absolute;
         right: 0px;
+        top: 10px;
         background: rgb(126, 142, 186);
         border: none;
-        margin-right: 20px;
+        margin-right: 10px;
         border-radius: 10px;
     }
 

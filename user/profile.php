@@ -111,7 +111,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
                         if (!empty($orders)) {
                             foreach ($orders as $order) {
                         ?>
-                                <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
+                                <tr class=" bg-[#d1d7e3] text-gray-800 table_row">
                                     <td class="p-2 md:p-4 text-center"> <?php echo $order['order_id'] ?></td>
                                     <td class="p-2 md:p-4 text-center"> <?php echo $order['order_date'] ?></td>
                                     <td class="p-2 md:p-4 text-center"> <?php echo $order['order_status'] ?></td>
@@ -140,7 +140,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
                         } else {
                             ?>
 
-                            <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
+                            <tr class=" bg-[#d1d7e3] text-gray-800 table_row">
                                 <td class="p-2 md:p-4 text-center">-</td>
 
                                 <td class="p-2 md:p-4 text-center">-</td>
@@ -194,7 +194,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
                                 if (!empty($order_items)) {
                                     foreach ($order_items as $order_item) {
                                 ?>
-                                        <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
+                                        <tr class=" bg-[#d1d7e3] text-gray-800 table_row">
                                             <td class="p-2 md:p-4 text-center"> <?php echo $order_item['order_item_id'] ?></td>
                                             <td class="p-2 md:p-4 text-center"> <?php echo $order_item['order_id'] ?></td>
                                             <td class="p-2 md:p-4 text-center"> <?php echo $order_item['product_id'] ?></td>
@@ -205,7 +205,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
                                         </tr>
                                     <?php }
                                 } else { ?>
-                                    <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
+                                    <tr class=" bg-[#d1d7e3] text-gray-800 table_row">
                                         <td class="p-2 md:p-4 text-center">-</td>
                                         <td class="p-2 md:p-4 text-center">-</td>
                                         <td class="p-2 md:p-4 text-center">-</td>
@@ -254,7 +254,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
                                 if (!empty($wishlists)) {
                                     foreach ($wishlists as $wishlist) {
                                 ?>
-                                        <tr class="bg-[#c3cfe6] text-gray-800 table_row">
+                                        <tr class="bg-[#d1d7e3] text-gray-800 table_row">
                                             <td class="p-2 md:p-4 text-center"> <?php echo $wishlist['wishlist_id'] ?></td>
 
                                             <td class="p-2 md:p-4 text-center"> <?php echo $wishlist['product_name'] ?></td>
@@ -269,7 +269,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
                                     <?php }
                                 } else {
                                     ?>
-                                    <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
+                                    <tr class=" bg-[#d1d7e3] text-gray-800 table_row">
                                         <td class="p-2 md:p-4 text-center">-</td>
                                         <td class="p-2 md:p-4 text-center">-</td>
                                         <td class="p-2 md:p-4 text-center">You Haven't Wish Anything Yet</td>
@@ -319,7 +319,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
                                 if (!empty($reviews)) {
                                     foreach ($reviews as $review) {
                                 ?>
-                                        <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
+                                        <tr class=" bg-[#d1d7e3] text-gray-800 table_row">
                                             <td class="p-2 md:p-4 text-center"> <?php echo $review['review_id'] ?></td>
                                             <td class="p-2 md:p-4 text-center"> <?php echo $review['rating'] ?></td>
                                             <td class="p-2 md:p-4 text-center"> <?php echo $review['comment'] ?></td>
@@ -331,7 +331,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
                                         </tr>
                                     <?php }
                                 } else { ?>
-                                    <tr class=" bg-[#c3cfe6] text-gray-800 table_row">
+                                    <tr class=" bg-[#d1d7e3] text-gray-800 table_row">
                                         <td class="p-2 md:p-4 text-center">-</td>
                                         <td class="p-2 md:p-4 text-center">-</td>
                                         <td class="p-2 md:p-4 text-center">You Havn't Made A Review Yet</td>
