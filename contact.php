@@ -136,8 +136,8 @@ $isLoggedIn = isset($_SESSION['user_data']['user_type']);
         <div class="contact-info">
           <div class="contact-info-row">
             <h1 class="linesAnimation">Email</h1>
-            <p class="linesAnimation" style="color: #90bbc5">
-              support@kaivera. com
+            <p class="linesAnimation" style="color: #6e7adbff">
+              support@kaivera.com
             </p>
           </div>
           <div class="contact-info-row">

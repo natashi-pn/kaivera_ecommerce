@@ -961,12 +961,11 @@ input[type="reset"]:active {
 .testimonial {
   height: 50vh;
   width: 100vw;
-
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  cursor: none;
+
 }
 
 
@@ -1007,7 +1006,7 @@ input[type="reset"]:active {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.65);
+  background: #1d20259c;
   z-index: 1;
   pointer-events: none;
   transition: .2s ease-in-out;
@@ -1027,7 +1026,8 @@ input[type="reset"]:active {
 }
 
 .testimonial:hover>.testimonial-image::before {
-  background: rgba(0, 0, 0, 0.7);
+  background: #1d2025af;
+
 
 }
 
@@ -1802,8 +1802,8 @@ footer {
   place-items: center;
   color: var(--white);
   text-align: center;
-  margin-top: 3rem;
-  padding: 20px;
+  margin-top: 2rem;
+  padding: 15px;
 }
 
 .product-section .product-header h1 {
@@ -1825,12 +1825,12 @@ footer {
 }
 
 .product-nav {
-  margin: 0.5rem 0;
+  margin: .5rem 0;
   display: flex;
   justify-content: center;
   gap: 1rem;
-  padding: 1rem;
   position: relative;
+  padding: 10px 0;
   top: 0;
   z-index: 10;
   color: var(--white);
@@ -1845,6 +1845,7 @@ footer {
 .search {
   text-align: center;
   width: 100%;
+  margin: .5rem 0;
 }
 
 .search input {
@@ -2311,7 +2312,7 @@ footer {
 }
 
 .contact-form .radio-field input:checked~label {
-  color: rgb(102, 135, 219);
+  color: rgb(126, 152, 217);
 }
 
 .contact-form .links {
@@ -2350,7 +2351,7 @@ footer {
   justify-content: space-between;
   align-items: flex-end;
   padding: 20px 0;
-  border-bottom: 1px solid rgb(159, 159, 159);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.185);
   will-change: transform;
   transition: 0.2s ease-in-out;
 }
@@ -2368,9 +2369,9 @@ footer {
   font-family: var(--smallFont);
   font-size: 0.9rem;
   color: var(--white);
-  line-height: 1.1;
+  line-height: 1.4;
   text-align: right;
-  width: 30%;
+  width: 40%;
   text-align: justify;
 }
 
@@ -2380,21 +2381,22 @@ footer {
 
 .contact_us {
   width: 100vw;
-  padding: 3rem;
+  padding: 10px;
   background: var(--black);
+  margin-bottom: 2rem;
 }
 
 .contact_us .contact_us_title {
   width: 100%;
   text-align: center;
   color: var(--white);
-  padding: 5px;
+  padding: 15px;
 }
 
 .contact_us .contact_us_title h1 {
   font-size: 4rem;
   font-family: var(--bigFont);
-  line-height: 1;
+  line-height: .8;
 }
 
 .contact_us .contact_us_title p {
@@ -2403,6 +2405,7 @@ footer {
   line-height: 2;
   font-weight: 500;
   color: var(--second-white);
+  margin-top: 25px;
 }
 
 .contact_us .contact_us_form {
@@ -2420,7 +2423,7 @@ footer {
 }
 
 .contact_us .input_container {
-  margin: 1rem;
+  margin: .5rem;
   padding: 2rem;
   width: 100%;
   display: flex;
@@ -2642,9 +2645,6 @@ input[type="number"]::-webkit-outer-spin-button {
     padding: 0;
   }
 
-  .contact_us {
-    padding: 2rem 1rem;
-  }
 
   .contact_us .textarea_container {
     padding: 0 1rem;
@@ -2657,13 +2657,12 @@ input[type="number"]::-webkit-outer-spin-button {
 
   .contact_us .contact_us_title h1 {
     font-size: 3rem;
-    line-height: 1.2;
   }
 
   .contact_us .contact_us_title p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
 
-    line-height: 1.2;
   }
 
   .contact-container .right-section .contact-info .contact-info-row:hover {
@@ -2681,6 +2680,18 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 @media (max-width: 400px) {
+
+  .contact-container .text-container h1 {
+    font-size: 4.3rem;
+    line-height: 0.8;
+
+  }
+
+  .contact-container .text-container h1 i {
+    font-size: 3.8rem;
+
+  }
+
   .contact-container .right-section .contact-text .contact-row h1 {
     font-size: 1.5rem;
   }
@@ -2701,9 +2712,7 @@ input[type="number"]::-webkit-outer-spin-button {
     transform: scale(1);
   }
 
-  .contact_us {
-    padding: 2rem 0.5rem;
-  }
+
 }
 
 /* About Part */
@@ -3237,7 +3246,7 @@ input[type="number"]::-webkit-outer-spin-button {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  top: 20px;
+  top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 99;
@@ -3257,6 +3266,8 @@ input[type="number"]::-webkit-outer-spin-button {
   justify-content: center;
   align-items: center;
   position: relative;
+  top: 20px;
+
   background: var(--black);
   border-radius: 20px;
 }
@@ -3515,18 +3526,26 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 @media (max-width: 800px) {
+  .product_details {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+
+
+  }
+
   .product_details .product_details_container {
     flex-direction: column;
-    width: 90%;
-    height: 90vh;
+    width: 95%;
+    height: 93%;
     position: relative;
+    top: 20px;
   }
 
   .product_details .product_details_container .image {
     height: 50%;
     width: 100%;
     padding: 15px;
-    border-radius: 20px 20px 0 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -3570,7 +3589,7 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 
   .product_details_container .content .desc p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   .product_details_container .content>div span {
@@ -3596,7 +3615,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 @media (max-width: 700px) {
   .product_details_container .content {
-    padding: 10px;
+    padding: 15px;
     width: 100%;
   }
 
@@ -3613,13 +3632,18 @@ input[type="number"]::-webkit-outer-spin-button {
     margin: 5px;
   }
 
+  .product_details_container .content .price {
+    margin: 0;
+  }
+
   .product_details_container .content .price h1 {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
+
   }
 
   .product_details_container .content .btn {
-    width: 70%;
-    margin: 0 0 5px 5px;
+    width: 100%;
+    margin: 0 0 20px 8px;
   }
 
   .product_details_container .content .btn button {
