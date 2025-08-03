@@ -1,6 +1,6 @@
 **Features**
 
-User Authentication & Access Control
+User Authentication & Access Control 📢
   -	Role-Based Navigation
       -	Admin: Access to admin-specific navigation and dashboard.
       -	User: Access to user-specific features and profile.
@@ -10,7 +10,7 @@ User Authentication & Access Control
 
 -----------------------------------------------------------------------------------------
 
-E-Commerce Core Features
+E-Commerce Core Features 🛠️
   -	Live Product Search
       -	Real-time product search using AJAX without page reload.
       -	Product navigation bar is disabled during search for a cleaner UI experience.
@@ -29,7 +29,7 @@ E-Commerce Core Features
 
 -----------------------------------------------------------------------------------------
 
-Ratings & Feedback
+Ratings & Feedback 💌
   -	Submit Feedback Without Refresh
       -	Users can rate and leave comments on the contact page via AJAX.
   -	Dynamic Display of Feedback
@@ -40,7 +40,7 @@ Ratings & Feedback
 
 -----------------------------------------------------------------------------------------
 
-User & Admin Profiles
+User & Admin Profiles 🙎🏻‍♂️
   -	User Profile
       -	View order history with cancellation available for orders not yet shipped.
       -	Manage wish list and personal reviews.
@@ -58,9 +58,14 @@ User & Admin Profiles
 
 -----------------------------------------------------------------------------------------
       
-Analytics & Highlights
+Analytics & Highlights 🏳️
   -	Top 4 Best-Selling Products:
-      -	Displayed prominently on the homepage under “Top Essences of Kaivera.”
+      -	Displayed prominently on the homepage under “Top Essences of Kaivera”
+
+-----------------------------------------------------------------------------------------
+
+Performance Optimization ⚡
+  -	Remove unnecessary product images and profile images after account updates and deletes.
 
 -----------------------------------------------------------------------------------------
 
