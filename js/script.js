@@ -1297,8 +1297,12 @@ function setUpProduct() {
     decreaseBtn.replaceWith(newDecreaseBtn);
 
     newDecreaseBtn.addEventListener('click', () => {
-      quantityInput.value = parseInt(quantityInput.value) - 1;
-      updatePrice();
+      const currentQuantity = parseInt(quantityInput.value);
+      if (currentQuantity > 1) {
+        quantityInput.value = currentQuantity - 1;
+        updatePrice();
+      }
+
     });
 
 

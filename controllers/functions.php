@@ -259,7 +259,7 @@ function getOrdersByUserId($user_id)
 FROM orders o
 JOIN users u ON o.user_id = u.user_id
 LEFT JOIN discounts d ON o.discount_id = d.discount_id 
-WHERE o.user_id = ?;";
+WHERE o.user_id = ? ORDER BY o.order_date DESC;";
     $stmt = $conn->prepare($query);
     $stmt->execute([$user_id]);
 
@@ -300,7 +300,7 @@ function getOrderItemsByUserId($user_id)
     $query =  "SELECT order_items.*
 FROM order_items
 JOIN orders ON order_items.order_id = orders.order_id
-WHERE orders.user_id = ?;";
+WHERE orders.user_id = ? ORDER BY orders.order_date DESC;";
     $stmt = $conn->prepare($query);
     $stmt->execute([$user_id]);
 

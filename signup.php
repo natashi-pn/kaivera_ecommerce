@@ -6,6 +6,10 @@ $activeForm = 'signup';
 if (isset($_GET['form']) && $_GET['form'] === 'login') {
     $activeForm = 'login';
 }
+
+if (isset($user_type)) {
+    header("Location: ../home.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -96,11 +100,14 @@ if (isset($_GET['form']) && $_GET['form'] === 'login') {
                     </div>
                     <div>
                         <label for="password_input"><i class="fa-solid fa-key"></i></label>
-                        <input type="password" name="password" id="password_input" placeholder="Set Password">
+                        <input type="password" name="password" id="password_input" placeholder="Set Password" class="show_password">
+                        <div id="show_password">
+                            <i class='fa-solid fa-eye'></i>
+                        </div>
                     </div>
                     <div>
                         <label for="repeat_password_input"><i class="fa-solid fa-key"></i></label>
-                        <input type="password" name="repeat_password" id="repeat_password_input" placeholder="Repeat Password">
+                        <input type="password" name="repeat_password" id="repeat_password_input" placeholder="Repeat Password" class="show_password">
                     </div>
                     <button type="submit">SignUp</button>
                 </form>
@@ -134,9 +141,11 @@ if (isset($_GET['form']) && $_GET['form'] === 'login') {
                     </div>
                     <div>
                         <label for="login_password_input"><i class="fa-solid fa-key"></i></label>
-                        <input type="password" name="password" id="login_password_input" placeholder="Set Password">
+                        <input type="password" name="password" id="login_password_input" placeholder="Set Password" class="login_password_input">
+                        <div id="show_password" class="login_show_password">
+                            <i class='fa-solid fa-eye'></i>
+                        </div>
                     </div>
-
                     <button type="submit">Login</button>
                 </form>
                 <div class="error_message">
@@ -205,19 +214,41 @@ if (isset($_GET['form']) && $_GET['form'] === 'login') {
                     clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)"
                 });
             } else {
-
                 gsap.set(".login_wrapper", {
                     xPercent: 100
                 });
                 gsap.set(".signup_wrapper", {
                     xPercent: 0,
                     clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)"
-
-
                 });
 
             }
         });
+
+        const icon = document.getElementById("show_password");
+        const password = document.querySelectorAll(".show_password");
+        const login_icon = document.querySelector(".login_show_password");
+        const login_password = document.querySelector(".login_password_input");
+        icon.onclick = function() {
+            password.forEach((psw) => {
+                if (psw.type == "password") {
+                    psw.type = "text";
+                    icon.innerHTML = "<i class='fa-solid fa-eye-slash'></i>";
+                } else {
+                    psw.type = "password"
+                    icon.innerHTML = "<i class='fa-solid fa-eye'></i>";
+                }
+            })
+        }
+        login_icon.onclick = function() {
+            if (login_password.type == "password") {
+                login_password.type = "text";
+                login_icon.innerHTML = "<i class='fa-solid fa-eye-slash'></i>";
+            } else {
+                login_password.type = "password";
+                login_icon.innerHTML = "<i class='fa-solid fa-eye'></i>";
+            }
+        }
     </script>
 </body>
 

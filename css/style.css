@@ -381,8 +381,9 @@ input[type="reset"]:active {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-
+  pointer-events: none;
   z-index: 3;
+  user-select: none;
 }
 
 .navigation .right .bot {
@@ -1530,6 +1531,9 @@ footer {
 
 @media (max-width: 400px) {
 
+  .navigation {
+    padding: 10px;
+  }
 
   .navigation .right .top p {
     width: 80%;
@@ -1537,12 +1541,14 @@ footer {
   }
 
   .navigation .left {
+    width: 100%;
     height: 40%;
-    padding-top: 2rem;
+    padding: 0;
+    margin-top: 8rem;
   }
 
   .navigation .left ul li a {
-    font-size: 2rem;
+    font-size: 2.8rem;
   }
 
   .nav-menu .btn_wrapper {
@@ -3168,6 +3174,19 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 5px 0;
 }
 
+#show_password {
+  position: absolute;
+  right: 18px;
+  place-self: center;
+  color: gray;
+  font-size: .9rem;
+  transition: .2s linear;
+}
+
+#show_password:hover {
+  color: var(--white);
+}
+
 @media (max-width: 1100px) {
   .signup_section .signup_wrapper {
     width: min(600px, 100%);
@@ -3186,7 +3205,7 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 
   .signup_section form span {
-    margin-right: 25px;
+    margin-right: 50px;
   }
 
   .signup_section form label {
@@ -3202,6 +3221,10 @@ input[type="number"]::-webkit-outer-spin-button {
 
   .signup_section form input {
     border-radius: 15px;
+  }
+
+  #show_password {
+    right: 50px;
   }
 }
 
@@ -3600,9 +3623,9 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 
   .product_details_container .content .btn button {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     padding: 8px 10px;
-    margin-right: 3px;
+    margin-right: 2px;
   }
 
   .product_details_container .content .btn button i {

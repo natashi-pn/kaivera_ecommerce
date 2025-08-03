@@ -462,7 +462,7 @@ $topProducts = getTopProducts();
         <div class="image-strip" id="strip">
           <img src="assets/images/recentWork.jpg" alt="" />
           <img src="assets/images/young-model-fashion-shoot.jpg" alt="" />
-          <img src="assets/images/mockup2.webp" alt="" />
+          <img src="assets/images/recentWork2.jpg" alt="" />
         </div>
       </div>
     </section>
