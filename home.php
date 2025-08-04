@@ -159,7 +159,7 @@ $topProducts = getTopProducts();
     <!-- Scroll Text Section -->
     <section class="horizontalText">
       <p>
-        . Kaivera . New york . London . Bangkok . Tokyo .
+        . Kaivera . New york . London . Bangkok . Tokyo . Kaivera . New york . London . Bangkok . Tokyo
       </p>
 
     </section>

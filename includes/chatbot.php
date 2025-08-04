@@ -9,7 +9,7 @@
         --df-messenger-chat-window-height: 500px;
         position: fixed !important;
         z-index: 103 !important;"
-    chat-icon="https://raw.githubusercontent.com/natashi-pn/kaivera_ecommerce/Main/assets/images/kaivera%20logo%20icon.png"
+    chat-icon="https://kaivera23.wuaze.com/assets/images/kaivera logo icon.png"
     chat-title="Ki-Bot"
     agent-id="98a47df1-c7b3-4db3-9722-7ed54d331465"
     language-code="en">
