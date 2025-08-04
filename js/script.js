@@ -13,7 +13,7 @@ function showNotification(html) {
   setTimeout(() => {
     message_area.innerHTML = "";
 
-  }, 10000);
+  }, 8000);
 
 }
 function setUpLoader() {
@@ -435,7 +435,6 @@ function aboutAnimation() {
           start: "-100px 90%",
           end: "bottom 20%",
           scrub: true,
-          // markers: true
         },
         clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0% 100%)",
         y: 0,

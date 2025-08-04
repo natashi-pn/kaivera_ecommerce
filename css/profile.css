@@ -378,17 +378,32 @@ form button:hover {
 }
 
 .user_information .info h1 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-family: var(--smallFont);
     color: var(--white);
     font-weight: 500;
+    text-align: justify;
+    line-height: 1;
 }
 
 .user_information .info p {
     color: var(--second-white);
     font-family: var(--smallFont);
     font-size: 0.9rem;
-    margin: 2px 0;
+    margin: 5px 0;
+    text-align: justify;
+    font-weight: 300;
+}
+
+
+.user_information .info h1 i,
+.user_information .info p i {
+    font-size: .7rem;
+    color: var(--black-olive);
+    margin: 0 10px;
+    background: var(--tropical);
+    padding: 7px;
+    border-radius: 10px;
 }
 
 @keyframes fade-in-out {

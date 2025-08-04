@@ -68,7 +68,7 @@ unset($_SESSION['order_id']);
       <div class="header-content">
         <div class="header-links">
           <a href="home.php">Home</a>
-          <span>.</span>
+          <span>•</span>
           <a href="products.php">Products</a>
         </div>
         <div class="title">

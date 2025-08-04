@@ -59,7 +59,7 @@ require_once("controllers/functions.php");
       <div class="header-content">
         <div class="header-links">
           <a href="home.php">Home</a>
-          <span>.</span>
+          <span>•</span>
           <a href="about.php">About</a>
         </div>
         <div class="title">

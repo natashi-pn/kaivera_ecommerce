@@ -14,8 +14,6 @@ $messages = getMessages();
 $reviews = getReviews();
 $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 

@@ -67,7 +67,7 @@ unset($_SESSION['alert_cart']);
       <div class="header-content">
         <div class="header-links">
           <a href="home.php">Home</a>
-          <span>.</span>
+          <span>•</span>
           <a href="cart.php">Cart</a>
         </div>
         <div class="title">

@@ -4,7 +4,7 @@ const heroText1 = document.querySelector(".landing-page .content h1:nth-child(1)
 
 gsap.to(heroText1, {
     clipPath: "polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%)",
-    y: "-180px",
+    y: "-100px",
     scrollTrigger: {
         trigger: heroText1,
         start: "-183px center",
@@ -17,7 +17,7 @@ const heroText2 = document.querySelector(".landing-page .content h1:nth-child(2)
 
 gsap.to(heroText2, {
     clipPath: "polygon(0% 0%, 100% 0%, 100% 28%, 0% 28%)",
-    y: "-100px",
+    y: "-50px",
     scrollTrigger: {
         trigger: heroText2,
         start: "-70px center",
@@ -29,7 +29,7 @@ const heroText3 = document.querySelector(".landing-page .content h1:nth-child(3)
 
 gsap.to(heroText3, {
     clipPath: "polygon(0% 0%, 100% 0%, 100% 20%, 0% 20%)",
-    y: "-40px",
+    y: "-20px",
 
     scrollTrigger: {
         trigger: heroText3,
@@ -55,15 +55,22 @@ gsap.to(heroText4, {
 const video_container = document.querySelector(".hero-video");
 const video = document.querySelector(".hero-video .video");
 
+const windowWidth = window.innerWidth;
 
+
+gsap.set(video, {
+    y: windowWidth > 800 ? "-108vh" : "-105vh",
+    width: windowWidth > 800 ? "30vw" : "70%",
+    height: windowWidth > 800 ? "33vh" : "40vh",
+})
 gsap.to(video, {
-    y: "730px",
-    width: "96vw",
-    height: "75vh",
+    y: "0",
+    width: "95%",
+    height: "100%",
     scrollTrigger: {
         trigger: video,
-        start: "-100px top",
-        end: "600px center",
+        start: "top top",
+        end: "600px top",
         scrub: 1,
     }
 })
