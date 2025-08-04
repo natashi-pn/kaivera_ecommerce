@@ -15,10 +15,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $payment_method = $_POST["payment_method"];
     $total_price = $_POST['total_price'];
     $discount = $_POST['discount'];
+    $order_address = $_POST['order_address'];
     $cart = $_SESSION['cart'] ?? [];
 
     if (empty($discount)) {
         $discount = null;
+    }
+    if (empty($order_address)) {
+        echo "<p class='error_msg'><i class='fa-solid fa-circle-exclamation'></i>Delivery Address Cannot be Empty</p>";
+        exit;
     }
 
     if (empty($user_id) || empty($payment_method) || empty($total_price) || empty($cart)) {
@@ -26,8 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         exit;
     } else {
 
-        $stmt = $conn->prepare("INSERT INTO orders (user_id, total_price, order_date, order_status, payment_method, discount_id) VALUES (?, ?, NOW(), 'Pending', ? , ?)");
-        $stmt->execute([$user_id, $total_price, $payment_method, $discount]);
+        $stmt = $conn->prepare("INSERT INTO orders (user_id, total_price, order_date, order_status, payment_method, discount_id , order_address) VALUES (?, ?, NOW(), 'Pending', ? , ?, ?)");
+        $stmt->execute([$user_id, $total_price, $payment_method, $discount, $order_address]);
 
         $order_id = $conn->lastInsertId();
 

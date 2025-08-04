@@ -60,9 +60,7 @@
                  <li>
                      <a href="about.php" class="text-slate-600 hover:text-slate-800 text-base transition-link">About</a>
                  </li>
-                 <li>
-                     <a href="signup.php" class="text-slate-600 hover:text-slate-800 text-base transition-link">SignUp</a>
-                 </li>
+
              </ul>
          </div>
 

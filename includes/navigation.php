@@ -63,7 +63,7 @@
        <a href="https://discord.gg/P9Fad8WKNy">Discord<i class="fa-solid fa-arrow-up"></i></a>
      </div>
      <div class="profile">
-       <button id="light_mode" class="hidden"><i class="fa-solid fa-sun"></i></button>
+       <button id="light_mode" class="hidden"><i class="fa-regular fa-lightbulb"></i></button>
        <button id="dark_mode"><i class="fa-solid fa-moon"></i></button>
      </div>
    </section>

@@ -248,6 +248,16 @@ unset($_SESSION['alert_cart']);
                     </dl>
                   </div>
 
+
+                  <div>
+                    <input type="text" id="address"
+                      class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray dark:text-black dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                      placeholder="Delivery Address" name="order_address" required />
+                  </div>
+
+
+
+
                   <dl class="flex items-center justify-between gap-4 border-t border-gray-200 pt-2 dark:border-gray-700">
                     <dt class="text-base font-bold cart_text">
                       Total
@@ -292,6 +302,7 @@ unset($_SESSION['alert_cart']);
               </div>
             </div>
 
+
             <div
               class="space-y-4 rounded-lg border border-gray-200  p-4 shadow-sm dark:border-gray-700  sm:p-6 cart_item">
               <form class="space-y-4" method="POST" id="discount_form">
@@ -301,7 +312,7 @@ unset($_SESSION['alert_cart']);
                   </label>
                   <input type="text" id="voucher"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray dark:text-black dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
-                    placeholder="" name="discount_code" />
+                    placeholder="Enter Voucher Code" name="discount_code" />
                 </div>
                 <button type="submit"
                   class="flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-base font-medium text-black hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-white dark:hover:bg-[#e6e6e6] dark:focus:ring-primary-800">
@@ -383,6 +394,10 @@ unset($_SESSION['alert_cart']);
     ?>
   </main>
 
+  <?php
+
+  require_once("includes/chatbot.php");
+  ?>
   <script>
     window.addEventListener("DOMContentLoaded", () => {
       if (sessionStorage.getItem("openReceipt") === "true") {
@@ -391,6 +406,8 @@ unset($_SESSION['alert_cart']);
       }
     });
   </script>
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/CustomEase.min.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>

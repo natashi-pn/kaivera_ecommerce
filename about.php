@@ -300,7 +300,7 @@ require_once("controllers/functions.php");
         <div class="image-strip" id="strip">
           <img src="assets/images/recentWork.jpg" alt="" />
           <img src="assets/images/young-model-fashion-shoot.jpg" alt="" />
-          <img src="assets/images/mockup2.webp" alt="" />
+          <img src="assets/images/recentWork2.jpg" alt="" />
         </div>
       </div>
     </section>
@@ -310,6 +310,14 @@ require_once("controllers/functions.php");
     require_once("includes/footer.php");
     ?>
   </main>
+
+
+  <?php
+
+  require_once("includes/chatbot.php");
+  ?>
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/CustomEase.min.js"></script>
 
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>

@@ -193,6 +193,8 @@ table {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    z-index: 4;
+
 }
 
 form {
@@ -366,6 +368,7 @@ form button:hover {
     height: 100%;
     aspect-ratio: 1;
     border-radius: 50%;
+    z-index: 4;
 }
 
 .user_information .profile_image img {
@@ -377,34 +380,56 @@ form button:hover {
     border: 2px solid var(--tropical);
 }
 
-.user_information .info h1 {
-    font-size: 1.1rem;
+.user_information .info {
+
+    width: 80%;
+}
+
+.user_information .info div {
+    text-align: center;
+    padding: 3px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 3;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.user_information .info div h1 {
+    font-size: 1rem;
     font-family: var(--smallFont);
     color: var(--white);
     font-weight: 500;
-    text-align: justify;
+    text-align: center;
     line-height: 1;
+    z-index: 3;
+
 }
 
-.user_information .info p {
+.user_information .info div p {
     color: var(--second-white);
     font-family: var(--smallFont);
     font-size: 0.9rem;
     margin: 5px 0;
-    text-align: justify;
-    font-weight: 300;
+    text-align: center;
+    font-weight: 400;
+    z-index: 3;
+
 }
 
 
 .user_information .info h1 i,
 .user_information .info p i {
     font-size: .7rem;
-    color: var(--black-olive);
-    margin: 0 10px;
-    background: var(--tropical);
+    color: var(--second-white);
+    margin: 0 5px;
     padding: 7px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
+
 
 @keyframes fade-in-out {
     from {

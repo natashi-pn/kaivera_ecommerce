@@ -1,6 +1,5 @@
-gsap.registerPlugin(SplitText);
-gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(CustomEase);
+gsap.registerPlugin(SplitText, ScrollTrigger, CustomEase);
+const showLoader = !sessionStorage.getItem("kaiveraVisited");
 
 CustomEase.create("hop", ".87, 0, .13, 1");
 reinitializePage();
@@ -16,6 +15,8 @@ function showNotification(html) {
   }, 8000);
 
 }
+
+
 function setUpLoader() {
 
   function init() {
@@ -30,10 +31,31 @@ function setUpLoader() {
     }
   });
 }
+function setUpHeroLoader() {
+
+  function init() {
+    if (showLoader) {
+      startMainAnimation(2.5);
+
+    }
+    else {
+
+      startMainAnimation(0);
+    }
+
+  }
+
+  window.addEventListener("load", init);
+
+  window.addEventListener("pageshow", (e) => {
+    if (e.persisted) {
+      init();
+    }
+  });
+}
 
 
 function setUpHome() {
-  const showLoader = !sessionStorage.getItem("kaiveraVisited");
   const lenis = new Lenis({
     duration: 1.3,
     smooth: true,
@@ -187,91 +209,7 @@ function setUpHome() {
       startMainAnimation(0);
     }
 
-    function startMainAnimation(delay = 0) {
 
-      requestAnimationFrame(raf);
-
-
-      //Landing page animation
-
-      const heroTexts = document.querySelectorAll(".landing-page h1");
-      const heroSplit = [];
-
-      const heroPara = document.querySelectorAll(".heroPara");
-      const heroParaSplit = [];
-
-      const video = document.querySelector(".hero-video .video");
-
-
-      heroPara.forEach((el) => {
-        const split = new SplitText(el, {
-          type: "lines",
-          linesClass: "line-wrapper",
-          autoSplit: true,
-        });
-
-        heroParaSplit.push(split);
-      });
-
-      heroParaSplit.forEach((split) => {
-        gsap.from(split.lines, {
-          y: 100,
-          duration: 2,
-          ease: "power4.out",
-          stagger: 0.05,
-          delay: delay + 1,
-        });
-      });
-
-      heroTexts.forEach((el) => {
-        const split = new SplitText(el, {
-          type: "chars",
-          autoSplit: true,
-        });
-
-        heroSplit.push(split);
-      });
-      heroSplit.forEach((split) => {
-        gsap.from(split.chars, {
-          y: 200,
-          duration: 2,
-          ease: "power4.out",
-          stagger: 0.1,
-          delay: delay + 0.5,
-          onComplete: () => {
-            document.body.style.overflowX = "hidden";
-          },
-        });
-      });
-      gsap.set(".hero-img", {
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        scale: 1.3,
-      });
-      gsap.to(".hero-img", {
-        scale: 1,
-        duration: 2,
-        ease: "power4.inOut",
-        delay: delay
-      })
-      gsap.to(".hero-img", {
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-        duration: 2,
-        ease: "power4.inOut",
-        delay: delay + .2,
-        onComplete: () => {
-          document.querySelector(".hero-img").style.display = "none"
-        }
-      })
-
-      gsap.from(video, {
-        duration: 1.5,
-        ease: "power4.inOut",
-        delay: delay + 2,
-        clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)"
-      })
-
-
-    }
   });
 
 
@@ -480,6 +418,91 @@ function aboutAnimation() {
     });
   });
 
+}
+
+function startMainAnimation(delay = 0) {
+
+  const heroTexts = document.querySelectorAll(".landing-page h1");
+  const heroSplit = [];
+
+  const heroPara = document.querySelectorAll(".heroPara");
+  const heroParaSplit = [];
+
+  document.fonts.ready.then(() => {
+
+
+    heroPara.forEach((el) => {
+      const split = new SplitText(el, {
+        type: "lines",
+        linesClass: "line-wrapper",
+        autoSplit: true,
+      });
+
+      heroParaSplit.push(split);
+    });
+
+    heroParaSplit.forEach((split) => {
+      gsap.from(split.lines, {
+        y: 100,
+        duration: 2,
+        ease: "power4.out",
+        stagger: 0.05,
+        delay: delay + 1,
+      });
+    });
+
+    heroTexts.forEach((el) => {
+      const split = new SplitText(el, {
+        type: "chars",
+        autoSplit: true,
+      });
+
+      heroSplit.push(split);
+    });
+    heroSplit.forEach((split) => {
+      gsap.from(split.chars, {
+        y: 200,
+        duration: 2,
+        ease: "power4.out",
+        stagger: 0.1,
+        delay: delay + 0.5,
+        onComplete: () => {
+          document.body.style.overflowX = "hidden";
+        },
+      });
+    });
+    gsap.set(".hero-img", {
+      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+      scale: 1.3,
+    });
+    gsap.to(".hero-img", {
+      scale: 1,
+      duration: 2,
+      ease: "power4.inOut",
+      delay: delay
+    })
+    gsap.set(".hero-video .video", {
+      clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+    })
+    gsap.to(".hero-video .video", {
+
+      duration: 1.5,
+      ease: "power4.inOut",
+      delay: delay + 2,
+      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+    })
+    gsap.to(".hero-img", {
+      clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+      duration: 2,
+      ease: "power4.inOut",
+      delay: delay + .2,
+      onComplete: () => {
+        document.querySelector(".hero-img").style.display = "none"
+      }
+    })
+
+
+  })
 }
 function setUpAbout() {
 
@@ -1880,7 +1903,9 @@ function initGlobal() {
 
 }
 function initHome() {
+
   setUpHome();
+  setUpHeroLoader();
   setUpParallax();
   setUpSliderImage();
   aboutAnimation();

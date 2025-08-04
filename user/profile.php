@@ -65,9 +65,18 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
                     <img src="<?php echo $user['user_profile_image'] ?>" alt="">
                 </div>
                 <div class="info">
-                    <h1><i class="fa-solid fa-user"></i> <?php echo $user['user_name'] ?></h1>
-                    <p><i class="fa-solid fa-at"></i> <?php echo $user['user_email'] ?></p>
-                    <p><i class="fa-solid fa-phone"></i> <?php echo $user['user_phone'] ?></p>
+                    <div>
+                        <h1><i class="fa-solid fa-user"></i> <?php echo $user['user_name'] ?></h1>
+
+                    </div>
+                    <div>
+                        <p><i class="fa-solid fa-envelope"></i> <?php echo $user['user_email'] ?></p>
+
+                    </div>
+                    <div>
+                        <p><i class="fa-solid fa-phone"></i> <?php echo $user['user_phone'] ?></p>
+
+                    </div>
                 </div>
                 <div class="action">
                     <a href="user_update_user.php" class="green_btn">Edit Account</a>
@@ -102,6 +111,9 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
                                 Discount
                             </th>
                             <th scope="col" class="px-6 py-3">
+                                Address
+                            </th>
+                            <th scope="col" class="px-6 py-3">
                                 Action
                             </th>
                         </tr>
@@ -124,6 +136,7 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
                                                                             echo  $order['discount_percent'] . "<span>%</span>";
                                                                         }
                                                                         ?></td>
+                                    <td class="p-2 md:p-4 text-center"><?php echo $order['order_address'] ?></td>
                                     <td class="relative p-2 md:p-4 action">
                                         <?php
                                         if ($order['order_status'] === "shipped") {

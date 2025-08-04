@@ -209,6 +209,9 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
                                         Discount
                                     </th>
                                     <th scope="col" class="px-6 py-3">
+                                        Address
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
                                         Action
                                     </th>
                                 </tr>
@@ -243,6 +246,8 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
                                                                                 echo  $order['discount_percent'] . "<span>%</span>";
                                                                             }
                                                                             ?></td>
+                                        <td class="p-2 md:p-4 text-center"><?php echo $order['order_address'] ?></td>
+
                                         <td class="relative p-2 md:p-4 action">
                                             <?php if ($order['order_status'] == "shipped") {
                                                 echo "<a class='green_btn'><i class='fa-solid fa-circle-check'></i>Delivered!</a>";
