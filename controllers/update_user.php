@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     $user_id = trim($_POST['update_user_id']);
     $user_name = trim($_POST['user_name']);
     $user_email = trim($_POST['user_email']);
-
+    $user_password = $_POST["user_password"] ?? null;
     $user_phone =  trim($_POST['user_phone']);
     $user_type =  trim($_POST['user_type']);
 
@@ -33,6 +33,33 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
             exit;
         }
     }
+
+    foreach ($users as $user) {
+        if (($user['user_name'] == $user_name || $user['user_email'] == $user_email) && $user['user_id'] != $user_id) {
+            $_SESSION["error"] = "Username or Email already exists.";
+            header('Location: ../admin/admin_update_user.php?id=' . $user_id);
+            exit;
+        }
+    }
+    if ($user_password) {
+        if (!validatePassword($user_password)) {
+            $_SESSION['error'] = 'Invalid Password';
+            header('Location: ../admin/admin_update_user.php?id=' . $user_id);
+            exit;
+        }
+
+        $final_password = password_hash($user_password, PASSWORD_DEFAULT);
+    } else {
+        $query = "SELECT user_password FROM users WHERE user_id = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->execute([$user_id]);
+
+        $final_password = $stmt->fetchColumn();
+    }
+
+
+
+
 
     $maxFileSize = 2 * 1024 * 1024;
     $allowedMimeTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
@@ -81,12 +108,12 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         $filePath = $existing_image;
     }
 
-    $sql = "UPDATE users SET user_name=?,user_email=?,user_phone=?,user_type=?,user_profile_image=?
+    $sql = "UPDATE users SET user_name=?,user_email=?,user_password = ?,user_phone=?,user_type=?,user_profile_image=?
      WHERE user_id = ?;";
 
 
     $stmt =   $conn->prepare($sql);
-    $status = $stmt->execute([$user_name, $user_email, $user_phone, $user_type, $filePath, $user_id]);
+    $status = $stmt->execute([$user_name, $user_email, $final_password, $user_phone, $user_type, $filePath, $user_id]);
 
 
     if ($status) {

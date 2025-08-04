@@ -58,6 +58,9 @@ if (!isset($user_type) || $user_type != 'admin') {
                 <input type="email" name="user_email" id="email_input" value="<?php echo $user['user_email'] ?>" placeholder="Email">
             </div>
             <div class="input_field">
+                <input type="password" name="user_password" id="password_input" placeholder="Password">
+            </div>
+            <div class="input_field">
 
                 <input type="number" name="user_phone" id="phone_input" step="any" value="<?php echo $user['user_phone'] ?>" placeholder="Phone">
             </div>
