@@ -86,12 +86,12 @@ if (isset($user_type)) {
                 <form action="controllers/signup.php" id="signup_form" enctype="multipart/form-data" method="POST">
                     <div>
                         <label for="username_input"><i class="fa-solid fa-user"></i></label>
-                        <input type="text" name="username" id="username_input" placeholder="Username" onkeyup="checkAvailability('username', this.value)">
+                        <input type="text" name="username" id="username_input" placeholder="Username" onkeyup="checkDebounce('username', this.value)">
                         <span id="username_status"></span>
                     </div>
                     <div>
                         <label for="email_input"><i class="fa-solid fa-envelope"></i></label>
-                        <input type="email" name="email" id="email_input" placeholder="Email" onkeyup="checkAvailability('email', this.value)">
+                        <input type="email" name="email" id="email_input" placeholder="Email" onkeyup="checkDebounce('email', this.value)">
                         <span id="email_status"></span>
                     </div>
                     <div>
@@ -191,6 +191,7 @@ if (isset($user_type)) {
                 })
                 .then(res => res.json())
                 .then(data => {
+
                     const statusElement = document.getElementById(type + "_status");
                     if (data.status === "taken") {
                         statusElement.innerText = `${type} is already taken`;
@@ -202,8 +203,21 @@ if (isset($user_type)) {
                         statusElement.innerText = "Error checking";
                         statusElement.style.color = "orange";
                     }
+
                 });
         }
+
+        function debounce(func, delay) {
+            let timer;
+            return function(...args) {
+                clearTimeout(timer);
+                timer = setTimeout(() => {
+                    func.apply(this, args)
+                }, delay)
+            }
+        }
+
+        const checkDebounce = debounce(checkAvailability, 700);
 
         document.addEventListener("DOMContentLoaded", function() {
             const activeForm = "<?php echo $activeForm; ?>";

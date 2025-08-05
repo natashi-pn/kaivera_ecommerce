@@ -1422,11 +1422,13 @@ function setUpProduct() {
     xhr.open("GET", `../controllers/search_products.php?term=${encodeURIComponent(term)}&category_id=${categoryId}`, true);
 
     xhr.onload = function () {
+
       if (xhr.status === 200) {
         document.querySelector(`#product-container-${categoryId}`).innerHTML = xhr.responseText;
         bindProductListeners();
         rebindWishlist();
       }
+
     };
     xhr.send();
   });
