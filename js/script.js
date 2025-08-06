@@ -24,34 +24,12 @@ function setUpLoader() {
   }
 
   window.addEventListener("load", init);
-
   window.addEventListener("pageshow", (e) => {
     if (e.persisted) {
       init();
     }
   });
-}
-function setUpHeroLoader() {
 
-  function init() {
-    if (showLoader) {
-      startMainAnimation(2.5);
-
-    }
-    else {
-
-      startMainAnimation(0);
-    }
-
-  }
-
-  window.addEventListener("load", init);
-
-  window.addEventListener("pageshow", (e) => {
-    if (e.persisted) {
-      init();
-    }
-  });
 }
 
 
@@ -109,12 +87,11 @@ function setUpHome() {
 
       const loader_bg = document.querySelectorAll(".loader .loader_bg");
       const loading_text = document.querySelectorAll(".loader .text_content h1");
-
       const arr_text = [];
 
       loading_text.forEach((el) => {
         const split = new SplitText(el, {
-          tupe: "chars"
+          type: "chars"
         });
         arr_text.push(split);
       });
@@ -201,17 +178,95 @@ function setUpHome() {
       startMainAnimation(3);
 
 
+
     } else {
       document.querySelector(".hero-img").style.display = "none"
       document.querySelector(".loader").style.display = "none";
       lenis.start();
       requestAnimationFrame(raf);
       startMainAnimation(0);
+
     }
 
+    function startMainAnimation(delay = 0) {
 
+      const heroTexts = document.querySelectorAll(".landing-page h1");
+      const heroSplit = [];
+
+      const heroPara = document.querySelectorAll(".heroPara");
+      const heroParaSplit = [];
+
+      heroPara.forEach((el) => {
+        const split = new SplitText(el, {
+          type: "lines",
+          linesClass: "line-wrapper",
+          autoSplit: true,
+        });
+
+        heroParaSplit.push(split);
+      });
+
+      heroParaSplit.forEach((split) => {
+        gsap.from(split.lines, {
+          y: 100,
+          duration: 2,
+          ease: "power4.out",
+          stagger: 0.05,
+          delay: delay + 1,
+        });
+      });
+
+      heroTexts.forEach((el) => {
+        const split = new SplitText(el, {
+          type: "chars",
+          autoSplit: true,
+        });
+
+        heroSplit.push(split);
+      });
+      heroSplit.forEach((split) => {
+        gsap.from(split.chars, {
+          y: 200,
+          duration: 2,
+          ease: "power4.out",
+          stagger: 0.1,
+          delay: delay + 0.5,
+          onComplete: () => {
+            document.body.style.overflowX = "hidden";
+          },
+        });
+      });
+      gsap.set(".hero-img", {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        scale: 1.3,
+      });
+      gsap.to(".hero-img", {
+        scale: 1,
+        duration: 2,
+        ease: "power4.inOut",
+        delay: delay
+      })
+      gsap.set(".hero-video .video", {
+        clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+      })
+      gsap.to(".hero-video .video", {
+
+        duration: 1.5,
+        ease: "power4.inOut",
+        delay: delay + 2,
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+      })
+      gsap.to(".hero-img", {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+        duration: 2,
+        ease: "power4.inOut",
+        delay: delay + .2,
+        onComplete: () => {
+          document.querySelector(".hero-img").style.display = "none";
+        }
+      })
+    }
   });
-
 
   // Scroll Trigger
   gsap.set(".horizontalText p", {
@@ -327,6 +382,8 @@ function testimonialCards() {
     startAutoSlide();
   }
 }
+
+
 function aboutAnimation() {
   let linesScrollAnimationSplit = [];
   const linesScrollAnimation = document.querySelectorAll(".scrollLine");
@@ -420,90 +477,7 @@ function aboutAnimation() {
 
 }
 
-function startMainAnimation(delay = 0) {
 
-  const heroTexts = document.querySelectorAll(".landing-page h1");
-  const heroSplit = [];
-
-  const heroPara = document.querySelectorAll(".heroPara");
-  const heroParaSplit = [];
-
-  document.fonts.ready.then(() => {
-
-
-    heroPara.forEach((el) => {
-      const split = new SplitText(el, {
-        type: "lines",
-        linesClass: "line-wrapper",
-        autoSplit: true,
-      });
-
-      heroParaSplit.push(split);
-    });
-
-    heroParaSplit.forEach((split) => {
-      gsap.from(split.lines, {
-        y: 100,
-        duration: 2,
-        ease: "power4.out",
-        stagger: 0.05,
-        delay: delay + 1,
-      });
-    });
-
-    heroTexts.forEach((el) => {
-      const split = new SplitText(el, {
-        type: "chars",
-        autoSplit: true,
-      });
-
-      heroSplit.push(split);
-    });
-    heroSplit.forEach((split) => {
-      gsap.from(split.chars, {
-        y: 200,
-        duration: 2,
-        ease: "power4.out",
-        stagger: 0.1,
-        delay: delay + 0.5,
-        onComplete: () => {
-          document.body.style.overflowX = "hidden";
-        },
-      });
-    });
-    gsap.set(".hero-img", {
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      scale: 1.3,
-    });
-    gsap.to(".hero-img", {
-      scale: 1,
-      duration: 2,
-      ease: "power4.inOut",
-      delay: delay
-    })
-    gsap.set(".hero-video .video", {
-      clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-    })
-    gsap.to(".hero-video .video", {
-
-      duration: 1.5,
-      ease: "power4.inOut",
-      delay: delay + 2,
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-    })
-    gsap.to(".hero-img", {
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-      duration: 2,
-      ease: "power4.inOut",
-      delay: delay + .2,
-      onComplete: () => {
-        document.querySelector(".hero-img").style.display = "none"
-      }
-    })
-
-
-  })
-}
 function setUpAbout() {
 
   aboutAnimation();
@@ -1902,35 +1876,39 @@ function initGlobal() {
   setUpNavigation();
   setUpLoader();
 
-
 }
 function initHome() {
 
   setUpHome();
-  setUpHeroLoader();
   setUpParallax();
   setUpSliderImage();
   aboutAnimation();
+
+
 }
 
 function initProduct() {
+
   setUpLenis();
   setUpProduct();
   setUpVideoLoads()
 }
 
 function initCart() {
+
   setUpCart();
   setUpLenis();
   setUpVideoLoads()
 }
 function initContact() {
+
   setUpLenis();
   setUpContact();
 
 }
 
 function initAbout() {
+
   setUpVideoLoads()
   setUpLenis();
   setUpAbout();
@@ -1943,9 +1921,7 @@ function initSignup() {
   setUpVideoLoads()
   setUpSignup();
 }
-function initAdmin() {
-  modeToggle();
-}
+
 
 // Reinitialize Page
 function reinitializePage() {

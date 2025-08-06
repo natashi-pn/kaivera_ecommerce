@@ -208,11 +208,6 @@ $isLoggedIn = isset($_SESSION['user_data']['user_type']);
     ?>
   </main>
 
-  <?php
-
-  require_once("includes/chatbot.php");
-  ?>
-
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/CustomEase.min.js"></script>
 

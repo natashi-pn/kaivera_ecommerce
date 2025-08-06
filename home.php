@@ -472,10 +472,7 @@ $topProducts = getTopProducts();
 
     ?>
   </main>
-  <?php
-  require_once("includes/chatbot.php");
 
-  ?>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/CustomEase.min.js"></script>
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>

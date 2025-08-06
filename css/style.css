@@ -1810,9 +1810,13 @@ footer {
   width: 100%;
   place-items: center;
   color: var(--white);
-  text-align: center;
   margin-top: 2rem;
   padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
 }
 
 .product-section .product-header h1 {
@@ -1821,6 +1825,7 @@ footer {
   font-weight: 300;
   line-height: 1;
   font-family: var(--bigFont);
+  text-align: center;
 }
 
 .product-section .product-header p {
@@ -1831,6 +1836,8 @@ footer {
   line-height: 1.5;
   width: 500px;
   margin-top: 10px;
+  text-align: center;
+
 }
 
 .product-nav {
@@ -4083,6 +4090,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .notification .success_msg {
+  width: 280px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -4092,6 +4100,7 @@ input[type="number"]::-webkit-outer-spin-button {
   background: #e3eeec;
   border-radius: 10px;
   padding: 20px;
+  text-align: center;
 }
 
 .notification .success_msg i {
@@ -4100,6 +4109,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .notification .error_msg {
+  width: 280px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -4109,6 +4119,7 @@ input[type="number"]::-webkit-outer-spin-button {
   background: #e3eeec;
   border-radius: 10px;
   padding: 20px;
+  text-align: center;
 }
 
 .notification .error_msg i {

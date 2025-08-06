@@ -394,10 +394,6 @@ unset($_SESSION['alert_cart']);
     ?>
   </main>
 
-  <?php
-
-  require_once("includes/chatbot.php");
-  ?>
   <script>
     window.addEventListener("DOMContentLoaded", () => {
       if (sessionStorage.getItem("openReceipt") === "true") {

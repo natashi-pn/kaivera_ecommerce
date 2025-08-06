@@ -61,7 +61,7 @@ if (isset($user_type)) {
             <div class="video">
                 <div class="spinner" id="spinner">
                     <div class="absolute top-0 right-0 h-screen w-screen z-50 flex justify-center items-center">
-                        <div class="animate-spin rounded-full h-20 w-20 border-t-2 border-b-2"></div>
+                        <div class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2"></div>
                     </div>
                 </div>
                 <video src="assets/videos/Gradientsection.mp4" id="header_video" autoplay muted playsinline loop></video>
@@ -157,11 +157,6 @@ if (isset($user_type)) {
         </section>
     </main>
 
-
-    <?php
-
-    require_once("includes/chatbot.php");
-    ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/CustomEase.min.js"></script>
 
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
