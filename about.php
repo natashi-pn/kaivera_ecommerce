@@ -54,7 +54,7 @@ require_once("controllers/functions.php");
             <div class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2"></div>
           </div>
         </div>
-        <video src="assets/videos/Gradientsection.mp4" id="header_video" preload="auto" autoplay muted loop playsinline></video>
+        <video src="assets/videos/Gradientblue.webm" id="header_video" preload="auto" autoplay muted loop playsinline></video>
       </div>
       <div class="header-content">
         <div class="header-links">

@@ -53,7 +53,6 @@ function setUpHome() {
   document.fonts.ready.then(() => {
     if (showLoader) {
 
-
       // Disabling scrolling in all platform
       document.body.style.overflow = "hidden";
       document.documentElement.style.overflow = "hidden";
@@ -190,31 +189,10 @@ function setUpHome() {
 
     function startMainAnimation(delay = 0) {
 
+      console.log("start animation called with " + delay)
       const heroTexts = document.querySelectorAll(".landing-page h1");
       const heroSplit = [];
 
-      const heroPara = document.querySelectorAll(".heroPara");
-      const heroParaSplit = [];
-
-      heroPara.forEach((el) => {
-        const split = new SplitText(el, {
-          type: "lines",
-          linesClass: "line-wrapper",
-          autoSplit: true,
-        });
-
-        heroParaSplit.push(split);
-      });
-
-      heroParaSplit.forEach((split) => {
-        gsap.from(split.lines, {
-          y: 100,
-          duration: 2,
-          ease: "power4.out",
-          stagger: 0.05,
-          delay: delay + 1,
-        });
-      });
 
       heroTexts.forEach((el) => {
         const split = new SplitText(el, {
