@@ -87,6 +87,31 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
         <!-- Admin Dashboard -->
         <section id="dashboard" class="<?php echo ($go_to === 'admin') ? 'active' : ''; ?>">
             <div class="heading">
+                <h1>Admin Information</h1>
+            </div>
+            <div class="user_information">
+                <div class="profile_image">
+                    <img src="<?php echo $user_profile_image ?>" alt="">
+                </div>
+                <div class="info">
+                    <div>
+                        <h1><i class="fa-solid fa-user"></i> <?php echo $user_name ?></h1>
+
+                    </div>
+                    <div>
+                        <p><i class="fa-solid fa-envelope"></i> <?php echo $user_email ?></p>
+                    </div>
+                    <div>
+                        <p><i class="fa-solid fa-phone"></i> <?php echo $user_phone ?></p>
+                    </div>
+                </div>
+                <div class="action">
+                    <a href="admin_update_user.php?id=<?php echo $user_id ?>" class="green_btn">Edit Account</a>
+
+
+                </div>
+            </div>
+            <div class="heading">
                 <h1>Admin Dashboard</h1>
 
             </div>

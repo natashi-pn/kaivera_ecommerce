@@ -119,8 +119,8 @@
 
 @media (max-width: 600px) {
   .action a {
-    padding: 5px 8px;
-    font-size: 0.55rem;
+    padding: 6px 10px;
+    font-size: 0.65rem;
     margin: 3px;
   }
 

@@ -273,7 +273,7 @@ form button:hover {
 }
 
 .table_row:hover {
-    background: rgb(182, 194, 228);
+    background: rgb(197, 206, 230);
 }
 
 /* Messages */
@@ -356,16 +356,20 @@ form button:hover {
 }
 
 .user_information {
-    padding: 1.5rem;
-    width: 100%;
-    height: 20vh;
+    padding: 1rem;
+    min-width: 280px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background: var(--black-olive);
+    margin: 1rem;
+    border-radius: 20px;
+    place-self: center;
+
 }
 
 .user_information .profile_image {
-    height: 100%;
+    height: 100px;
     aspect-ratio: 1;
     border-radius: 50%;
     z-index: 4;
@@ -381,20 +385,19 @@ form button:hover {
 }
 
 .user_information .info {
-
-    width: 80%;
+    margin: 0 30px;
+    width: 100%;
 }
 
 .user_information .info div {
     text-align: center;
-    padding: 3px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0px 0;
     position: relative;
     z-index: 3;
-    height: 40px;
+    height: 30px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 
@@ -413,7 +416,6 @@ form button:hover {
     color: var(--second-white);
     font-family: var(--smallFont);
     font-size: 0.9rem;
-    margin: 5px 0;
     text-align: center;
     font-weight: 400;
     z-index: 3;
@@ -502,6 +504,10 @@ form button:hover {
 
     .user_information .info {
         margin: 20px 0;
+    }
+
+    .user_information .info div {
+        justify-content: center;
     }
 }
 
