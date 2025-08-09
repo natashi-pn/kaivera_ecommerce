@@ -599,6 +599,7 @@ input[type="reset"]:active {
 /* About Us section */
 .about-us {
   padding: 50px;
+  padding-top: 80px;
   width: 100vw;
   background: var(--black);
   position: relative;
@@ -631,7 +632,7 @@ input[type="reset"]:active {
 }
 
 .about-us .container .wrapper a {
-  margin: 30px 0;
+  margin: 50px 0 30px 0;
   text-decoration: none;
   background: var(--white);
   color: var(--black);
