@@ -48,7 +48,6 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 
     <nav class="sidebar">
         <div class="profile">
-            <h1><?php echo $user_name ?></h1>
             <div class="profile_image">
                 <img src="<?php echo $user_profile_image ?>" alt="">
             </div>
@@ -95,14 +94,16 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
                 </div>
                 <div class="info">
                     <div>
-                        <h1><i class="fa-solid fa-user"></i> <?php echo $user_name ?></h1>
+                        <div>
+                            <h1><i class="fa-solid fa-user"></i> <?php echo $user_name ?></h1>
 
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-envelope"></i> <?php echo $user_email ?></p>
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-phone"></i> <?php echo $user_phone ?></p>
+                        </div>
+                        <div>
+                            <p><i class="fa-solid fa-envelope"></i> <?php echo $user_email ?></p>
+                        </div>
+                        <div>
+                            <p><i class="fa-solid fa-phone"></i> <?php echo $user_phone ?></p>
+                        </div>
                     </div>
                 </div>
                 <div class="action">

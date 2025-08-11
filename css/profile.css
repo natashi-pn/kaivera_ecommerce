@@ -387,9 +387,14 @@ form button:hover {
 .user_information .info {
     margin: 0 30px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
-.user_information .info div {
+.user_information .info div div {
     text-align: center;
     padding: 0px 0;
     position: relative;
@@ -401,7 +406,7 @@ form button:hover {
 }
 
 
-.user_information .info div h1 {
+.user_information .info div div h1 {
     font-size: 1rem;
     font-family: var(--smallFont);
     color: var(--white);
@@ -412,7 +417,7 @@ form button:hover {
 
 }
 
-.user_information .info div p {
+.user_information .info div div p {
     color: var(--second-white);
     font-family: var(--smallFont);
     font-size: 0.9rem;
@@ -506,9 +511,7 @@ form button:hover {
         margin: 20px 0;
     }
 
-    .user_information .info div {
-        justify-content: center;
-    }
+
 }
 
 .profile_image_container {

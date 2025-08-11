@@ -66,16 +66,18 @@ $go_to = isset($_GET['to']) ? $_GET['to'] : 'orders';
                 </div>
                 <div class="info">
                     <div>
-                        <h1><i class="fa-solid fa-user"></i> <?php echo $user['user_name'] ?></h1>
+                        <div>
+                            <h1><i class="fa-solid fa-user"></i> <?php echo $user['user_name'] ?></h1>
 
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-envelope"></i> <?php echo $user['user_email'] ?></p>
+                        </div>
+                        <div>
+                            <p><i class="fa-solid fa-envelope"></i> <?php echo $user['user_email'] ?></p>
 
-                    </div>
-                    <div>
-                        <p><i class="fa-solid fa-phone"></i> <?php echo $user['user_phone'] ?></p>
+                        </div>
+                        <div>
+                            <p><i class="fa-solid fa-phone"></i> <?php echo $user['user_phone'] ?></p>
 
+                        </div>
                     </div>
                 </div>
                 <div class="action">
