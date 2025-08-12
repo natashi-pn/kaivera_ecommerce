@@ -1,6 +1,7 @@
 gsap.registerPlugin(SplitText, ScrollTrigger, CustomEase);
 const showLoader = !sessionStorage.getItem("kaiveraVisited");
 
+
 CustomEase.create("hop", ".87, 0, .13, 1");
 reinitializePage();
 
@@ -11,7 +12,6 @@ function showNotification(html) {
 
   setTimeout(() => {
     message_area.innerHTML = "";
-
   }, 8000);
 
 }
@@ -34,6 +34,41 @@ function setUpLoader() {
 
 
 function setUpHome() {
+
+  // Loader animation
+
+  const counterElement = document.querySelector(".loader .counter p");
+  let totalAssets = 0;
+  let loadedAssets = 0;
+  const loader_bg = document.querySelectorAll(".loader .loader_bg");
+  const loading_text = document.querySelectorAll(".loader .text_content h1");
+  const arr_text = [];
+
+  loading_text.forEach((el) => {
+    const split = new SplitText(el, {
+      type: "chars"
+    });
+    arr_text.push(split);
+  });
+  arr_text.forEach((split) => {
+    gsap.from(split.chars, {
+      y: -100,
+      duration: 1.2,
+      stagger: 0.03,
+      ease: "power4.out",
+      delay: .4
+    });
+  });
+
+  gsap.from(counterElement, {
+    opacity: 0,
+    y: -20,
+    duration: 1.2,
+    ease: "power4.out",
+    delay: .4,
+  });
+
+  // Lenis
   const lenis = new Lenis({
     duration: 1.3,
     smooth: true,
@@ -44,11 +79,13 @@ function setUpHome() {
     infinite: false,
   });
 
-  // Scroll update loop
+
   function raf(time) {
     lenis.raf(time);
     requestAnimationFrame(raf);
   }
+
+
   document.addEventListener("DOMContentLoaded", () => {
     document.fonts.ready.then(() => {
       if (showLoader) {
@@ -68,116 +105,113 @@ function setUpHome() {
         sessionStorage.setItem("kaiveraVisited", "true");
 
 
-        // Loader animation
 
-        let counterElement = document.querySelector(".loader .counter p");
-        let currentValue = 0;
+        const images = Array.from(document.querySelectorAll("img"));
 
-        function updateCounter() {
-          if (currentValue < 100) {
-            let increment = Math.floor(Math.random() * 10) + 1;
-            currentValue = Math.min(currentValue + increment, 100);
-            counterElement.textContent = currentValue;
+        totalAssets = images.length;
 
-            let delay = Math.floor(Math.random() * 150) + 25;
-            setTimeout(updateCounter, delay);
+        const updateCounter = (percent) => {
+          counterElement.textContent = Math.floor(percent);
+        }
+
+        const finishLoader = () => {
+          gsap.to(counterElement, {
+            textContent: 100,
+            duration: 1.3,
+            roundProps: "textContent",
+            onUpdate: () => {
+              counterElement.textContent = Math.floor(counterElement.textContent);
+            },
+            onComplete: () => {
+              loadingAnimation();
+            }
+          })
+        }
+
+        const assetsLoaded = () => {
+          loadedAssets++;
+          let progress = loadedAssets / totalAssets * 100;
+          updateCounter(progress);
+          if (progress >= 100) {
+            finishLoader();
           }
         }
 
-        const loader_bg = document.querySelectorAll(".loader .loader_bg");
-        const loading_text = document.querySelectorAll(".loader .text_content h1");
-        const arr_text = [];
-
-        loading_text.forEach((el) => {
-          const split = new SplitText(el, {
-            type: "chars"
-          });
-          arr_text.push(split);
+        images.forEach(img => {
+          if (img.complete) {
+            assetsLoaded();
+          }
+          else {
+            img.addEventListener("load", assetsLoaded);
+            img.addEventListener("error", assetsLoaded);
+          }
         });
 
-        arr_text.forEach((split) => {
-          gsap.from(split.chars, {
-            y: -100,
-            duration: 1.2,
-            stagger: 0.03,
-            ease: "power4.out",
-            delay: .4
+
+
+        function loadingAnimation() {
+
+          arr_text.forEach((split) => {
+            gsap.to(split.chars, {
+              y: 50,
+              duration: 1,
+              stagger: 0.02,
+              ease: "power4.in",
+            })
           });
 
-          gsap.to(split.chars, {
-            y: 50,
+          gsap.to(counterElement, {
+            opacity: 0,
+            y: 30,
             duration: 1,
-            stagger: 0.02,
             ease: "power4.in",
-            delay: 2.5
+
           })
-        });
 
-        gsap.from(counterElement, {
-          opacity: 0,
-          y: -20,
-          duration: 1.2,
-          ease: "power4.out",
-          delay: .4,
-        });
-        gsap.to(counterElement, {
-          opacity: 0,
-          y: 30,
-          duration: 1,
-          ease: "power4.in",
-          delay: 2.5
-        })
+          gsap.set(".loader .loader_bg_top, .loader .loader_bg_bottom", {
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
+          });
+          gsap.to(loader_bg, {
+            scale: 0.5,
+            duration: 1.5,
+            ease: "power4.inOut",
 
-        gsap.set(".loader .loader_bg_top, .loader .loader_bg_bottom", {
-          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
-        });
-        gsap.to(loader_bg, {
-          scale: 0.5,
-          duration: 1.5,
-          ease: "power4.inOut",
-          delay: 2.5,
-        });
-        gsap.to(".loader .loader_bg_top", {
-          clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-          duration: 1.3,
-          ease: "power4.inOut",
-          delay: 3
-
-        });
+          });
+          gsap.to(".loader .loader_bg_top", {
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+            duration: 1.3,
+            ease: "power4.inOut",
+            delay: .5
+          });
 
 
-        gsap.to(".loader .loader_bg_bottom", {
-          clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-          duration: 1.3,
-          ease: "power4.inOut",
-          delay: 3.4,
+          gsap.to(".loader .loader_bg_bottom", {
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+            duration: 1.3,
+            ease: "power4.inOut",
+            delay: 1,
 
-          onComplete: () => {
-            document.querySelector('.loader').style.display = "none";
-            document.body.style.overflow = "";
-            document.documentElement.style.overflow = "";
-            document.body.removeEventListener("touchmove", preventScroll);
-            document.removeEventListener("wheel", preventScroll);
-            lenis.start();
-            requestAnimationFrame(raf);
+            onComplete: () => {
+              document.querySelector('.loader').style.display = "none";
+              document.body.style.overflow = "";
+              document.documentElement.style.overflow = "";
+              document.body.removeEventListener("touchmove", preventScroll);
+              document.removeEventListener("wheel", preventScroll);
+              lenis.start();
+              requestAnimationFrame(raf);
 
-          },
-        });
+            },
+          });
 
-
-        gsap.to(".loader", {
-          delay: 6,
-          onComplete: () => {
-            document.querySelector('.loader').style.display = "none";
-          },
-        });
-
-
-        updateCounter();
-        startMainAnimation(3);
-
-
-
+          gsap.to(".loader", {
+            delay: 2,
+            onComplete: () => {
+              document.querySelector('.loader').style.display = "none";
+            },
+          });
+          console.log("Added Loader Countdown")
+          startMainAnimation(.7);
+        }
       } else {
         document.querySelector(".hero-img").style.display = "none"
         document.querySelector(".loader").style.display = "none";
@@ -222,7 +256,7 @@ function setUpHome() {
           scale: 1,
           duration: 2,
           ease: "power4.inOut",
-          delay: delay
+          delay: delay - 0.15
         })
         gsap.set(".hero-video .video", {
           clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",

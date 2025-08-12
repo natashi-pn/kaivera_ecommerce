@@ -28,7 +28,7 @@ $topProducts = getTopProducts();
   <section class="loader">
     <div class="text_content">
       <div class="counter">
-        <p></p>
+        <p>0</p>
       </div>
       <h1>Kaivera</h1>
     </div>
@@ -485,6 +485,7 @@ $topProducts = getTopProducts();
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
     integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
 </body>
 
