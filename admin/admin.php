@@ -11,7 +11,7 @@ if (!isset($user_type) || $user_type !== 'admin') {
 $categories = getCategories();
 $discounts = getDiscounts();
 $messages = getMessages();
-$reviews = getReviews();
+$reviews = getAllReviews();
 $go_to = isset($_GET['to']) ? $_GET['to'] : 'admin';
 ?>
 <!DOCTYPE html>

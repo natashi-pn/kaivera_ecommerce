@@ -3,10 +3,12 @@
 require_once "../controllers/dbconn.php";
 
 
-$query = "SELECT DAYOFWEEK(order_date) AS day_number, COUNT(*) AS total_orders
-    FROM orders
-    WHERE order_date >= DATE_SUB(CURDATE(), INTERVAL 7 DAY)
-    GROUP BY day_number";
+$query = "SELECT 
+    DAYOFWEEK(order_date) AS day_number, 
+    COUNT(*) AS total_orders
+FROM orders
+GROUP BY day_number
+ORDER BY day_number;";
 
 $stmt = $conn->prepare($query);
 $stmt->execute();

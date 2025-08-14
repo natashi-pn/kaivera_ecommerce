@@ -111,6 +111,26 @@ function getReviews()
     users.user_email,
     users.user_type,
     users.user_profile_image FROM reviews JOIN users ON reviews.user_id = users.user_id ORDER BY 
+    reviews.review_date DESC LIMIT 10;";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+
+    $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $reviews;
+}
+function getAllReviews()
+{
+    global $conn;
+    $query = "SELECT reviews.review_id,
+    reviews.rating,
+    reviews.comment,
+    reviews.review_date,
+    users.user_id,
+    users.user_name,
+    users.user_email,
+    users.user_type,
+    users.user_profile_image FROM reviews JOIN users ON reviews.user_id = users.user_id ORDER BY 
     reviews.review_date DESC;";
     $stmt = $conn->prepare($query);
     $stmt->execute();
@@ -119,6 +139,7 @@ function getReviews()
 
     return $reviews;
 }
+
 
 
 function getDiscount($discount_code)
